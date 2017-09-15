@@ -12,7 +12,9 @@
 .banner {
   height: 200px;
   background-image: url(../../assets/banner.png);
-  background-position: 0 0 ;
+  // background-position: 0 0 ;
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
 }
 
 main {

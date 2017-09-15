@@ -5,6 +5,11 @@ import { LoginComponent } from './login/login.component';
 
 export const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: '/sale',
+    pathMatch: 'full'
+  },
+  {
     path: 'sale',
     component: ToSaleComponent
   },
