@@ -1,0 +1,146 @@
+@import '../variables.scss';
+
+.top {
+  height: 224px;
+}
+
+.bottom {
+  height: 196px;
+  background-color: #dba;
+}
+
+.banner {
+  height: 200px;
+  background-image: url(../../assets/banner.png);
+  background-position: 0 0 ;
+}
+
+main {
+  width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+main * {
+  user-select: none;
+}
+
+main > .nav {
+  color: $gray-text;
+  font-size: 12px;
+}
+
+.option-label {
+  color: $yellow-text;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 34px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .text {
+  margin: 0 20px;
+}
+
+
+.select-wrap {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.select-wrap.show {
+  height: auto;
+  opacity: 1;
+  transition: all .6s;
+}
+
+.option-label .left, .option-label .right {
+  width: 8px;
+  height: 8px;
+  border: 2px solid $yellow-text;
+  transform: rotate(45deg);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.option {
+  width: 224px;
+  height: 50px;
+  border: 1px solid;
+  border-color: $gray-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dark-text;
+  transition: all .3s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.option.small {
+  width: 182px;
+}
+
+.option.small:nth-child(6n + 1) {
+  margin-left: 0;
+}
+
+.option:not(:first-child) {
+  margin-left: 20px;
+}
+
+.option.active {
+  background-color: $yellow-bg;
+  border-color: $yellow-bg;
+  color: #fff;
+}
+
+.btn-wrapper {
+  margin-top: 80px;
+  text-align: center;
+}
+.next {
+  width: 328px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(155deg, #ffd76d, #ffba00);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  text-shadow: 0 4px 10px rgba(0,0,0,.2);
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+.next.valid {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.next:active {
+  transition: all .2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  transform: translate(1px, 1px);
+}
+
+
+.select-state {
+  background-color: $gray-bg;
+}
+
+.select-state .inner {
+  width: 1200px;
+  min-width: 1200px;
+  line-height: 60px;
+  margin: 0 auto;
+  color: #103e56;
+}

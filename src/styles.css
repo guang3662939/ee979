@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+  box-sizing: border-box;
+}	
+html{
+	width:100%;
+}
+
+body {
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  background: #fff;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	border: none;
+    /*display:block;*/
+}
+a {
+	text-decoration: none;
+}
+
+a, p, span, input, textarea, img, select {
+    -moz-outline: none;
+    outline: none;
+}
+a,p,span,h1,h4,i,h3,h5,h2,h6,b,p,em,input,select{
+	font-family:'Microsoft YaHei','Arial';
+	}
+h3,h1,h2,h4,h5,h6,b{
+	font-weight:normal;
+	}
+i, em {
+    font-style:normal;
+}
+a:hover, a:visited, a:link, a:active {
+	text-decoration: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999999;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #999999;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999999;
+}
+
+.disappear {
+    display:none;
+}
+.f_l {
+    float:left;
+}
+.f_r {
+    float:right;
+}
+/*超出字体变...(仅限一行)*/
+.comm_dian {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    color:#777;
+}
+/*强制不换行*/
+.wh-no {
+    white-space: nowrap;
+}
+/*强制换行*/
+.wh-all {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/*通用*/
+.main {
+    width:100%;
+    height:auto;
+    overflow:hidden;
+}
+
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

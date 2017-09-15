@@ -1,0 +1,88 @@
+<div class="top">
+  <a routerLink="/login">login</a>
+</div>
+
+<div class="banner"></div>
+
+<main>
+  <div class="nav">您现在的位置：首页 > 我要卖</div>
+
+  <!-- 商品类型 -->
+  <div class="option-label">
+    <div class="left"></div>
+    <div class="text">选择商品类型</div>
+    <div class="right"></div>
+  </div>
+
+  <div class="options">
+    <div class="option" 
+      *ngFor="let gt of goodsTypes; let i=index"
+      [class.active]="i === gtIdx"
+      (click)="onOptionClick('gt', i)">{{ gt }}</div>
+  </div>
+
+  <!-- 游戏区 -->
+  <div class="select-wrap" [class.show]="gtIdx !== null">
+    <div class="option-label">
+      <div class="left"></div>
+      <div class="text">选择游戏区</div>
+      <div class="right"></div>
+    </div>
+  
+    <div class="options">
+      <div class="option" 
+        *ngFor="let pg of playgrounds; let i=index"
+        [class.active]="i === pgIdx"
+        (click)="onOptionClick('pg', i)">{{ pg }}</div>
+    </div>
+  </div>
+
+  <!-- 游戏服 -->
+  <div class="select-wrap" [class.show]="pgIdx !== null">
+    <div class="option-label">
+      <div class="left"></div>
+      <div class="text">选择游戏服</div>
+      <div class="right"></div>
+    </div>
+  
+    <div class="options">
+      <div class="option small" 
+        *ngFor="let gs of gameServers; let i=index"
+        [class.active]="i === gsIdx"
+        (click)="onOptionClick('gs', i)">{{ gs }}</div>
+    </div>
+  </div>
+
+  <!-- 交易类型 -->
+  <div class="select-wrap" [class.show]="gsIdx !== null">
+    <div class="option-label">
+      <div class="left"></div>
+      <div class="text">选择交易类型</div>
+      <div class="right"></div>
+    </div>
+  
+    <div class="options">
+      <div class="option" 
+        *ngFor="let tt of tradeTypes; let i=index"
+        [class.active]="i === ttIdx"
+        (click)="onOptionClick('tt', i)">{{ tt }}</div>
+    </div>
+  </div>
+
+  <div class="btn-wrapper">
+    <button 
+      class="btn next" 
+      [disabled]="gtIdx === null || pgIdx === null || gsIdx === null ||  ttIdx === null"
+      [class.valid]="!(gtIdx === null || pgIdx === null || gsIdx === null ||  ttIdx === null)"
+      >确认无误，下一步</button>
+  </div>
+  
+</main>
+
+
+<div class="select-state">
+  <div class="inner">您当前的选择是：古剑奇谭 > 账号交易 </div>
+</div>
+
+
+<div class="bottom">footer</div>
