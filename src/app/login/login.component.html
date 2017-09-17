@@ -1,57 +1,150 @@
-<!--login start-->
-<!--<div class="login_black"></div>-->
-<!--<div class="login_box">-->
-    <!--<ul>×</ul>-->
-    <!--<ul>易易游戏网</ul>-->
-    <!--<ul>快速登录</ul>-->
-    <!--<ul>-->
-        <!--<input type="text"  name="username" placeholder="请输入用户名 / 手机号码 / 邮箱号码" />-->
-        <!--<input type="password"  name="password" placeholder="请输入密码" />-->
-    <!--</ul>-->
-    <!--<ul>-->
-        <!--<li><input type="checkbox" id="checkbox_c1" class="chk_3" /><label for="checkbox_c1"></label><p>自动登录</p></li>-->
-        <!--<li>还没有账号？<i>立即注册</i></li>-->
-    <!--</ul>-->
-    <!--<ul>-->
-        <!--<li >快速登录</li>-->
-    <!--</ul>-->
-    <!--<ul>-->
-        <!--<li>QQ登录</li>-->
-        <!--<li>微信登录</li>-->
-        <!--<li>支付宝登录</li>-->
-    <!--</ul>-->
-    <!--<ul>-->
-        <!--忘记密码？<i>点这里</i>-->
-    <!--</ul>-->
-<!--</div>-->
-<!--login end-->
+<!-- 遮罩 -->
+<div class="overlay"></div>
+
+<!--登录 start-->
+<div class="login-box" *ngIf="state === 'login'">
+    <div class="cancel">×</div>
+    <h1>易易游戏网</h1>
+    <h4>快速登录</h4>
+    <form class="login-form" (ngSubmit)="onLogin($event)" #loginForm="ngForm">
+        <div class="ipt-group">
+            <input class="ipt" 
+                required    
+                name="phone" 
+                #phone="ngModel"
+                [(ngModel)]="loginPhone"
+                [pattern]="phonePattern"
+                maxlength="11"
+                placeholder="请输入手机号码" />
+            <div class="err-msg" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors.required">手机号码必须填写</div>
+                <div *ngIf="phone.errors.pattern && loginPhone.length === 11">手机号码格式有误</div>
+            </div>
+        </div>
+        <div class="ipt-group">
+            <input class="ipt" 
+                required
+                type="password"  
+                name="password"
+                minlength="6"
+                [(ngModel)]="loginPass"
+                #password="ngModel" 
+                placeholder="请输入密码" />
+            <div class="err-msg" *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors.required">密码必须填写</div>
+                <div *ngIf="loginPass.length < 6 && loginPass.length > 0">密码不足6位</div>
+            </div>
+        </div>
+        
+        <div class="option">
+            <div class="left">
+                <input type="checkbox" id="checkbox_c1" class="chk_3" />
+                <label for="checkbox_c1"></label>
+                <label for="checkbox_c1">自动登录</label>
+            </div>
+            <div class="right">还没有账号？<i (click)="state = 'register'">立即注册</i></div>
+        </div>
+
+        <button 
+            [disabled]="!loginForm.valid"
+            [class.invalid]="!loginForm.valid"
+            type="submit" class="submit btn">快速登录</button>
+    </form>
+  
+    <ul class="third-parties">
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>支付宝登录</li>
+    </ul>
+    <p class="regain-pass">忘记密码？<i>点这里</i></p>
+</div>
+<!--登录 end-->
 
 
-<!--register start-->
-<div class="login_black"></div>
-<div class="login_box" style="height: 700px!important;">
-    <ul>×</ul>
-    <ul>易易游戏网</ul>
-    <ul>快速注册</ul>
-    <ul>
-        <input type="text"  name="username" placeholder="请输入手机号码" />
-        <li>获取验证码</li>
-        <input type="password"  name="password" placeholder="输入验证码" />
-        <input type="password"  name="password" placeholder="请输入密码" />
-        <input type="password"  name="password" placeholder="请确认密码" />
-    </ul>
-    <ul>
-        <li>已有账号？<i>立即登录</i></li>
+<!--注册 start-->
+<div class="register-box" *ngIf="state !== 'login'">
+    <div class="cancel">×</div>
+    <h1>易易游戏网</h1>
+    <h4>快速注册</h4>
+    <form class="register-form" #regForm="ngForm" (ngSubmit)="onRegSubmit()">
+        <div class="ipt-group">
+            <input 
+                class="ipt"
+                required
+                maxlength="11"
+                [(ngModel)]="regPhone"
+                name="phone"
+                #phone="ngModel"
+                [pattern]="phonePattern"
+                placeholder="请输入手机号码" />
+            <div class="err-msg" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors.required">手机号码必须填写</div>
+                <div *ngIf="phone.errors.pattern && regPhone.length === 11">手机号码格式有误</div>
+            </div>
+        </div>
+        
+        <div class="ipt-group">
+            <input 
+                class="ipt"  
+                name="code" 
+                [(ngModel)]="regCode"
+                #code="ngModel"
+                placeholder="输入验证码"
+                required />
+            <button 
+                class="btn btn-code" 
+                [disabled]="phone.invalid"
+                [class.invalid]="phone.invalid"
+                (click)="getCode()">
+                {{!sendIngCode ? '获取验证码' : '重新获取 (' + (count > 9 ? count : '0' + count ) + ')'}}
+            </button>
+        </div>
+        <div class="ipt-group">
+            <input 
+                class="ipt" 
+                minlength="6"
+                name="passwd" 
+                [(ngModel)]="regPasswd"
+                #passwd="ngModel"
+                placeholder="请输入密码"
+                required
+                type="password" />
+            <div class="err-msg" *ngIf="passwd.invalid && (passwd.dirty || passwd.touched)">
+                <div *ngIf="passwd.errors.required">密码必须填写</div>
+                <div *ngIf="regPasswd.length < 6 && regPasswd.length > 0">密码不足6位</div>
+            </div>
+        </div>
+        <div class="ipt-group">
+            <input 
+                class="ipt" 
+                minlength="6"
+                name="passwd2" 
+                [(ngModel)]="regPasswd2"
+                #passwd2="ngModel"
+                placeholder="请确认密码"
+                required
+                type="password" />
+            <div class="err-msg" *ngIf="passwd.value !== passwd2.value && passwd2.dirty">
+                <!-- <div *ngIf="passwd2.errors.required">密码必须填写</div>
+                <div *ngIf="regPasswd2.length < 6 && regPasswd2.length > 0">密码不足6位</div>
+                <div *ngIf="passwd.value !== passwd2.value">两次密码输入不一致</div> -->
+                <div>两次密码输入不一致</div>
+            </div>
+        </div>
 
-    </ul>
-    <ul>
-        <li >快速注册</li>
-    </ul>
-    <ul>
+        <p class="option">已有账号？<i (click)="state = 'login'">立即登录</i></p>
+
+        <button type="submit" 
+            [disabled]="regForm.invalid || passwd.value !== passwd2.value"
+            [class.invalid]="regForm.invalid || passwd.value !== passwd2.value"
+            class="submit btn">快速注册</button>
+    </form>
+
+    <ul class="third-parties">
         <li>QQ登录</li>
         <li>微信登录</li>
         <li>支付宝登录</li>
     </ul>
 
 </div>
-<!--login end-->
+<!--注册 end-->

@@ -1,5 +1,6 @@
 <div class="top">
-  <a routerLink="/login">login</a>
+  <button routerLink="/login">superdorkman</button>
+  <button routerLink="/login0">guanguang</button>
 </div>
 
 <div class="banner"></div>
@@ -8,21 +9,23 @@
   <div class="nav">您现在的位置：首页 > 我要卖</div>
 
   <!-- 商品类型 -->
-  <div class="option-label">
-    <div class="left"></div>
-    <div class="text">选择商品类型</div>
-    <div class="right"></div>
-  </div>
+  <div class="select-wrap show" #select1>
+    <div class="option-label">
+      <div class="left"></div>
+      <div class="text">选择商品类型</div>
+      <div class="right"></div>
+    </div>
 
-  <div class="options">
-    <div class="option" 
-      *ngFor="let gt of goodsTypes; let i=index"
-      [class.active]="i === gtIdx"
-      (click)="onOptionClick('gt', i)">{{ gt }}</div>
+    <div class="options">
+      <div class="option" 
+        *ngFor="let gt of goodsTypes; let i=index"
+        [class.active]="i === gtIdx"
+        (click)="onOptionClick('gt', i, select1)">{{ gt }}</div>
+    </div>
   </div>
-
+  
   <!-- 游戏区 -->
-  <div class="select-wrap" [class.show]="gtIdx !== null">
+  <div class="select-wrap" [class.show]="gtIdx !== null" #select2>
     <div class="option-label">
       <div class="left"></div>
       <div class="text">选择游戏区</div>
@@ -33,12 +36,12 @@
       <div class="option" 
         *ngFor="let pg of playgrounds; let i=index"
         [class.active]="i === pgIdx"
-        (click)="onOptionClick('pg', i)">{{ pg }}</div>
+        (click)="onOptionClick('pg', i, select2)">{{ pg }}</div>
     </div>
   </div>
 
   <!-- 游戏服 -->
-  <div class="select-wrap" [class.show]="pgIdx !== null">
+  <div class="select-wrap" [class.show]="pgIdx !== null" #select3>
     <div class="option-label">
       <div class="left"></div>
       <div class="text">选择游戏服</div>
@@ -49,7 +52,7 @@
       <div class="option small" 
         *ngFor="let gs of gameServers; let i=index"
         [class.active]="i === gsIdx"
-        (click)="onOptionClick('gs', i)">{{ gs }}</div>
+        (click)="onOptionClick('gs', i, select3)">{{ gs }}</div>
     </div>
   </div>
 
@@ -80,8 +83,12 @@
 </main>
 
 
-<div class="select-state">
-  <div class="inner">您当前的选择是：古剑奇谭 > 账号交易 </div>
+<div class="select-state" [class.show]="gtIdx !== null">
+  <div class="inner">您当前的选择是：古剑奇谭 {{gtIdx !== null ? ' > ' + goodsTypes[gtIdx] : ''}}
+    {{pgIdx !== null ? ' > ' + playgrounds[pgIdx] : ''}}
+    {{gsIdx !== null ? ' > ' + gameServers[gsIdx] : ''}}
+    {{ttIdx !== null ? ' > ' + tradeTypes[ttIdx] : ''}}
+  </div>
 </div>
 
 

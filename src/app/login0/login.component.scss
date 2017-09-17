@@ -1,14 +1,14 @@
-.overlay{
+.login_black{
   width: 100%;
   height: 100%;
   background-color: #000;
   opacity: 0.5;
   position: fixed;
-  top: 0;
+  top: 0px;
   z-index: 100;
 }
 
-.register-box, .login-box {
+.login_box{
   width: 585px;
   height: 671px;
   border: 1px solid #e8ca9c;
@@ -23,140 +23,117 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Microsoft YaHei', 'Arial';
   color: #999;
   font-size: 14px;
-}
 
-.register-box {
-  height: 700px;
 }
-
-.register-box .cancel, .login-box .cancel {
-  font-size: 2rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 54px;
-  width: 54px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+.login_box i{
+  color: #ffba00;
 }
-.register-box h1, .login-box h1 {
+.login_box ul:nth-child(1){
+  font-size: 25px;
+  padding: 10px 0 11px 525px;
+}
+.login_box ul:nth-child(2){
   color: #444444;
   font-size: 28px;
   font-weight: bold;
-  margin-top: 54px;
 }
-.register-box h4, .login-box h4 {
+.login_box ul:nth-child(3){
   line-height: 40px;
   padding-bottom: 50px;
   font-size: 16px;
   color: #444444;
   font-weight: bold;
 }
-
-// 表单
-
-.register-form, .login-form {
+.login_box ul:nth-child(4){
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.register-form .ipt, .login-form .ipt {
-    padding:0 24px;
-    width: 423px;
-    height: 58px;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    border-color: #ccc;
-    border-style: solid;
-    border-width: 0 1px 1px;
-}
-.register-form .ipt-group:first-of-type .ipt, .login-form .ipt-group:first-of-type .ipt {
-    border-top-width: 1px;
-    border-top-left-radius:5px ;
-    border-top-right-radius: 5px;
-}
+  .login_box ul:nth-child(4) input{
+      padding:0 24px;
+      width: 423px;
+      height: 58px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+  }
+  .login_box ul:nth-child(4) input:first-child{
 
-.register-form .ipt-group:last-of-type .ipt, .login-form .ipt-group:nth-child(2) .ipt {
-  border-bottom-left-radius:5px ;
-  border-bottom-right-radius: 5px;
-}
+      border: 1px solid #ccc;
+      border-top-left-radius:5px ;
+      border-top-right-radius: 5px;
+  }
+  .login_box ul:nth-child(4) li:nth-child(2) {
 
-.ipt-group {
-  position: relative;
-}
+      width: 110px;
+      height: 37px;
+      position: absolute;
+      background-image: linear-gradient(155deg, #ffd76d, #ffba00);
+      background-position: center bottom;
+      left: 300px;
+      top: 68px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 0 10px #ccc ;
+      text-shadow: 0 0 3px #999;
+      cursor: pointer;
+  }
+  .login_box ul:nth-child(4) input:nth-child(3){
 
-.ipt-group .err-msg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1rem;
-  color: red;
+      border: 1px solid #ccc;
+      border-top: none;
+  }
+  .login_box ul:nth-child(4) input:nth-child(4){
+
+      border: 1px solid #ccc;
+      border-top: none;
+  }
+  .login_box ul:nth-child(4) input:last-child{
+      border: 1px solid #ccc;
+      border-top: none;
+      border-bottom-left-radius:5px ;
+      border-bottom-right-radius: 5px;
+  }
+.login_box ul:nth-child(5){
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 418px;
 }
+  .login_box ul:nth-child(5) li{
+      height:25px;
+      margin-top: 25px;
+      line-height: 18px;
+      display: flex;
+      flex-direction: row;
+      font-size: 15px;
 
-.register-form .btn-code {
-    width: 110px;
-    height: 36px;
-    position: absolute;
-    background-image: linear-gradient(155deg, #ffd76d, #ffba00);
-    right: 20px;
-    top: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
+  }
 
-
-.register-box .option {
-    height:25px;
-    margin-top: 25px;
-    line-height: 18px;
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-}
-
-.register-box i, .login-box i {
-  color: #ffba00;
-  cursor: pointer;
-}
-
-.register-box .submit, .login-form .submit {
+.login_box ul:nth-child(6) li{
   margin-top: 30px;
   width: 425px;
   height: 60px;
   border-radius: 5px;
-  background-image: linear-gradient(155deg, #ffd76d, #ffba00);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(155deg, #ffd76d, #ffba00);
+  box-shadow: 0 0 10px #ccc;
+  border: none;
+  cursor: pointer;
   font-size: 20px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  letter-spacing: 4px;
-}
-
-.register-box .submit:active, .register-form .btn-code:active, .login-form .submit:active {
-  transition: all .2s;
-  box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
-  transform: translate(2px, 2px);
+  text-shadow: 0 0 3px #999;
 }
 
 
-.third-parties {
+.login_box ul:nth-child(7) {
   width: 280px;
   height: 75px;
   display: flex;
@@ -165,7 +142,7 @@
   justify-content: space-between;
   margin-top: 38px;
 }
-.third-parties li{
+.login_box ul:nth-child(7) li{
   width: 70px;
   height: 75px;
   background-position:center top;
@@ -173,22 +150,18 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  cursor: pointer;
 }
-.third-parties li:first-child{
+.login_box ul:nth-child(7) li:first-child{
   background-image: url("../../assets/qq.png");
 }
-.third-parties li:nth-child(2){
+.login_box ul:nth-child(7) li:nth-child(2){
   background-image: url("../../assets/wechat.png") ;
 }
-.third-parties li:last-child{
+.login_box ul:nth-child(7) li:last-child{
   background-image: url("../../assets/alipay.png") ;
+
 }
-
-
-// 登录
-
-.login-box .regain-pass {
+.login_box ul:nth-child(8) {
   width: 280px;
   height: 100px;
   display: flex;
@@ -199,31 +172,12 @@
   font-weight: 600;
 }
 
-.login-box .option {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 25px;
-}
-.login-box .option .left {
-  display: flex;
-}
-
-.login-box .option label {
-  cursor: pointer;
-  padding: 0 10px;
-  user-select: none;
-}
-
-.submit.invalid, .btn-code.invalid {
-  cursor: not-allowed !important;
-  opacity: .4;
-}
 
 /*******checkbox*******/
 .chk_3{
   display: none;
 }
+
 
 .chk_3 + label {
   background-color: #fafbfa;
@@ -231,15 +185,16 @@
   border-radius: 50px;
   display: inline-block;
   position: relative;
-  // margin-right: 10px;
+  margin-right: 10px;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
   width: 35px;
   height: 18px;
+
 }
 
 .chk_3  + label:after {
-  content: '';
+  content: ' ';
   position: absolute;
   top: 0;
   -webkit-transition: box-shadow 0.1s ease-in;
@@ -252,7 +207,7 @@
 }
 
 .chk_3  + label:before {
-  content: '';
+  content: ' ';
   position: absolute;
   background: white;
   top: 0px;

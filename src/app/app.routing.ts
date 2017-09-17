@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { ToSaleComponent } from './tosale/to-sale.component';
 import { LoginComponent } from './login/login.component';
+import { Login0Component } from './login0/login.component';
 
 export const appRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ export const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'login0',
+    component: Login0Component
   }
 ];
 

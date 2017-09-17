@@ -1,0 +1,63 @@
+<!-- 遮罩 -->
+<div class="overlay"></div>
+
+<!--登录 start-->
+<div class="login-box" *ngIf="state === 'login'">
+    <div class="cancel">×</div>
+    <h1>易易游戏网</h1>
+    <h4>快速登录</h4>
+    <form class="register-form" (ngSubmit)="onLogin($event)" #regFor="ngForm">
+        <input class="ipt"  name="username" placeholder="请输入用户名 / 手机号码 / 邮箱号码" />
+        <input class="ipt" type="password"  name="password" placeholder="请输入密码" />
+        <div class="option">
+            <div class="left">
+                <input type="checkbox" id="checkbox_c1" class="chk_3" />
+                <label for="checkbox_c1"></label>
+                <label for="checkbox_c1">自动登录</label>
+            </div>
+            <div class="right">还没有账号？<i (click)="state = 'register'">立即注册</i></div>
+        </div>
+
+        <button type="submit" class="submit btn">快速登录</button>
+    </form>
+  
+    <ul class="third-parties">
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>支付宝登录</li>
+    </ul>
+    <p class="regain-pass">忘记密码？<i>点这里</i></p>
+</div>
+<!--登录 end-->
+
+
+<!--注册 start-->
+<div class="register-box" *ngIf="state !== 'login'">
+    <div class="cancel">×</div>
+    <h1>易易游戏网</h1>
+    <h4>快速注册</h4>
+    <form class="login-form" #loginForm="ngForm">
+        <input 
+            class="ipt"
+            name="username" placeholder="请输入手机号码" />
+        <div class="ipt-group">
+            <input class="ipt"  name="password" placeholder="输入验证码" />
+            <div class="btn-code">获取验证码</div>
+        </div>
+        
+        <input class="ipt" type="password"  name="password" placeholder="请输入密码" />
+        <input class="ipt" type="password"  name="password" placeholder="请确认密码" />
+
+        <p class="option">已有账号？<i (click)="state = 'login'">立即登录</i></p>
+
+        <button type="submit" class="submit btn">快速注册</button>
+    </form>
+
+    <ul class="third-parties">
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>支付宝登录</li>
+    </ul>
+
+</div>
+<!--注册 end-->

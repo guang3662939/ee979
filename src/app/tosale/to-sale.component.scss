@@ -137,6 +137,12 @@ main .text {
 
 .select-state {
   background-color: $gray-bg;
+  opacity: 0;
+  margin-top: 20px;
+}
+
+.select-state.show {
+  opacity: 1;
 }
 
 .select-state .inner {
