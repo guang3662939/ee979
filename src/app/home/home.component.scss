@@ -512,9 +512,11 @@
           transform: translateX(-50%);
           user-select: none;
           bottom: 20px;
+          display: none;
       }
 
       .btn-detail.show {
+          display: flex;
           animation: slideUp .6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
       }
     }
