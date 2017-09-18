@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
+  @Input() loginType: string;
+  @Output() cancel = new EventEmitter();
 
-  state = 'register';
   // 登录
   phonePattern = '1[3-9]\\d{9}';
   loginPhone = '';
@@ -27,7 +28,15 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '15px';
+  }
+  
+  ngOnDestroy() {
+    document.body.style.overflow = 'auto';
+    document.body.style.paddingRight = '0';
+  }
 
   getCode() {
     this.sendIngCode = true;
@@ -47,5 +56,9 @@ export class LoginComponent implements OnInit {
 
   onRegSubmit() {
     console.log(123)
+  }
+
+  hideForm() {
+    this.cancel.emit();
   }
 }

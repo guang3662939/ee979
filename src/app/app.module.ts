@@ -5,15 +5,15 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { Login0Component } from './login0/login.component';
 import { ToSaleComponent } from './tosale/to-sale.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LoginComponent,
-    Login0Component,
     ToSaleComponent
   ],
   imports: [

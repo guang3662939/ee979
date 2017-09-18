@@ -1,9 +1,9 @@
 <!-- 遮罩 -->
-<div class="overlay"></div>
+<div class="overlay" (click)="hideForm()"></div>
 
 <!--登录 start-->
-<div class="login-box" *ngIf="state === 'login'">
-    <div class="cancel">×</div>
+<div class="login-box" *ngIf="loginType === 'login'">
+    <div class="cancel" (click)="hideForm()">×</div>
     <h1>易易游戏网</h1>
     <h4>快速登录</h4>
     <form class="login-form" (ngSubmit)="onLogin($event)" #loginForm="ngForm">
@@ -42,7 +42,7 @@
                 <label for="checkbox_c1"></label>
                 <label for="checkbox_c1">自动登录</label>
             </div>
-            <div class="right">还没有账号？<i (click)="state = 'register'">立即注册</i></div>
+            <div class="right">还没有账号？<i (click)="loginType = 'register'">立即注册</i></div>
         </div>
 
         <button 
@@ -62,8 +62,8 @@
 
 
 <!--注册 start-->
-<div class="register-box" *ngIf="state !== 'login'">
-    <div class="cancel">×</div>
+<div class="register-box" *ngIf="loginType === 'register'">
+    <div class="cancel" (click)="hideForm()">×</div>
     <h1>易易游戏网</h1>
     <h4>快速注册</h4>
     <form class="register-form" #regForm="ngForm" (ngSubmit)="onRegSubmit()">
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <p class="option">已有账号？<i (click)="state = 'login'">立即登录</i></p>
+        <p class="option">已有账号？<i (click)="loginType = 'login'">立即登录</i></p>
 
         <button type="submit" 
             [disabled]="regForm.invalid || passwd.value !== passwd2.value"

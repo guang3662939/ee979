@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 import { ToSaleComponent } from './tosale/to-sale.component';
 import { LoginComponent } from './login/login.component';
-import { Login0Component } from './login0/login.component';
+import { HomeComponent } from './home/home.component';
 
 export const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/sale',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -19,8 +19,8 @@ export const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'login0',
-    component: Login0Component
+    path: 'home',
+    component: HomeComponent
   }
 ];
 
