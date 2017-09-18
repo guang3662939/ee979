@@ -19,6 +19,19 @@ export class LoginService {
       .catch(err => console.log(err));
   }
 
+  //注册
+  register(phone: string, password: string, code: string) {
+    let body = {
+      phone,
+      password,
+      code
+    };
+    return this.http.post(`${API_URL}Members/phoneReg`, body)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
   //登录
   login(username: string, password: string) {
     let body = {
