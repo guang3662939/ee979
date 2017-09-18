@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class LoginComponent implements OnInit {
   @Input() loginType: string;
+  @Input() calledByOther: string;
   @Output() cancel = new EventEmitter();
 
   // 登录
@@ -26,13 +27,15 @@ export class LoginComponent implements OnInit {
   count: number = 60;
   sendIngCode: boolean = false;
 
+  animLogin: boolean;
+
   constructor() { }
 
   ngOnInit() {
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '15px';
   }
-  
+
   ngOnDestroy() {
     document.body.style.overflow = 'auto';
     document.body.style.paddingRight = '0';
@@ -60,5 +63,17 @@ export class LoginComponent implements OnInit {
 
   hideForm() {
     this.cancel.emit();
+  }
+
+  goOtherWay(type) {
+    if (this.calledByOther) {
+      this.calledByOther = null;
+    }
+
+    this.animLogin = type == 'login' ? true : false;
+    this.loginType = type === 'login' ? 'login' : 'register';
+
+    // setTimeout(() => this.animLogin = !this.animLogin, 0);
+    
   }
 }
