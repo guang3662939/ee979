@@ -1,5 +1,3 @@
-<!--顶部-->
-<app-toolbar (sign)="onSign($event)"></app-toolbar>
 <!--头部-->
 <app-header></app-header>
 <!--海报-->
@@ -150,8 +148,3 @@
     <app-footer></app-footer>
 </div>
 
-<app-login 
-    (cancel)="onCancelLogin()"
-    [loginType]="loginType"
-    [calledByOther]="true"
-    *ngIf="showLoginForm"></app-login>

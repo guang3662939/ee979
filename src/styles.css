@@ -121,6 +121,9 @@ textarea::-webkit-input-placeholder {
 .child_tit a{
     color: #999;
 }
+a {
+    cursor: pointer;
+}
 
 /*可点击字体颜色*/
 a.clickable{

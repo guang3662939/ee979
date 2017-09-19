@@ -1,11 +1,11 @@
 <div class="content">
     <div class="child_tit">
         您现在的位置：
-        <a href="javascript:;">首页</a>
+        <a>首页</a>
         &gt;
-        <a href="javascript:;">我要卖 </a>
+        <a>我要卖 </a>
         &gt;
-        <a href="javascript:;">商品信息</a>
+        <a>商品信息</a>
     </div>
 
     <div class="infor_alert">
@@ -14,13 +14,15 @@
             <li>1.为满足广大客户的需求，地下城与勇士账号商品交易成功后，将延迟15天转账给卖家，此期间请勿修改帐号资料，否则将会财号两空。</li>
             <li>2.如果您出售的帐号出现找回情况，我们将把您在V9games登记的所有信息提供给买家，由买家在各大网站公布并向公安机关报案。</li>
             <li>3.有客服联系时，可点击【客服验证中心】验证客服真假，V9games不会通过邮箱进行二次审核或通过任何未认证通讯方式向您索取账号信息。</li>
-            <li>温馨提示：为了顺利通过审核，建议您解除QQ安全中心手机版 <a href="javascript:;" class="clickable">（点击查看如何解绑QQ安全中心手机版）</a></li>
+            <li>温馨提示：为了顺利通过审核，建议您解除QQ安全中心手机版 <a class="clickable">（点击查看如何解绑QQ安全中心手机版）</a></li>
         </ul>
         <b class="detele"></b>
     </div>
     <div class="acc_infor pro_find">
-        <div class="infor_tit">
-           找回包赔
+        <div class="info-label">
+            <div class="left"></div>
+            <div class="text">找回包赔</div>
+           <div class="right"></div>
         </div>
         <a href="javascript:;" class="on">
             不支持，让买家担心
@@ -36,8 +38,10 @@
         </a>
     </div>
     <div class="acc_infor">
-        <div class="infor_tit">
-           商品信息
+        <div class="info-label">
+           <div class="left"></div>
+            <div class="text">商品信息</div>
+           <div class="right"></div>
         </div>
         <form action="">
             <ul class="infor_ipt">
@@ -98,14 +102,17 @@
         </form>
     </div>
     <div class="acc_infor">
-        <div class="infor_tit">
-            商品图片
-            <p>为了您的账号更快的售出请上传您认为有卖点的账号截图，例如牛B的武器、高端的心法、超高的功力等。</p>
+        <div class="info-label">
+            <div class="left"></div>
+            <div class="text">商品图片</div>
+            <div class="right"></div>
         </div>
+        <p>为了您的账号更快的售出请上传您认为有卖点的账号截图，例如牛B的武器、高端的心法、超高的功力等。</p>
         <div class="pro_photo flex">
             <div class="upload" *ngFor="let picker of [1,2,3,4,5,6,7]">
                 <input type="file" accept="image/jpg">
-                <p>添加图片</p>
+                <div class="thumb"></div>
+                <span>添加图片</span>
             </div>
           
         </div>
@@ -114,7 +121,7 @@
         <!--确认无误下一步-->
     </div>
 </div>
-<div class="info_fix">
+<div class="info-choose" [class.fixed]="fixed">
     <div class="content">
         您当前的选择是：古剑奇谭 > 账号交易
     </div>

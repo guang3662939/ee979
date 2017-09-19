@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sale',
+  // templateUrl: 'sale.component.html',
   template: `
-    <app-toolbar></app-toolbar>
     <app-header></app-header>
     <router-outlet></router-outlet>
     <app-footer></app-footer>

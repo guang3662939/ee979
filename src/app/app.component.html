@@ -1,1 +1,9 @@
+<app-toolbar (sign)="onSign($event)"></app-toolbar>
+
 <router-outlet></router-outlet>
+
+<app-login 
+    (cancel)="onCancelLogin()"
+    [loginType]="loginType"
+    [calledByOther]="true"
+    *ngIf="showLoginForm"></app-login>

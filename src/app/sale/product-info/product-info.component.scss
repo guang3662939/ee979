@@ -26,15 +26,36 @@
     right: 20px;
     z-index: 5;
 }
-.infor_tit.infor_tit{
+.info-label {
     font-size: 26px;
     color: #f0bd76;
     font-weight: bold;
     font-family:'Microsoft YaHei';
     text-align: center;
-    margin-bottom: 40px;
-    background: url("/assets/images/infor_bg.png") no-repeat center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+        margin: 0 30px;
+    }
+
+    .left, .right {
+        width: 8px;
+        height: 8px;
+        border: 2px solid #f0bd76;
+        transform: rotate(45deg);
+    }
 }
+
+.info-label + p{
+    font-size: 14px;
+    color: #999;
+    margin: -15px 0 40px;
+    text-align: center;
+}
+
 .acc_infor{
     margin-top: 60px;
 }
@@ -68,18 +89,23 @@
 .infor_ipt li.acc_time select{
     width: 95px;
 }
-.info_fix{
+.info-choose {
     width: 100%;
     height: 60px;
-    line-height: 60px;
     background: #f2f2f2;
     font-size: 16px;
     color: #103e56;
+    display: flex;
+    align-items: center;
     font-family:'Microsoft YaHei';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 5;
+    transition: all .3s;
+
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
 }
 
 /*商品信息*/
@@ -109,7 +135,8 @@
     overflow: auto;
     resize: none;
     padding: 10px;
-    font-family:'Microsoft YaHei'
+    font-family:'Microsoft YaHei';
+    font-size: 14px;
 }
 .infor_ipt .pro_text span{
     float: left;
@@ -124,34 +151,43 @@
     font-size: 14px;
     padding-left: 50px;
 }
-.infor_tit p{
-    font-size: 14px;
-    color: #999;
-    margin-top: 15px;
-}
+
 /*上传图片*/
 .upload{
     width: 176px;
     height: 176px;
     border: 1px solid #cccccc;
     position: relative;
-    text-align: center;
-    background: url("/assets/images/add_photo.png") no-repeat center 38px;
     float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        border: 0;
+        position: absolute;
+        left: 0;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .thumb {
+        width: 50px;
+        height: 50px;
+        background-image: url("/assets/images/add_photo.png");
+        background-size: 100% 100%;
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-size: 14px;
+        color: #999;
+    }
 }
-.upload input{
-    border: 0;
-    position: absolute;
-    left: 0;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-}
-.upload p{
-    margin-top: 125px;
-    font-size: 14px;
-    color: #999;
-}
+
+
 .card_exam {
     margin:0 40px 0 20px;
     float: left;
