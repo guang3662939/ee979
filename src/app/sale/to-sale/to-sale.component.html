@@ -76,6 +76,7 @@
       class="btn next" 
       [disabled]="gtIdx === null || pgIdx === null || gsIdx === null ||  ttIdx === null"
       [class.valid]="!(gtIdx === null || pgIdx === null || gsIdx === null ||  ttIdx === null)"
+      (click)="onNextClick()"
       >确认无误，下一步</button>
   </div>
   

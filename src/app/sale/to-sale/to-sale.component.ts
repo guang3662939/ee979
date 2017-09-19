@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,6 +23,9 @@ export class ToSaleComponent {
 
   timer;
   scrollTop = 0;
+
+
+  constructor(private router: Router) {}
 
 
   onOptionClick(type, idx, el) {
@@ -61,6 +65,13 @@ export class ToSaleComponent {
       }
       document.body.scrollTop = scrollTop;
     }, 1000 / 60);
+  }
+
+
+  onNextClick() {
+    // console.log(this.router);
+    this.router.navigate(['/sale/info'])
+
   }
   
 }

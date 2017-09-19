@@ -68,7 +68,7 @@
 <!--注册 start-->
 <div class="register-box" 
     *ngIf="loginType === 'register'" 
-    [class.fadeInLeft]="(animLogin !== undefined) && !animLogin"
+    [class.fadeInRight]="(animLogin !== undefined) && !animLogin"
     [class.pop-in]="calledByOther">
     <div class="cancel" (click)="hideForm()">×</div>
     <h1>易易游戏网</h1>

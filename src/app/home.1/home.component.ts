@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { menus } from '../shared/menus';
+import { menus } from '../constants/menus';
 
 @Component({
   selector: 'app-home',

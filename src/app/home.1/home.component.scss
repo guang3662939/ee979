@@ -1,3 +1,354 @@
+.content{
+    width:1200px;
+    margin: 0 auto;
+}
+.flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+.text_color{
+    color: #f1b663 !important;
+}
+.top{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ececec;
+    background: #fdfdfd;
+    font-size: 12px;
+    position: relative;
+    z-index: 6;
+}
+.top .content{
+    overflow: visible;
+}
+
+.top_size{
+    color: #103e56;
+}
+.top_left b i{
+    background: url("/assets/images/ionic.png") -15px -13px;
+    margin-right: 10px;
+    width: 10px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+.top_left span {
+    color: #7f7f7f;
+    padding: 0 18px 0 35px ;
+}
+.top_left a{
+    margin-right: 30px;
+    cursor: pointer;
+}
+.top_right ul li{
+    padding: 0 22px;
+    float: left;
+}
+.top_right ul li:last-child{
+    padding-right: 0;
+}
+.pull{
+    width: 11px;
+    height: 5px;
+    background: url("/assets/images/ionic.png") -32px -20px;
+    display: inline-block;
+}
+.top_right ul li a{
+    color: #103e56;
+}
+.top_right_pull{
+    position: relative;
+}
+.top_right_subm{
+    width: 95px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 5;
+    border: 1px solid #e8ca9c;
+    border-top: 0;
+    text-align: center;
+    padding-bottom: 10px;
+    background: #fff;
+    opacity: 0;
+    -webkit-transition:opacity 0s;
+    transition:opacity 0s;
+    color: #103e56;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.top_right_subm div{
+    border-bottom: 1px solid #ececec;
+    margin: 0 20px;
+    font-family:'Microsoft YaHei','Arial';
+}
+.top_right_subm div span{
+    transform:rotate(180deg);
+}
+.top_right_subm p{
+    height: 30px;
+    cursor: pointer;
+}
+.top_right_buy:hover .top_subm_buy{
+    opacity: 1;
+}
+.top_right_sale:hover .top_subm_sale{
+    opacity: 1;
+}
+.header{
+    position: relative;
+    z-index: 5;
+}
+
+.header_left{
+    margin-top: 30px;
+}
+.header_left_line{
+    width: 1px;
+    height: 30px;
+    background: #666;
+   margin: 24px 30px ;
+}
+.header_right{
+    width: 690px;
+    margin-top: 40px;
+    position: relative;
+}
+.header_right_type_pr{
+    overflow: hidden;
+    height: 28px;
+}
+.header_prec{
+    width: 90px;
+    height: 28px;
+    position:absolute ;
+    top:1px;
+    left: 0;
+    z-index: 5;
+}
+.header_hot{
+    max-width: 555px;
+    padding-top: 7px;
+    overflow: hidden;
+    margin-left: 103px;
+}
+.header_hot li{
+    padding: 0 10px;
+    font-size: 12px;
+    float: left;
+    line-height: 17px;
+}
+.header_hot li a,.header_type_tit a{
+    color: #999;
+}
+.header_hot .h_list_f a,.header_type_tit .h_list_f {
+    color: #103e56;
+}
+.header_seach_left{
+    width: 599px;
+    height: 42px;
+    background: url("/assets/images/inbox.png");
+    float: left;
+}
+.header_seach_left ul li{
+    width: 125px;
+    float: left;
+    color: #103e56;
+    font-size: 12px;
+    line-height: 42px;
+}
+.header_seach_left ul{
+    float: left;
+}
+.header_seach_left ul li a{
+    width: 125px;
+    padding-left: 20px;
+    border-right:1px solid #ececec ;
+    display: inline-block;
+    line-height: 10px;
+    color: #444;
+}
+
+.header_seach_left li .pull{
+    float: right;
+    margin:4px 10px 0 0;
+}
+.header_seach_input{
+    width: 195px;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 36px;
+    border: none;
+    float: right;
+    padding: 0 20px 0 0;
+    margin: 2px 0 0 0;
+    font-size: 15px;
+    letter-spacing: 1.6px;
+
+    
+}
+.header_seach_input::-webkit-input-placeholder {
+    font-size: 13px;
+    letter-spacing: normal;
+}
+.header_seach_right{
+    float: left;
+    cursor: pointer;
+}
+.header_type_det{
+    position: absolute;
+    z-index: 5;
+    top:77px;
+    left: 0;
+    width: 690px;
+    border: 1px solid #e8ca9c;
+    padding: 0 19px;
+    overflow: hidden;
+    font-size: 12px;
+    background: #fff;
+    display: none;
+}
+/*.header_type_det a{*/
+    /*color: #103e56;*/
+/*}*/
+.header_type_tit{
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #ececec;
+}
+.header_type_tit a{
+    padding: 0 10px;
+}
+.header_type_tit a:hover{
+    color: #ffba00;
+}
+.header_type_tit .h_list_f:hover{
+    color: #103e56;
+}
+
+.header_type_data{
+    margin-top:20px ;
+}
+.header_type_data a{
+    width: 142px;
+    text-align: center;
+    /*padding: 0 10px;*/
+    height: 37px;
+    line-height: 37px;
+    display:inline-block;
+    border: 1px solid #103e56;
+    margin: 0 20px 20px 0;
+    color: #103e56;
+    box-sizing: content-box;
+}
+.header_type_data a:hover{
+    width: 144px;
+    height: 39px;
+    line-height: 39px;
+    border: none;
+    background:linear-gradient(#ffd76d,#ffba00);
+}
+.header_type_data .hot{
+    position: relative;
+    border: 1px solid #d34e3f;
+    color: #d34e3f;
+}
+.header_type_data .hot b{
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 5;
+    background: url("/assets/images/ionic.png") -101px -13px;
+}
+.header_seach{
+    width: 690px;
+}
+.nav_menu {
+    margin: 34px 0 16px 0;
+    overflow: hidden;
+}
+.nav_menu ul{
+    margin-left: 130px;
+}
+.nav_menu ul li{
+    font-size: 16px;
+    float: left;
+}
+.nav_menu ul li:not(:last-child):after {
+    content: '';
+    width: 2px;
+    height: 17px;
+    background: #ececec;
+    display: inline-block;
+    -webkit-transform:rotate(30deg);
+    transform:rotate(30deg);
+    vertical-align: middle;
+}
+.nav_menu ul li a{
+    padding: 0 20px;
+    color: #103e56;
+}
+
+.nav_menu ul li a.active {
+    color: #f1b663;
+}
+
+.bot_text{
+    font-size: 12px;
+    color: #646464;
+}
+/*底部*/
+.bottom{
+    padding-bottom: 40px;
+}
+.bot_right{
+    width: 700px;
+}
+.bot_menu{
+    margin-bottom: 15px;
+}
+.bot_menu a{
+    padding-left:17px;
+    font-size: 14px;
+    color: #103e56;
+}
+.bot_menu a:first-child{
+    padding-left: 0;
+}
+.bot_menu a:after{
+    content: "";
+    width: 1px;
+    height: 8px;
+    background:  #737a88 ;
+    display: inline-block;
+    margin-left: 17px;
+}
+.bot_menu a:last-child:after{
+   background: #fff;
+}
+.bot_text{
+    margin-bottom: 8px;
+}
+.bot_text_p b{
+    padding-right: 20px;
+}
+.bot_img{
+    margin-top: 15px;
+}
+
+
+
 
 
 

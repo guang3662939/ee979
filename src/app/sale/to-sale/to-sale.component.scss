@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
 .top {
   height: 224px;
@@ -11,7 +11,7 @@
 
 .banner {
   height: 200px;
-  background: url(../../assets/banner.png) 50% 50% no-repeat;
+  background: url(/assets/banner.png) 50% 50% no-repeat;
 }
 
 main {

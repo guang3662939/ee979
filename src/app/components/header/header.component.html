@@ -1,0 +1,73 @@
+<div class="header">
+    <div class="content">
+        <div class="header_top  flex top_flex">
+            <div class="header_left">
+                <div class="logo f_l">
+                    <img src="/assets/images/logo.png"/>
+                </div>
+                <div class="header_left_line f_l"></div>
+                <div class="header_left_hot f_l">
+                    <img src="/assets/images/img_01.png"/>
+                </div>
+            </div>
+            <div class="header_right">
+                <div class="header_right_type">
+                    <div class="header_right_type_pr">
+                        <div class="header_prec">
+                            <img src="/assets/images/seach01.png"/>
+                        </div>
+                        <ul class="header_hot">
+                            <li class="h_list_f"><a href="javascript:;">热门搜索：</a></li>
+                            <li><a href="javascript:;">DNF</a></li>
+                            <li><a href="javascript:;" class="text_color">王者荣耀</a></li>
+                            <li><a href="javascript:;">CS GO</a></li>
+                            <li><a href="javascript:;" class="text_color">DOTA 2</a></li>
+                            <li><a href="javascript:;">GTA5</a></li>
+                        </ul>
+                    </div>
+                    <div class="header_seach flex">
+                        <div class="header_seach_left">
+                            <ul>
+                                <li>
+                                    <a href="javascript:;">游戏区<span class="pull "></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">服务区<span class="pull "></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">物品种类<span class="pull "></span></a>
+                                </li>
+                            </ul>
+                            <input type="text" class="header_seach_input" placeholder="请输入想要搜索的内容">
+
+                        </div>
+                        <div class="header_seach_right">
+                            <img src="/assets/images/search_btn.png"/>
+                        </div>
+                    </div>
+                </div>
+                <!--搜索的点击部分-->
+                <div class="header_type_det">
+                    <div class="header_type_tit ">
+                        <a href="javascript:;" class="h_list_f">历史记录：</a>
+                        <a href="javascript:;">联通2区</a>
+                        <a href="javascript:;">网通1区</a>
+                    </div>
+                    <div class="header_type_data">
+                        <a href="javascript:;" class="hot"><b></b>电信1区</a>
+                        <a href="javascript:;">电信1区</a>
+                        <a href="javascript:;">电信1区</a>
+                        <a href="javascript:;">电信1区</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--导航-->
+        <div class="nav_menu">
+            <ul>
+                <li *ngFor="let menu of menus; let idx = index"
+                    ><a [routerLink]="menu.path" routerLinkActive="active">{{ menu.text }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

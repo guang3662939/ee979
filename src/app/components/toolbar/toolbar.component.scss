@@ -1,0 +1,94 @@
+
+.text_color{
+    color: #f1b663 !important;
+}
+.top{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ececec;
+    background: #fdfdfd;
+    font-size: 12px;
+    position: relative;
+    z-index: 6;
+}
+.top .content{
+    overflow: visible;
+}
+
+.top_size{
+    color: #103e56;
+}
+.top_left b i{
+    background: url("/assets/images/ionic.png") -15px -13px;
+    margin-right: 10px;
+    width: 10px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+.top_left span {
+    color: #7f7f7f;
+    padding: 0 18px 0 35px ;
+}
+.top_left a{
+    margin-right: 30px;
+    cursor: pointer;
+}
+.top_right ul li{
+    padding: 0 22px;
+    float: left;
+}
+.top_right ul li:last-child{
+    padding-right: 0;
+}
+.pull{
+    width: 11px;
+    height: 5px;
+    background: url("/assets/images/ionic.png") -32px -20px;
+    display: inline-block;
+}
+.top_right ul li a{
+    color: #103e56;
+}
+.top_right_pull{
+    position: relative;
+}
+.top_right_subm{
+    width: 95px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 5;
+    border: 1px solid #e8ca9c;
+    border-top: 0;
+    text-align: center;
+    padding-bottom: 10px;
+    background: #fff;
+    opacity: 0;
+    -webkit-transition:opacity 0s;
+    transition:opacity 0s;
+    color: #103e56;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.top_right_subm div{
+    border-bottom: 1px solid #ececec;
+    margin: 0 20px;
+    font-family:'Microsoft YaHei','Arial';
+}
+.top_right_subm div span{
+    transform:rotate(180deg);
+}
+.top_right_subm p{
+    height: 30px;
+    cursor: pointer;
+}
+.top_right_buy:hover .top_subm_buy{
+    opacity: 1;
+}
+.top_right_sale:hover .top_subm_sale{
+    opacity: 1;
+}

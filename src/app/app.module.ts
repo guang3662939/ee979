@@ -6,20 +6,25 @@ import { appRoutes } from './app.routing';
 
 // 组件
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { ToSaleComponent } from './tosale/to-sale.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 
 //service
 import { LoginService } from './login/login.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
+    HeaderComponent,
     HomeComponent,
     LoginComponent,
-    ToSaleComponent
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,
