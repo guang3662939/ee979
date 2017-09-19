@@ -69,8 +69,7 @@ export class ToSaleComponent {
 
 
   onNextClick() {
-    // console.log(this.router);
-    this.router.navigate(['/sale/info'])
+    this.router.navigate(['/sale/product'])
 
   }
   

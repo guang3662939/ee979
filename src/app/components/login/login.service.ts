@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { API_URL } from '../constants/api';
+import { API_URL } from '../../shared/api';
 
 @Injectable()
 export class LoginService {

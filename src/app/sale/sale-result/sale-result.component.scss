@@ -1,0 +1,72 @@
+.release{
+    width: 845px;
+    border: 1px solid #e4e2e5;
+}
+.suc_ic{
+    width: 40px;
+    height: 40px;
+    background: url("../images/ionic.png") no-repeat -135px -6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.release_top,.release_bot{
+    padding:40px;
+}
+.release_top{
+    border-bottom: 1px solid #e4e2e5;
+}
+.reltop_lt{
+    width: 524px;
+    padding-right: 95px;
+    border-right: 1px solid #e5e5e5;
+
+}
+.reltop_lt li{
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.reltop_lt .suc_ic{
+   margin-right: 20px;
+}
+.reltop_lt h2{
+    font-size: 16px;
+    color: #333;
+}
+.reltop_lt ul{
+    margin-top: 20px;
+}
+.reltop_lt ul li{
+    font-size: 14px;
+    color: #999;
+    padding: 5px 0;
+}
+.reltop_rg{
+    padding: 30px 0 0 0;
+}
+.reltop_rg h4{
+    font-size: 4px;
+    color: #333;
+}
+.reltop_rg .btn_big{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0 30px;
+}
+
+.reltop_rg  a.clickable{
+    font-size: 14px;
+    display: block;
+    margin: 0 auto;
+    width: 85px;
+}
+.release_bot h5{
+    color: #ff2d26;
+    padding-bottom: 5px;
+}
+.release_bot ul li{
+    font-size: 12px;
+    color: #333;
+    padding:4px 0 ;
+}

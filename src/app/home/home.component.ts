@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { menus } from '../shared/menus';
 
 @Component({
   selector: 'app-home',
@@ -13,23 +12,27 @@ export class HomeComponent implements OnInit {
   curBanner: number = 0;
   showLoginForm: boolean = false;
   loginType: string = '';
-  menus = menus;
+  
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
-  log_reg(type) {
+  
+  // 监听子组件事件
+  onCancelLogin() {
+    this.showLoginForm = false;
+  }
+
+  onSign(type) {
+    console.log(type)
     if (type === 'login') {
       this.loginType = 'login';
     } else if (type === 'register') {
       this.loginType = 'register';
     }
     this.showLoginForm = true;
-  }
-  // 监听子组件事件
-  onCancelLogin() {
-    this.showLoginForm = false;
   }
 
 

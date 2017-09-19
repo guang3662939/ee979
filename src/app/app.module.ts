@@ -4,32 +4,30 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 
+//模块
+import { SharedModule } from './shared/shared.module';
+
 // 组件
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 //service
-import { LoginService } from './login/login.service';
+import { LoginService } from './components/login/login.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    HeaderComponent,
     HomeComponent,
     LoginComponent,
-    ToolbarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    SharedModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

@@ -26,7 +26,7 @@
     right: 20px;
     z-index: 5;
 }
-.infor_tit.infor_tit{
+.infor_tit{
     font-size: 26px;
     color: #f0bd76;
     font-weight: bold;
@@ -41,6 +41,10 @@
 .infor_ipt li{
     padding: 10px 0;
 }
+.infor_ipt li.pro_mf{
+    margin-left: 117px;
+    overflow: hidden;
+}
 .infor_ipt li span{
     width: 95px;
     font-size: 14px;
@@ -48,6 +52,7 @@
     display: inline-block;
     text-align: right;
     margin-right: 18px;
+
 }
 .infor_ipt li span i{
     color: #ff2d26;
@@ -81,54 +86,6 @@
     left: 0;
     z-index: 5;
 }
-
-/*商品信息*/
-.pro_find a{
-    width: 224px;
-    height: 40px;
-    border: 1px solid #cccccc;
-    display: inline-block;
-    text-align: center;
-    line-height: 40px;
-    font-size: 14px;
-    color: #333;
-    margin-right: 20px;
-}
-.pro_find a.on{
-    background: #ffba00;
-    color: #fff;
-    border: 1px solid #ffba00;
-}
-.infor_ipt .pro_inf_tit input{
-    width: 475px;
-}
-.infor_ipt li textarea{
-    width: 475px;
-    height: 165px;
-    border: 1px solid #e4e2e5;
-    overflow: auto;
-    resize: none;
-    padding: 10px;
-    font-family:'Microsoft YaHei'
-}
-.infor_ipt .pro_text span{
-    float: left;
-    margin-top: 14px;
-}
-.pro_warn p{
-    font-size: 14px;
-    color: #ff2d26;
-    margin-left: 114px;
-}
-.infor_ipt a.pro_a{
-    font-size: 14px;
-    padding-left: 50px;
-}
-.infor_tit p{
-    font-size: 14px;
-    color: #999;
-    margin-top: 15px;
-}
 /*上传图片*/
 .upload{
     width: 176px;
@@ -139,7 +96,11 @@
     background: url("/assets/images/add_photo.png") no-repeat center 38px;
     float: left;
 }
-.upload input{
+.infor_ipt li .upload input{
+    width: 176px;
+    height: 176px;
+}
+ .upload input{
     border: 0;
     position: absolute;
     left: 0;
@@ -147,6 +108,7 @@
     opacity: 0;
     cursor: pointer;
 }
+
 .upload p{
     margin-top: 125px;
     font-size: 14px;
@@ -164,8 +126,3 @@
     margin: 55px 0 100px;
 }
 
-
-.pro_photo .upload,.pro_photo .upload input{
-    width: 154px;
-    height: 154px;
-}
