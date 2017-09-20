@@ -19,6 +19,7 @@ export class ProductInfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(123)
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.onScroll);
   }
@@ -35,6 +36,15 @@ export class ProductInfoComponent implements OnInit {
 
   onNextClick() {
     this.router.navigate(['/sale/account']);
+  }
+
+  canDeactivate() {
+    
+    const leave = confirm('确定离开？');
+
+    if (leave) {
+      return true;
+    }
   }
 
 }

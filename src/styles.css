@@ -103,6 +103,16 @@ textarea::-webkit-input-placeholder {
   cursor: pointer;
 }
 
+.btn_big {
+    color: #fff;
+    font-size: 14px;
+    background: linear-gradient(#ffd76d,#ffba00);
+    border-radius: 5px;
+    text-shadow: 2px 2px 4px #e3a600;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
 .content{
     width:1200px;
     margin: 0 auto;

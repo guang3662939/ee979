@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 //service
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AuthService } from './services/auth.service';
   providers: [
     AuthGuard,
     AuthService,
+    CanDeactivateGuard,
   ],
   bootstrap: [AppComponent]
 })
