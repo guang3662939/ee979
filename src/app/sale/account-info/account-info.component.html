@@ -8,8 +8,6 @@
         <a href="javascript:;">商品信息</a>
         &gt;
         <a href="javascript:;">账号信息</a>
-        &gt;
-        <a href="javascript:;">发布成功</a>
     </div>
     <div class="infor_alert">
         <h5>易易游戏网提醒您：</h5>
@@ -57,15 +55,15 @@
                             <p>上传正面</p>
                         </div>
                     <div class="card_exam">
-                        <img src="../images/sfz01.png"/>
+                        <img src="/assets/images/id_front.png"/>
                         <p>示例</p>
                     </div>
                         <div class="upload">
                             <input type="file">
-                            <p>上传正面</p>
+                            <p>上传反面</p>
                         </div>
                     <div class="card_exam">
-                        <img src="../images/sfz01.png"/>
+                        <img src="/assets/images/id_back.png"/>
                         <p>示例</p>
                     </div>
                 </li>
@@ -130,8 +128,11 @@
             </ul>
         </form>
     </div>
-    <div class="acc_prot">
-        <!--登录注册里的我同意和确认无误按钮提交-->
+    <div class="btn-wrapper">
+        <button 
+        class="btn next" 
+        (click)="onNextClick()"
+        >确认无误，下一步</button>
     </div>
 </div>
 <div class="info_fix">

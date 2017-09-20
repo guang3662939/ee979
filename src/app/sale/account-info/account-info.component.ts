@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'account-info',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AccountInfoComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit() { }
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
+  onNextClick() {
+    this.router.navigate(['/sale/result']);
+  }
 }

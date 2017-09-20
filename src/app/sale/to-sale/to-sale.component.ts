@@ -27,6 +27,10 @@ export class ToSaleComponent {
 
   constructor(private router: Router) {}
 
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 
   onOptionClick(type, idx, el) {
     

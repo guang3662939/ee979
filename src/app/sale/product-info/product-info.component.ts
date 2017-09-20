@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { debounce } from '../../shared/helper';
 
@@ -9,25 +9,32 @@ import { debounce } from '../../shared/helper';
   styleUrls: ['./product-info.component.scss']
 })
 export class ProductInfoComponent implements OnInit {
-  fixed: boolean = false;
+  hideFixed: boolean = false;
+  refunds = ['不支持，让买家担心', '一个月内找回包赔', '两个月内找回包赔', '三个月内找回包赔'];
+  refundSelected: number = 0;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    console.log(this.route)
-    window.addEventListener('scroll', debounce(this.onScroll, 200, false));
+    window.scrollTo(0, 0);
+    window.addEventListener('scroll', this.onScroll);
+  }
+  
+  //DOM events
+  onScroll = () => {
+    let scrollTop = document.body.scrollHeight - window.innerHeight - document.querySelector('.bottom').clientHeight;
+    if (document.body.scrollTop < scrollTop) {
+      this.hideFixed = false;
+    } else {
+      this.hideFixed = true;
+    }
   }
 
-  onScroll = () => {
-    
-    let scrollTop = document.body.scrollHeight - window.innerHeight - document.querySelector('.bottom').clientHeight - document.querySelector('.info-label').clientHeight;
-    // console.log(this.fixed)
-    // console.log('document.body.scrollTop', document.body.scrollTop)
-    if (document.body.scrollTop > scrollTop) {
-      this.fixed = false;
-    } else {
-      this.fixed = true;
-    }
+  onNextClick() {
+    this.router.navigate(['/sale/account']);
   }
 
 }

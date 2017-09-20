@@ -196,4 +196,9 @@
 .nav_menu ul li a.active {
     color: #f1b663;
 }
-
+.pull{
+    width: 11px;
+    height: 5px;
+    background: url("/assets/images/ionic.png") -32px -20px;
+    display: inline-block;
+}

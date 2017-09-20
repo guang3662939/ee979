@@ -24,18 +24,11 @@
             <div class="text">找回包赔</div>
            <div class="right"></div>
         </div>
-        <a href="javascript:;" class="on">
-            不支持，让买家担心
+        <a [class.on]="idx === refundSelected" 
+            *ngFor="let refund of refunds; let idx = index" (click)="refundSelected = idx">
+            {{ refund }}
         </a>
-        <a href="javascript:;">
-            一个月内找回包赔
-        </a>
-        <a href="javascript:;">
-            两个月内找回包赔
-        </a>
-        <a href="javascript:;">
-            三个月内找回包赔
-        </a>
+  
     </div>
     <div class="acc_infor">
         <div class="info-label">
@@ -117,11 +110,21 @@
           
         </div>
     </div>
-    <div class="acc_prot">
-        <!--确认无误下一步-->
+
+    <div class="btn-wrapper">
+        <button 
+        class="btn next" 
+        (click)="onNextClick()"
+        >确认无误，下一步</button>
     </div>
 </div>
-<div class="info-choose" [class.fixed]="fixed">
+<div class="info-choose" [style.opacity]="hideFixed ? 1 : 0">
+    <div class="content">
+        您当前的选择是：古剑奇谭 > 账号交易
+    </div>
+</div>
+
+<div class="info-choose fixed"  [style.opacity]="!hideFixed ? 1 : 0">
     <div class="content">
         您当前的选择是：古剑奇谭 > 账号交易
     </div>
