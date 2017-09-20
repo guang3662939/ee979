@@ -6,8 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 
 import { API_URL } from '../shared/api';
 
-
-
 @Injectable()
 export class AuthService {
 
@@ -44,12 +42,12 @@ export class AuthService {
   }
 
   //登录
-  login(username: string, password: string) {
+  login(phone: string, password: string) {
     let body = {
-      username,
+      phone,
       password
     };
-    return this.http.post(`${API_URL}Members/login`, body)
+    return this.http.post(`${API_URL}Members/phoneLogin`, body)
       .toPromise()
       .then(res => res.json())
       .catch(err => console.log(err));

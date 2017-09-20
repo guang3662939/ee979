@@ -1,8 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
-
-// import 'rxjs/Rx';
 
 @Component({
   selector: 'app-login',
@@ -33,14 +32,14 @@ export class LoginComponent implements OnInit {
 
   animLogin: boolean;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '15px';
-
-    // var numbers = Rx.Observable.interval(1000);
-    // numbers.subscribe(x => console.log(x));
   }
 
   ngOnDestroy() {
@@ -65,11 +64,24 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
         console.log(res);
-        if ('ttl' in res) {
+        if (res.data) {
           this.authService.isLoggedIn.next(true);
+          this.authService.timeValid.next(res.data.ttl);
+          this.authService.showLogin.next(false);
 
+          this.storeValidTime(res.data);
+
+          if (this.authService.redirectUrl) {
+            this.router.navigate([this.authService.redirectUrl]);
+            this.authService.redirectUrl = '';
+          }
         }
       }).catch(err => console.log(err));
+  }
+
+  storeValidTime(data) {
+    console.log(data)
+    localStorage.setItem('data', JSON.stringify(data));
   }
 
   onRegSubmit() {

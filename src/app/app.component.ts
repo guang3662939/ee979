@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { AuthService } from './services/auth.service';
 
+import {Observable} from 'rxjs/Observable';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +13,26 @@ export class AppComponent {
   isLoggedIn: boolean = false;
   showLoginForm: boolean = false;
 
+  timeValid: number;
+
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    let data = this.getValidTime();
+    if (data) {
+      this.authService.isLoggedIn.next(true);
+      this.authService.timeValid.next(data.ttl - (Date.now() - new Date(data.created).getTime()) / 1000);
+    }
+
+    var numbers = Observable.interval(1000);
+    numbers.subscribe(x => {
+      if (x >= this.timeValid) {
+        this.authService.isLoggedIn.next(false);
+        this.authService.timeValid.next(0);
+        localStorage.removeItem('data');
+      }
+    });
+
     this.authService.showLogin.subscribe(
       val => {
         if (!val) {
@@ -28,6 +47,15 @@ export class AppComponent {
         this.isLoggedIn = val;
       }
     );
+
+    this.authService.timeValid.subscribe(val => this.timeValid = val);
+  }
+
+  getValidTime() {
+    const data = localStorage.getItem('data');
+    if (data) {
+      return JSON.parse(data);
+    }
   }
 
   // 监听子组件事件
