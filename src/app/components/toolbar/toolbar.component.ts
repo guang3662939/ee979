@@ -15,7 +15,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   log_reg(type) {
-    console.log(type)
     this.sign.emit(type);
   }
 }

@@ -1,21 +1,68 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/map';
-import {BehaviorSubject} from 'rxjs';
+import 'rxjs/add/operator/toPromise';
+import { BehaviorSubject } from 'rxjs';
+
+import { API_URL } from '../shared/api';
+
+
 
 @Injectable()
 export class AuthService {
-  // isLoggedIn = false;
-  isLoggedIn = new BehaviorSubject(false);
+
+  constructor(private http: Http) {}
+
+  isLoggedIn = false;
+  showLogin = new BehaviorSubject(false);
 
   redirectUrl: string;
-  
-  login() {
-    this.isLoggedIn.next(true);
+
+  //获取验证码
+  getCode(phone: string): Promise<any> {
+    let body = {
+      phone
+    };
+    return this.http.post(`${API_URL}Sms/getCode`, body)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  //注册
+  register(phone: string, password: string, code: string) {
+    let body = {
+      phone,
+      password,
+      code
+    };
+    return this.http.post(`${API_URL}Members/phoneReg`, body)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  //登录
+  login(username: string, password: string) {
+    let body = {
+      username,
+      password
+    };
+    return this.http.post(`${API_URL}Members/login`, body)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  //登出
+  logout(access_token:string = '') {
+    let body = {
+      access_token
+    };
+    return this.http.post(`${API_URL}Members/logout`, body)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
   }
   
 }

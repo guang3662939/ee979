@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let url: string = state.url;
-    console.log('url', url);
+    // console.log('url', url);
     return this.checkLogin(url);;
   }
 
@@ -22,11 +22,11 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url:string): boolean {
-    if (this.authService.isLoggedIn.value) {
+    if (this.authService.isLoggedIn) {
       return true;
     }
     // this.authService.redirectUrl = url;
-    this.authService.login();
+    this.authService.showLogin.next(true);
 
     return false;
   }

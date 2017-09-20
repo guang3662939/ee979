@@ -14,18 +14,14 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.isLoggedIn.subscribe(
+    this.authService.showLogin.subscribe(
       val => {
-        console.log('isLoggedIn', val);
         this.showLoginForm = val;
       }
     );
   }
 
   // 监听子组件事件
-  onCancelLogin() {
-    this.showLoginForm = false;
-  }
 
   onSign(type) {
     if (type === 'login') {

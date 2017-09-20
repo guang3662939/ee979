@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +11,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class LoginComponent implements OnInit {
   @Input() loginType: string;
   @Input() calledByOther: string;
-  @Output() cancel = new EventEmitter();
 
   // 登录
   phonePattern = '1[3-9]\\d{9}';
   loginPhone = '';
   loginPass = '';
+
   // 注册
   regCode: string = '';
   regPhone: string = '';
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   animLogin: boolean;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     document.body.style.overflow = 'hidden';
@@ -54,7 +56,10 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(e) {
-    // e.preventDefault();
+    this.authService.login(this.loginPhone, this.loginPass)
+      .then(res => {
+        console.log(res);
+      }).catch(err => console.log(err));
   }
 
   onRegSubmit() {
@@ -62,7 +67,7 @@ export class LoginComponent implements OnInit {
   }
 
   hideForm() {
-    this.cancel.emit();
+    this.authService.showLogin.next(false);
   }
 
   goOtherWay(type) {
@@ -72,8 +77,6 @@ export class LoginComponent implements OnInit {
 
     this.animLogin = type == 'login' ? true : false;
     this.loginType = type === 'login' ? 'login' : 'register';
-
-    // setTimeout(() => this.animLogin = !this.animLogin, 0);
     
   }
 }
