@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader, FileUploaderOptions } from 'ng2-file-upload/ng2-file-upload';
 import { UploadService } from './upload.service';
+import * as sha1 from 'js-sha1';
 
 const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';
 
@@ -24,9 +25,11 @@ export class UploadComponent implements OnInit {
   
   constructor(
     private uploadService: UploadService
-  ){}
+  ){
+  }
 
   ngOnInit() {
+    // FIXME: 测试的accessToken,
     let accessToken = 'vlSOObPXXehuTEXFyNCUkglAdb3HFMPRMfjFVazki8sF64ep1C0hA092XLy5xnTF';
 
     this.uploadService.token(accessToken).subscribe(
@@ -36,7 +39,8 @@ export class UploadComponent implements OnInit {
           for (let i in data.data) {
             form.append(i,data.data[i]);
           }
-          form.append('key', data.data['id']+'/\${filename}');
+          // @Note: 随机文件名称
+          form.append('key', data.data['id']+'/'+sha1(Date.now().toString()));
         };
       },
       err => console.log(err)
