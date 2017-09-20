@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { debounce } from '../../shared/helper';
+import { DialogService } from '../../services/dialog.service';
 
 @Component({
   selector: 'app-product-info',
@@ -15,11 +15,11 @@ export class ProductInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit() {
-    console.log(123)
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.onScroll);
   }
@@ -40,11 +40,10 @@ export class ProductInfoComponent implements OnInit {
 
   canDeactivate() {
     
-    const leave = confirm('确定离开？');
+    // const leave = confirm('确定离开？');
 
-    if (leave) {
-      return true;
-    }
+    // return false;
+    return this.dialogService.confirm();
   }
 
 }
