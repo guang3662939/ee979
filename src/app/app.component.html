@@ -1,4 +1,6 @@
-<app-toolbar (sign)="onSign($event)"></app-toolbar>
+<app-toolbar 
+    [isLoggedIn]="isLoggedIn"
+    (sign)="onSign($event)"></app-toolbar>
 
 <router-outlet></router-outlet>
 

@@ -5,10 +5,10 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   loginType: string = 'login';
+  isLoggedIn: boolean = false;
   showLoginForm: boolean = false;
 
   constructor(private authService: AuthService) {}
@@ -16,13 +16,21 @@ export class AppComponent {
   ngOnInit() {
     this.authService.showLogin.subscribe(
       val => {
+        if (!val) {
+          this.loginType = 'login';
+        }
         this.showLoginForm = val;
+      }
+    );
+
+    this.authService.isLoggedIn.subscribe(
+      val => {
+        this.isLoggedIn = val;
       }
     );
   }
 
   // 监听子组件事件
-
   onSign(type) {
     if (type === 'login') {
       this.loginType = 'login';

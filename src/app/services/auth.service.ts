@@ -13,8 +13,9 @@ export class AuthService {
 
   constructor(private http: Http) {}
 
-  isLoggedIn = false;
+  isLoggedIn = new BehaviorSubject(false);;
   showLogin = new BehaviorSubject(false);
+  timeValid = new BehaviorSubject(0);;
 
   redirectUrl: string;
 

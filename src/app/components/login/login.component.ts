@@ -2,6 +2,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 
 import { AuthService } from '../../services/auth.service';
 
+// import 'rxjs/Rx';
+
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
@@ -36,6 +38,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '15px';
+
+    // var numbers = Rx.Observable.interval(1000);
+    // numbers.subscribe(x => console.log(x));
   }
 
   ngOnDestroy() {
@@ -59,6 +64,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
         console.log(res);
+        if ('ttl' in res) {
+          this.authService.isLoggedIn.next(true);
+
+        }
       }).catch(err => console.log(err));
   }
 
