@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
         this.count--;
       } else {
         this.sendIngCode = false;
+        this.count = 60;
         clearInterval(this.codeTimer);
       }
     }, 1000);
