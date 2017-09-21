@@ -14,6 +14,7 @@ export class AuthService {
   isLoggedIn = new BehaviorSubject(false);
   showLogin = new BehaviorSubject(false);
   timeValid = new BehaviorSubject(0);
+  navigated = true;
 
   redirectUrl: string;
 

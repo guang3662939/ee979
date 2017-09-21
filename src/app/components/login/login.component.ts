@@ -32,12 +32,15 @@ export class LoginComponent implements OnInit {
 
   animLogin: boolean;
 
+  navigated: boolean = true;
+
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.navigated = this.authService.navigated;
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '15px';
   }
@@ -45,6 +48,10 @@ export class LoginComponent implements OnInit {
   ngOnDestroy() {
     document.body.style.overflow = 'auto';
     document.body.style.paddingRight = '0';
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
 
@@ -64,7 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
   //登录
-  onLogin(e) {
+  onLogin() {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
         console.log(res);

@@ -25,8 +25,9 @@ export class AppComponent {
 
     let data = this.getValidTime();
 
-    if (!data && !this.router.navigated) {
-      this.router.navigate(['/']);
+    if (!this.router.navigated) {
+      // this.router.navigate(['/']);
+      this.authService.navigated = false;
     }
 
     if (data) {
