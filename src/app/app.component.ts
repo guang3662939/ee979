@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from './services/auth.service';
 
@@ -15,10 +16,19 @@ export class AppComponent {
 
   timeValid: number;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
+
+    //test only
+    console.log(this.router)
+
     let data = this.getValidTime();
+
+    if (!data && !this.router.navigated) {
+      this.router.navigate(['/']);
+    }
+
     if (data) {
       this.authService.isLoggedIn.next(true);
       this.authService.timeValid.next(data.ttl - (Date.now() - new Date(data.created).getTime()) / 1000);

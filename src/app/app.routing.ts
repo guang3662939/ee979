@@ -12,6 +12,10 @@ export const appRoutes: Routes = [
     loadChildren: './sale/sale.module#SaleModule'
   },
   {
+    path: 'personal',
+    loadChildren: './personal/personal.module#PersonalModule'
+  },
+  {
     path: 'test1',
     redirectTo: '/sale'
   },
@@ -47,5 +51,9 @@ export const appRoutes: Routes = [
     path: 'test9',
     redirectTo: '/sale'
   },
+  {
+    path: '**',
+    redirectTo: '/'
+  }
 ];
 
