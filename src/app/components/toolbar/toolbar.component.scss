@@ -68,11 +68,10 @@
     background: #fff;
     opacity: 0;
     -webkit-transition:opacity 0s;
-    transition:opacity 0s;
     color: #103e56;
     font-size: 12px;
     cursor: pointer;
-    transition: all .3s;
+    transition: all .1s;
 }
 .top_right_subm div{
     border-bottom: 1px solid #ececec;
@@ -91,4 +90,11 @@
 }
 .top_right_sale:hover .top_subm_sale{
     opacity: 1;
+}
+
+.pull{
+    width: 11px;
+    height: 5px;
+    background: url("/assets/images/ionic.png") -32px -20px;
+    display: inline-block;
 }

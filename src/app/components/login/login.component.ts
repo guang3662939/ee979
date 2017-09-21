@@ -47,8 +47,11 @@ export class LoginComponent implements OnInit {
     document.body.style.paddingRight = '0';
   }
 
+
+  //获取验证码
   getCode() {
     this.sendIngCode = true;
+    this.authService.getCode(this.regPhone);
     this.codeTimer = setInterval(() => {
       if (this.count > 1) {
         this.count--;
@@ -60,15 +63,12 @@ export class LoginComponent implements OnInit {
     }, 1000);
   }
 
+  //登录
   onLogin(e) {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
         console.log(res);
         if (res.data) {
-          this.authService.isLoggedIn.next(true);
-          this.authService.timeValid.next(res.data.ttl);
-          this.authService.showLogin.next(false);
-
           this.storeValidTime(res.data);
 
           if (this.authService.redirectUrl) {
@@ -80,18 +80,30 @@ export class LoginComponent implements OnInit {
   }
 
   storeValidTime(data) {
-    console.log(data)
+    this.authService.isLoggedIn.next(true);
+    this.authService.timeValid.next(data.ttl);
+    this.authService.showLogin.next(false);
     localStorage.setItem('data', JSON.stringify(data));
   }
 
+  //注册
   onRegSubmit() {
-    console.log(123)
+    if (this.regPhone && this.regCode && this.regPasswd && this.regPasswd2 && (this.regPasswd === this.regPasswd2)) {
+      this.authService.register(this.regPhone, this.regPasswd, this.regCode)
+        .then(res => {
+          if (res.data) {
+            this.storeValidTime(res.data);
+          }
+        })
+    }
   }
 
+  //隐藏表单
   hideForm() {
     this.authService.showLogin.next(false);
   }
 
+  //登录注册切换
   goOtherWay(type) {
     if (this.calledByOther) {
       this.calledByOther = null;
