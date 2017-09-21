@@ -14,7 +14,8 @@ export class AuthService {
   isLoggedIn = new BehaviorSubject(false);
   showLogin = new BehaviorSubject(false);
   timeValid = new BehaviorSubject(0);
-  navigated = true;
+  navigated = new BehaviorSubject(true);
+  accessToken: string;
 
   redirectUrl: string;
 
@@ -56,10 +57,7 @@ export class AuthService {
 
   //登出
   logout(access_token:string = '') {
-    let body = {
-      access_token
-    };
-    return this.http.post(`${API_URL}Members/logout`, body)
+    return this.http.post(`${API_URL}Members/logout?access_token=${access_token}`, {})
       .toPromise()
       .then(res => res.json())
       .catch(err => console.log(err));

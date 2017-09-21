@@ -16,21 +16,24 @@ export class AppComponent {
 
   timeValid: number;
 
+  navigated: boolean = true;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
 
-    //test only
-    console.log(this.router)
+    this.authService.navigated.subscribe(
+      val => this.navigated = val
+    );
 
     let data = this.getValidTime();
 
-    if (!this.router.navigated) {
-      // this.router.navigate(['/']);
-      this.authService.navigated = false;
+    if (!data && !this.router.navigated) {
+      this.authService.navigated.next(false);
     }
 
     if (data) {
+      this.authService.accessToken = data.id;
       this.authService.isLoggedIn.next(true);
       this.authService.timeValid.next(data.ttl - (Date.now() - new Date(data.created).getTime()) / 1000);
     }

@@ -1,4 +1,5 @@
 <app-toolbar 
+    [style.visibility]="navigated ? 'visible' : 'hidden'"
     [isLoggedIn]="isLoggedIn"
     (sign)="onSign($event)"></app-toolbar>
 

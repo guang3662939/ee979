@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.navigated = this.authService.navigated;
+    this.navigated = this.authService.navigated.value;
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '15px';
   }
@@ -74,7 +74,6 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
-        console.log(res);
         if (res.data) {
           this.storeValidTime(res.data);
 
@@ -90,6 +89,7 @@ export class LoginComponent implements OnInit {
     this.authService.isLoggedIn.next(true);
     this.authService.timeValid.next(data.ttl);
     this.authService.showLogin.next(false);
+    this.authService.accessToken = data.id;
     localStorage.setItem('data', JSON.stringify(data));
   }
 
