@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SaleService } from '../sale.service';
 
 @Component({
   selector: 'to-sale',
@@ -25,10 +26,27 @@ export class ToSaleComponent {
   scrollTop = 0;
 
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private saleService: SaleService
+  ) {}
 
   ngOnInit() {
+    this.saleService.toSale && this.recoverData(this.saleService.toSale);
     window.scrollTo(0, 0);
+  }
+
+  ngOnDestroy() {
+    if (window.location.pathname.indexOf('sale') == -1) {
+      this.saleService.destroy();
+    }
+  }
+
+  recoverData(data) {
+    this.gtIdx = data.gtIdx,
+    this.pgIdx = data.pgIdx,
+    this.gsIdx = data.gsIdx,
+    this.ttIdx = data.ttIdx
   }
 
 
@@ -73,8 +91,13 @@ export class ToSaleComponent {
 
 
   onNextClick() {
+    this.saleService.toSale = {
+      gtIdx: this.gtIdx,
+      pgIdx: this.pgIdx,
+      gsIdx: this.gsIdx,
+      ttIdx: this.ttIdx
+    };
     this.router.navigate(['/sale/product'])
-
   }
   
 }

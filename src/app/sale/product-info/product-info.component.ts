@@ -40,9 +40,9 @@ export class ProductInfoComponent implements OnInit {
 
   canDeactivate() {
     
-    // const leave = confirm('确定离开？');
-
-    // return false;
+    if (window.location.pathname !== this.router.url) {
+      return true;
+    }
     return this.dialogService.confirm();
   }
 

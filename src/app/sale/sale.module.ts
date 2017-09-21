@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { saleRoutes } from './sale.routing';
 
+import { SaleService } from './sale.service';
+
 // components
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
@@ -23,7 +25,8 @@ import { ToSaleComponent } from './to-sale/to-sale.component';
     CommonModule,
     RouterModule.forChild(saleRoutes),
     SharedModule
-  ]
+  ],
+  providers: [SaleService]
 })
 
 export class SaleModule {}
