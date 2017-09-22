@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -10,12 +11,17 @@ import { AuthService } from '../services/auth.service';
 })
 
 export class PersonalComponent implements OnInit {
+
+  accessToken: string;
+
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.authService.accessToken.subscribe(val => this.accessToken = val);
+  }
 
   logout() {
-    this.authService.logout(this.authService.accessToken)
+    this.authService.logout(this.accessToken)
       .then(res => {
         if (res.data === 'success') {
           this.authService.isLoggedIn.next(false);

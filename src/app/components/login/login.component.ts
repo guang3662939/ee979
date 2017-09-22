@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
     this.authService.isLoggedIn.next(true);
     this.authService.timeValid.next(data.ttl);
     this.authService.showLogin.next(false);
-    this.authService.accessToken = data.id;
+    this.authService.accessToken.next(data.id);
     localStorage.setItem('data', JSON.stringify(data));
   }
 

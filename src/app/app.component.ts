@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from './services/auth.service';
 
@@ -18,7 +18,10 @@ export class AppComponent {
 
   navigated: boolean = true;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService, 
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit() {
 
@@ -33,7 +36,7 @@ export class AppComponent {
     }
 
     if (data) {
-      this.authService.accessToken = data.id;
+      this.authService.accessToken.next(data.id);
       this.authService.isLoggedIn.next(true);
       this.authService.timeValid.next(data.ttl - (Date.now() - new Date(data.created).getTime()) / 1000);
     }

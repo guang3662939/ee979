@@ -12,10 +12,12 @@ export class ToolbarComponent implements OnInit {
   @Input() isLoggedIn: boolean;
   @Output() sign = new EventEmitter();
 
+  accessToken: string;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-
+    this.authService.accessToken.subscribe(val => this.accessToken = val);
   }
 
   log_reg(type) {
@@ -23,7 +25,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout(this.authService.accessToken)
+    this.authService.logout(this.accessToken)
       .then(res => {
         if (res.data === 'success') {
           this.authService.isLoggedIn.next(false);

@@ -103,7 +103,7 @@
         <p>为了您的账号更快的售出请上传您认为有卖点的账号截图，例如牛B的武器、高端的心法、超高的功力等。</p>
         <div class="pro_photo flex">
             <div class="upload" *ngFor="let picker of [1,2,3,4,5,6,7]" (click)="upLoad()">
-                <input type="file" accept="image/jpg">
+                <input type="file" accept="image/jpg" ng2FileSelect [uploader]="uploader">
                 <div class="thumb"></div>
                 <span>添加图片</span>
             </div>
