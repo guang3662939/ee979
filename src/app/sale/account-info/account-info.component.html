@@ -23,45 +23,56 @@
         <div class="infor_tit">
             账号信息
         </div>
-        <form action="">
+        <form>
             <ul class="infor_ipt">
                 <li>
                     <span><i>*</i>游戏账号</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="account" name="_account"/>
                 </li>
                 <li>
                     <span><i>*</i>游戏密码</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="password" name="_password"/>
                 </li>
                 <li>
                     <span><i>*</i>确认游戏密码</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="password2" name="_password2"/>
                 </li>
                 <li>
                     <span><i>*</i>游戏角色名</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="character" name="_character"/>
                 </li>
                 <li>
                     <span><i>*</i>仓库密码</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="cargoPwd" name="_cargoPwd"/>
                 </li>
                 <li>
                     <span><i>*</i>身份证截图</span>
                      <i>注：身份证截图为游戏绑定的身份证截图</i>
                 </li>
                 <li class="pro_mf">
-                        <div class="upload">
-                            <input type="file">
-                            <p>上传正面</p>
-                        </div>
+                    <!--正面-->
+                    <div class="upload">
+                        <input 
+                            ng2FileSelect [uploader]="uploader" (change)="wrapOos('front')"
+                            type="file" accept="image/jpeg,image/jpg,image/png">
+                        <div class="thumb"></div>
+                        <p>上传正面</p>
+                        <img [src]="front" *ngIf="front">
+                    </div>
                     <div class="card_exam">
                         <img src="/assets/images/id_front.png"/>
                         <p>示例</p>
                     </div>
-                        <div class="upload">
-                            <input type="file">
-                            <p>上传反面</p>
-                        </div>
+
+                    <!--反面-->
+                    <div class="upload">
+                        <input 
+                            ng2FileSelect [uploader]="uploader" (change)="wrapOos('back')"
+                            type="file" accept="image/jpeg,image/jpg,image/png">
+                        <div class="thumb"></div>
+                        <p>上传反面</p>
+                        <img [src]="back" *ngIf="back">
+                    </div>
                     <div class="card_exam">
                         <img src="/assets/images/id_back.png"/>
                         <p>示例</p>
@@ -74,55 +85,55 @@
         <div class="infor_tit">
             客服信息
         </div>
-        <form action="">
+        <form>
             <ul class="infor_ipt">
                 <li>
                     <span><i>*</i>客服暗号</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="cipher" name="_cipher"/>
                     <b>注：设置后，客服联系您时必定有此暗号，没有则为假客服</b>
                 </li>
                 <li class="acc_time">
                     <span><i>*</i>方便交易时间</span>
-                    <select name="">
-                        <option value="">0:00</option>
-                        <option value="">1:00</option>
-                        <option value="">2:00</option>
+                    <select [(ngModel)]="startH" name="_startH" (change)="startHChange()">
+                        <option 
+                            *ngFor="let ts of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
+                            [value]="ts">{{ ts }}:00</option>
                     </select>
-                    <select name="" >
-                        <option value="">0:00</option>
-                        <option value="">1:00</option>
-                        <option value="">2:00</option>
+                    <select [(ngModel)]="endH" name="_endH">
+                        <option 
+                            *ngFor="let te of tes"
+                            [value]="te">{{ te }}:00</option>
                     </select>
                     <b>注：默认时间为24小时，如全天24小时均方便交易，请选择00:00到00:00</b>
                 </li>
                 <li>
                     <span><i>*</i>有效期</span>
-                    <select name="" >
-                        <option value="">一天</option>
-                        <option value="">两天</option>
-                        <option value="">三天</option>
+                    <select [(ngModel)]="ttl" name="_ttl">
+                        <option value="一天">一天</option>
+                        <option value="两天">两天</option>
+                        <option value="三天">三天</option>
+                        <option value="七天">七天</option>
                     </select>
                     <b>注：再此有效期后就停止出售此商品</b>
                 </li>
                 <li>
                     <span>是否指定购买</span>
-                    <select name="" >
+                    <select [(ngModel)]="target" name="_target">
                         <option value="">否</option>
-                        <option value="">是</option>
+                        <option value="1">是</option>
                     </select>
                 </li>
                 <li>
                     <span>资金转账至</span>
-                    <select name="" >
-                        <option value="">平台账户2</option>
-                        <option value="">平台账户3</option>
+                    <select [(ngModel)]="moneyTo" name="_moneyTo">
+                        <option value="平台账户1">平台账户1</option>
+                        <option value="平台账户2">平台账户2</option>
                     </select>
                 </li>
                 <li>
                     <span>无货赔付</span>
-                    <select name="" >
-                        <option value="">否</option>
-                        <option value="">是</option>
+                    <select [(ngModel)]="compensate" name="_compensate">
+                        <option value="一个月找回包赔">一个月找回包赔</option>
                     </select>
                 </li>
             </ul>

@@ -30,7 +30,7 @@ export class ToolbarComponent implements OnInit {
         if (res.data === 'success') {
           this.authService.isLoggedIn.next(false);
           this.authService.timeValid.next(0);
-          sessionStorage.removeItem('data');
+          localStorage.removeItem('data');
           this.router.navigate(['/']);
         }
         

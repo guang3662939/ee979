@@ -9,6 +9,8 @@ import { API_URL } from '../shared/api';
 @Injectable()
 export class SaleService {
   toSale;
+  toSaleText;
+  productInfo;
   accesToken: string;
 
   constructor(

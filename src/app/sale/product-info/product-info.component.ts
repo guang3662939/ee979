@@ -14,12 +14,19 @@ const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';
   styleUrls: ['./product-info.component.scss']
 })
 export class ProductInfoComponent implements OnInit {
+  toSaleText;
   hideFixed: boolean = false;
   refunds = ['不支持，让买家担心', '一个月内找回包赔', '两个月内找回包赔', '三个月内找回包赔'];
+  careers = ['天罡', '斩风', '御剑', '妙法', '司令', '咒隐'];
+  career;
+  level: string;
+  gender;
+  title;
+  unitPrice;
+  description;
   refundSelected: number = 0;
   imgFrames = new Array(7);
   curFrame: number;
-  
   
   uploader: FileUploader = new FileUploader({
     method: "POST",
@@ -36,6 +43,7 @@ export class ProductInfoComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    this.toSaleText = this.saleService.toSaleText && this.saleService.toSaleText.join(' > ');
     window.addEventListener('scroll', this.onScroll);
     this.uploader.onSuccessItem = this.onSuccess.bind(this);
   }
@@ -60,6 +68,7 @@ export class ProductInfoComponent implements OnInit {
     //   return true;
     // }
     // return this.dialogService.confirm();
+    return true;
   }
 
   wrapOos(index) {
@@ -72,12 +81,8 @@ export class ProductInfoComponent implements OnInit {
           }
           form.append('key', res.data['id']+'/'+ sha1(Date.now().toString()));
         };
-        this.upload();
+        this.uploader.queue[0].upload();
       })
-  }
-
-  upload() {
-    this.uploader.queue[0].upload();
   }
 
   onSuccess(item, res, status, headers) {

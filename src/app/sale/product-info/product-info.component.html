@@ -36,57 +36,44 @@
             <div class="text">商品信息</div>
            <div class="right"></div>
         </div>
-        <form action="">
+
+        <form>
             <ul class="infor_ipt">
                 <li>
                     <span><i>*</i>账号职业</span>
-                    <select name="" >
-                        <option value="">1</option>
-                        <option value="">2</option>
+                    <select [(ngModel)]="career" name="_career">
+                        <option *ngFor="let career of careers" [value]="career">{{ career }}</option>
                     </select>
                 </li>
                 <li>
                     <span><i>*</i>账号等级</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="level" name="_level"/>
                 </li>
                 <li>
                     <span><i>*</i>账号性别</span>
-                    <select name="" >
-                        <option value="">男</option>
-                        <option value="">女</option>
-                    </select>
-                </li>
-                <li>
-                    <span><i>*</i>账号身份</span>
-                    <select name="" >
-                        <option value="">1</option>
-                        <option value="">2</option>
-                    </select>
-                </li>
-                <li>
-                    <span><i>*</i>身份重置需要</span>
-                    <select name="" >
-                        <option value="">1</option>
-                        <option value="">2</option>
+                    <select [(ngModel)]="gender" name="_gender">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
                     </select>
                 </li>
                 <li class="pro_inf_tit">
                     <span><i>*</i>信息标题</span>
-                    <input type="text" placeholder="请输入您的个性化标题，以被更多人发现哦~" />
+                    <input 
+                        name="_title"
+                        [(ngModel)]="title" placeholder="请输入您的个性化标题，以被更多人发现哦~" />
                 </li>
                 <li >
                     <span><i>*</i>出售价格</span>
-                    <input type="text"/>
+                    <input [(ngModel)]="unitPrice" name="_unitPrice"/>
                       元
                     <a  href="javascript:;" class="clickable pro_a">交易服务费说明</a>
                 </li>
-                <li>
-                    <span><i>*</i>出售价格</span>
-                    <input type="text"/>
-                </li>
                 <li class="pro_text">
                     <span><i>*</i>角色描述</span>
-                   <textarea placeholder="详尽的描述可以吸引更多人来咨询您的账号，加快您的出售速度哦~"></textarea>
+                   <textarea 
+                    [(ngModel)]="description"
+                     name="_description"
+                    placeholder="详尽的描述可以吸引更多人来咨询您的账号，加快您的出售速度哦~"></textarea>
                 </li>
                 <li class="pro_warn">
                   <p>请您将不出售的商品转移出账号，如未转移，则视为与账号一起出售</p>
@@ -121,12 +108,12 @@
 </div>
 <div class="info-choose" [style.opacity]="hideFixed ? 1 : 0">
     <div class="content">
-        您当前的选择是：古剑奇谭 > 账号交易
+        您当前的选择是：古剑奇谭 > {{ toSaleText }}
     </div>
 </div>
 
 <div class="info-choose fixed"  [style.opacity]="!hideFixed ? 1 : 0">
     <div class="content">
-        您当前的选择是：古剑奇谭 > 账号交易
+        您当前的选择是：古剑奇谭 > {{ toSaleText }}
     </div>
 </div>

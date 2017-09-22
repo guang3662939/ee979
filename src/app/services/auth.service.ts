@@ -65,8 +65,12 @@ export class AuthService {
 
 
   //储存登录有效期
-  storeTimeValid() {
-    
+  storeValidTime(data) {
+    this.isLoggedIn.next(true);
+    this.timeValid.next(data.ttl);
+    this.showLogin.next(false);
+    this.accessToken.next(data.id);
+    localStorage.setItem('data', JSON.stringify(data));
   }
   
 }

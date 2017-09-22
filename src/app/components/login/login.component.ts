@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginPhone, this.loginPass)
       .then(res => {
         if (res.data) {
-          this.storeValidTime(res.data);
+          this.authService.storeValidTime(res.data);
 
           if (this.authService.redirectUrl) {
             this.router.navigate([this.authService.redirectUrl]);
@@ -85,13 +85,6 @@ export class LoginComponent implements OnInit {
       }).catch(err => console.log(err));
   }
 
-  storeValidTime(data) {
-    this.authService.isLoggedIn.next(true);
-    this.authService.timeValid.next(data.ttl);
-    this.authService.showLogin.next(false);
-    this.authService.accessToken.next(data.id);
-    localStorage.setItem('data', JSON.stringify(data));
-  }
 
   //注册
   onRegSubmit() {
@@ -99,7 +92,7 @@ export class LoginComponent implements OnInit {
       this.authService.register(this.regPhone, this.regPasswd, this.regCode)
         .then(res => {
           if (res.data) {
-            this.storeValidTime(res.data);
+            this.authService.storeValidTime(res.data);
           }
         })
     }

@@ -92,28 +92,45 @@
     height: 176px;
     border: 1px solid #cccccc;
     position: relative;
-    text-align: center;
-    background: url("/assets/images/add_photo.png") no-repeat center 38px;
     float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .thumb {
+        width: 50px;
+        height: 50px;
+        background-image: url(/assets/images/add_photo.png);
+        background-size: 100% 100%;
+        margin-bottom: 10px;
+    }
+    input{
+        border: 0;
+        position: absolute;
+        left: 0;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    p{
+        font-size: 14px;
+        color: #999;
+    }
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 }
 .infor_ipt li .upload input{
     width: 176px;
     height: 176px;
 }
- .upload input{
-    border: 0;
-    position: absolute;
-    left: 0;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-}
 
-.upload p{
-    margin-top: 125px;
-    font-size: 14px;
-    color: #999;
-}
+
+
 .card_exam {
     margin:0 40px 0 20px;
     float: left;

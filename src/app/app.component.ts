@@ -31,6 +31,8 @@ export class AppComponent {
 
     let data = this.getValidTime();
 
+    console.log(data)
+
     if (!data && !this.router.navigated) {
       this.authService.navigated.next(false);
     }
@@ -39,16 +41,17 @@ export class AppComponent {
       this.authService.accessToken.next(data.id);
       this.authService.isLoggedIn.next(true);
       this.authService.timeValid.next(data.ttl - (Date.now() - new Date(data.created).getTime()) / 1000);
-    }
 
-    var numbers = Observable.interval(1000);
-    numbers.subscribe(x => {
-      if (x >= this.timeValid) {
-        this.authService.isLoggedIn.next(false);
-        this.authService.timeValid.next(0);
-        localStorage.removeItem('data');
-      }
-    });
+      var numbers = Observable.interval(1000);
+      numbers.subscribe(x => {
+        if (x >= this.timeValid) {
+          this.authService.isLoggedIn.next(false);
+          this.authService.timeValid.next(0);
+          console.log('remove')
+          localStorage.removeItem('data');
+        }
+      });
+    }
 
     this.authService.showLogin.subscribe(
       val => {

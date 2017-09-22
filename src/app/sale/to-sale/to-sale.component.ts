@@ -91,12 +91,18 @@ export class ToSaleComponent {
 
 
   onNextClick() {
-    this.saleService.toSale = {
-      gtIdx: this.gtIdx,
-      pgIdx: this.pgIdx,
-      gsIdx: this.gsIdx,
-      ttIdx: this.ttIdx
-    };
+    // this.saleService.toSale = {
+    //   gtIdx: this.gtIdx,
+    //   pgIdx: this.pgIdx,
+    //   gsIdx: this.gsIdx,
+    //   ttIdx: this.ttIdx
+    // };
+    this.saleService.toSaleText = [
+      this.goodsTypes[this.gtIdx], 
+      this.playgrounds[this.pgIdx],
+      this.gameServers[this.gsIdx],
+      this.tradeTypes[this.ttIdx],
+    ];
     this.router.navigate(['/sale/product'])
   }
   
