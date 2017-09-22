@@ -17,8 +17,11 @@ export class ProductInfoComponent implements OnInit {
   hideFixed: boolean = false;
   refunds = ['不支持，让买家担心', '一个月内找回包赔', '两个月内找回包赔', '三个月内找回包赔'];
   refundSelected: number = 0;
+  imgFrames = new Array(7);
+  curFrame: number;
   
-  uploader:FileUploader = new FileUploader({
+  
+  uploader: FileUploader = new FileUploader({
     method: "POST",
     url: URL,
     isHTML5: true,
@@ -34,6 +37,7 @@ export class ProductInfoComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.onScroll);
+    this.uploader.onSuccessItem = this.onSuccess.bind(this);
   }
   
   //DOM events
@@ -52,23 +56,33 @@ export class ProductInfoComponent implements OnInit {
 
   canDeactivate() {
     
-    if (window.location.pathname !== this.router.url) {
-      return true;
-    }
-    return this.dialogService.confirm();
+    // if (window.location.pathname !== this.router.url) {
+    //   return true;
+    // }
+    // return this.dialogService.confirm();
   }
 
-  upLoad() {
+  wrapOos(index) {
+    this.curFrame = index;
     this.saleService.getOssKey()
       .then(res => {
         this.uploader.onBuildItemForm = (item, form) => {
           for (let key in res.data) {
             form.append(key, res.data[key]);
           }
-          // @Note: 随机文件名称
           form.append('key', res.data['id']+'/'+ sha1(Date.now().toString()));
         };
+        this.upload();
       })
+  }
+
+  upload() {
+    this.uploader.queue[0].upload();
+  }
+
+  onSuccess(item, res, status, headers) {
+    this.imgFrames[this.curFrame] = JSON.parse(res).data.filename;
+    this.uploader.clearQueue();
   }
 
 }

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { saleRoutes } from './sale.routing';
+import { FileUploadModule } from 'ng2-file-upload/';
 
 import { SaleService } from './sale.service';
 
@@ -23,6 +24,7 @@ import { ToSaleComponent } from './to-sale/to-sale.component';
   ],
   imports: [
     CommonModule,
+    FileUploadModule,
     RouterModule.forChild(saleRoutes),
     SharedModule
   ],

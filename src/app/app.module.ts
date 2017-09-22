@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 
+
 //模块
 import { SharedModule } from './shared/shared.module';
 

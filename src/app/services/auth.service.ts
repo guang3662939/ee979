@@ -62,5 +62,11 @@ export class AuthService {
       .then(res => res.json())
       .catch(err => console.log(err));
   }
+
+
+  //储存登录有效期
+  storeTimeValid() {
+    
+  }
   
 }
