@@ -1,0 +1,361 @@
+.personl_cn{
+    width: 645px;
+}
+.percn_block{
+    border-bottom: 1px solid #ffba00 ;
+    padding: 40px 0 30px;
+}
+.per_money{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 25px;
+    font-size: 14px;
+    color: #666;
+}
+.perm_total p,.perm_infor p span{
+    color: #333;
+}
+.perm_total p b,.perm_infor p b{
+    color: #ff2d26;
+}
+.perm_total p b{
+    font-size: 44px;
+    padding-right: 8px;
+}
+.perm_infor p{
+    padding: 3px 0;
+}
+.perm_get{
+    width: 128px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 6px;
+    background: #ff2d26;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin-top: 11px;
+}
+.per_site{
+    padding-top: 28px;
+}
+.per_site span{
+    font-size: 14px;
+    color: #666;
+    padding-right: 125px;
+}
+.perrg_b_tit div,.perrg_b_tit div i{
+    display: inherit;
+}
+.perrg_b_tit div i a{
+    font-size: 14px;
+    color: #999;
+    display: inline-block;
+    margin-right: 18px;
+}
+.perrg_b_tit a.clickable{
+    color: #ffba00;
+}
+.perrg_b_tit div i:before{
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #ececec;
+    display: inline-block;
+    margin: 5px 18px 0 28px;
+}
+.per_order{
+    width: 100%;
+    border: 1px solid #ececec;
+    margin-top: 30px;
+    font-size: 12px;
+}
+.per_order_tit{
+    height: 32px;
+    line-height: 32px;
+    padding: 0 20px;
+    border-bottom: 1px solid #ececec;
+    background: #fbfbfb;
+
+}
+.per_order_tit div span{
+    color: #333;
+    padding-right: 60px;
+}
+.per_order_tit div b{
+    color: #999;
+    padding-right: 45px;
+}
+.per_order_tit div a:before,.per_order_tit div i{
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+}
+.per_order_tit div a:before{
+    content: "";
+    background: url("/assets/images/ionic.png") no-repeat -218px -18px;
+    margin-right: 5px;
+}
+i.share{
+    background: url("/assets/images/ionic.png") no-repeat -236px -19px;
+    margin-left: 18px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.per_order_item{
+    padding: 20px 0 20px 20px;
+    overflow: hidden;
+}
+.per_order_item div{
+  border-right:1px solid #ececec ;
+    float: left;
+    height: 60px;
+    font-family:'Microsoft YaHei','Arial';
+}
+.per_order_item div.yellow{
+    color: #ffba00;
+}
+.per_order_item div:last-child{
+    border-right:none ;
+}
+.per_order_item .peror_infor{
+    width: 300px;
+}
+.per_order_item .peror_infor img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ececec;
+    float: left;
+}
+.per_order_item .peror_infor span{
+    display: inline-block;
+    width: 190px;
+    margin-left: 18px;
+    line-height: 22px;
+}
+.per_order_item .peror_price{
+    width: 115px;
+    color: #ff2d26;
+}
+.per_order_item .peror_state{
+    width: 95px;
+}
+.per_order_item .peror_price,.per_order_item .peror_state{
+    line-height: 60px;
+    text-align: center;
+}
+.per_order_item .peror_look{
+    width:112px;
+    text-align:center;
+    padding-top: 10px;
+}
+.per_order_item .peror_look p{
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.per_atten{
+    margin-top: 30px;
+}
+.per_atten_item{
+    width: 145px;
+    font-size: 12px;
+
+}
+.per_atten_item img{
+    width: 145px;
+    height: 145px;
+    border: 1px solid #ececec;
+}
+.per_atten_item h6{
+    color: #333;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.per_atten_item .atten_h6{
+    margin: 16px 0 8px;
+}
+.per_atten_item p{
+    text-align: center;
+}
+.per_atten_item p:last-child{
+    margin: 8px 0 0 ;
+}
+.per_atten_item p b{
+    font-size: 18px;
+    color: #ff2d26;
+}
+
+.per_atten_item p span{
+    padding: 0 10px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #ff2d26;
+    color: #fff;
+    display: inline-block;
+   margin: 0 auto;
+}
+.per_atten_item .like_price i{
+    font-size: 12px;
+    color: #999;
+    text-decoration:line-through
+}
+.per_atten_item .like_price{
+    margin: 7px 0;
+}
+.per_att_bot{
+    margin-top: 12px;
+}
+.per_att_bot span{
+   color: #999;
+}
+.per_att_bot span:before{
+    content: "";
+    width: 14px;
+    height: 12px;
+    display: inline-block;
+    background: url("/assets/images/ionic.png") no-repeat -272px -20px;
+    vertical-align: middle;
+    margin:0 5px 1px 0;
+
+}
+.per_att_bot button{
+    width: 68px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background: #ffba00;
+    font-size: 12px;
+}
+.scroll_down li{
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffdd80;
+    float: left;
+    transform:rotate(45deg);
+    position: relative;
+}
+.scroll_down li.on:before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    background:#ffba00;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top:2px;
+    z-index: 5;
+}
+.pera_scroll .scroll_down li{
+    margin-right: 14px;
+}
+.pera_scroll .scroll_down li:last-child{
+    margin-right: 0;
+}
+.pera_scroll .scroll_down{
+    width: 66px;
+    margin: 20px auto 0 auto;
+}
+.perns_list{
+    width: 310px;
+}
+
+/*首页样式里也有*/
+.index_news_det{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e4e2e5;
+}
+.index_news_det h4{
+    width: 390px;
+    font-size: 18px;
+    color: #222;
+    margin: 26px 0 17px ;
+}
+.i_list_data li{
+    padding: 8px 0;
+}
+.i_list_data li span:before{
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #575757;
+    border-radius:50px ;
+    display: inline-block;
+}
+.i_list_data li i{
+    width: 5px;
+    height: 5px;
+    background: #575757;
+    border-radius:50px ;
+    display: inline-block;
+}
+.i_list_data li span{
+    width: 380px;
+    display: inline-block;
+    font-size: 14px;
+    color: #444;
+}
+.i_list_data li b{
+    font-size: 12px;
+    color: #666;
+}
+/*//*/
+.per_news{
+    margin-top: 40px;
+}
+.perns_list{
+    padding-bottom: 10px;
+}
+.perns_list .index_news_det h4{
+    width: 285px;
+    margin: 16px 0 5px ;
+}
+.perns_list .i_list_data li{
+    padding: 5px 0;
+}
+.perns_list .perrg_b_tit{
+    padding-bottom: 10px;
+}
+.perns_list .index_news_det{
+    border-bottom: 1px solid #ffba00;
+}
+.perns_img{
+    width: 304px;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.perns_img_item{
+    height: 200px;
+    position: relative;
+
+}
+.perns_img_item img{
+    width: 304px;
+    height: 200px;
+}
+.perns_img_item p{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index:3;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,0.5);
+}
+.perns_img .scroll_down{
+    position: absolute;
+    right: 16px;
+    bottom: 7px;
+    z-index: 6;
+}
+.perns_img .scroll_down li{
+    margin-right: 10px;
+}
+.personl_rg {
+  margin-top: 40px;
+}

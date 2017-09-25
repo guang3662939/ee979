@@ -4,7 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 //service
 import { AuthGuard } from '../services/auth-guard.service';
 
+import { MessagesCenterComponent } from './message-center/messages-center.component';
 import { PersonalComponent } from './personal.component';
+import { PersonalCenterComponent } from './personal-center/personal-center.component';
 
 const appRoutes: Routes = [
   {
@@ -12,7 +14,14 @@ const appRoutes: Routes = [
     component: PersonalComponent,
     canActivate: [AuthGuard],
     children: [
-
+      {
+        path: '',
+        component: PersonalCenterComponent
+      },
+      {
+        path: 'messages',
+        component: MessagesCenterComponent
+      }
     ]
   }
 ];

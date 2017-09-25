@@ -1,0 +1,151 @@
+/*方形选择框*/
+.square_box{
+    width:16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+}
+.square_box input{
+    width:16px;
+    height: 16px;
+    opacity: 0;
+}
+.sqbox_on {
+    background: url("/assets/images/ionic.png") -99px -55px;
+    border: none;
+}
+/*个人中心页面都有*/
+.per_subclass{
+    width: 960px;
+    min-height: 760px;
+}
+.perrg_b_tit{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 14px;
+}
+.perrg_b_tit span{
+    font-size: 14px;
+    color: #333;
+}
+.perrg_b_tit span:before{
+    content: "";
+    width: 4px;
+    height: 14px;
+    background: #ffba00;
+    display: inline-block;
+    margin-right: 8px;
+}
+/*//*/
+.p_select .square_box{
+    margin: 20px 0 0 25px;
+
+}
+.perm_classify{
+    margin: 30px 0;
+}
+.permf_btn{
+    width: 145px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #ccc;
+    color: #333333;
+    font-size: 12px;
+    background: #fff;
+    margin-right: 40px;
+}
+
+.per_btn{
+    background: #ffba00;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid  #ffba00;
+}
+.perm_list_item{
+    overflow: hidden;
+    border-bottom: 1px solid #ececec;
+    height: 57px;
+    line-height: 57px;
+}
+.perm_list_item:last-child{
+    border-bottom: 1px solid #ffba00;
+}
+.permli_tit{
+    background: #f7f7f7;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    color: #666;
+}
+.perm_list_item div{
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    font-family:'Microsoft YaHei','Arial'
+}
+.perm_list_item .p_select{
+    width: 63px;
+}
+.perm_list_item .p_title{
+    width: 318px;
+    text-align: left;
+    padding-left: 30px;
+}
+.permli_tit .p_title{
+    text-align: center;
+    padding-left: 0;
+}
+.perm_list_item .p_title span{
+    cursor: pointer;
+}
+.perm_list_item .p_title b{
+    color: #ffba00;
+}
+.perm_list_item .p_type{
+    width: 116px;
+}
+.perm_list_item .p_time{
+    width: 176px;
+}
+.perm_list_item .p_operate{
+    width: 170px;
+    color: #666;
+}
+.perm_list_item .p_operate i{
+    width: 2px;
+    height: 13px;
+    background: #ececec;
+    display: inline-block;
+    margin: 2px 10px 0;
+    vertical-align: middle;
+    transform: rotate(18deg);
+}
+.perm_list_item .p_look{
+    width: 116px;
+}
+.perm_list_item .p_look a{
+    color: #ffba00;
+}
+.perm_list_item div{
+    color: #999;
+}
+.perm_unread div{
+    color: #333;
+}
+.perm_unread .p_title,.perm_unread .p_type,.perm_unread .p_time,.perm_unread .p_operate{
+    color: #333;
+}
+.permli_tit div,.perm_list_item .p_operate{
+    color: #666 ;
+}
+.per_messbot{
+    margin-top: 25px;
+}
+.permet_lt .square_box{
+    float: left;
+    margin: 3px 9px 0 25px;
+}
+.permet_lt span{
+    font-size: 14px;
+    color: #333;
+    padding-right: 24px;
+}

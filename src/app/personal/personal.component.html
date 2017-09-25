@@ -16,8 +16,8 @@
             </div>
             <div class="per_ul">
                 <ul >
-                    <li class="current">个人中心</li>
-                    <li>消息中心</li>
+                    <li class="current"  routerLink="./">个人中心</li>
+                    <li routerLink="messages">消息中心</li>
                     <li>资金明细</li>
                     <li>个人信息</li>
                 </ul>
@@ -39,7 +39,8 @@
                 </ul>
             </div>
         </div>
-        <div class="personl_cn">
+        <router-outlet></router-outlet>
+        <!--<div class="personl_cn">
             <div class="percn_block">
                 <div class="per_money flex">
                     <div class="perm_total">
@@ -321,7 +322,7 @@
                     <li>教你识别骗子卖家你识别骗子卖家</li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 

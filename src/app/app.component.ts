@@ -31,7 +31,6 @@ export class AppComponent {
 
     let data = this.getValidTime();
 
-    console.log(data)
 
     if (!data && !this.router.navigated) {
       this.authService.navigated.next(false);
@@ -47,7 +46,6 @@ export class AppComponent {
         if (x >= this.timeValid) {
           this.authService.isLoggedIn.next(false);
           this.authService.timeValid.next(0);
-          console.log('remove')
           localStorage.removeItem('data');
         }
       });

@@ -4,13 +4,16 @@ import { SharedModule } from '../shared/shared.module';
 
 import { PeronsalRoutingModule } from './personal.routing';
 
-import {PersonalComponent } from './personal.component';
-import { MessagesCenterComponent } from './messages/messages-center.component'
+import { MessagesCenterComponent } from './message-center/messages-center.component';
+import { PersonalComponent } from './personal.component';
+import { PersonalCenterComponent } from './personal-center/personal-center.component';
+
 
 @NgModule({
   declarations: [
     MessagesCenterComponent,
-    PersonalComponent
+    PersonalComponent,
+    PersonalCenterComponent
   ],
   imports: [
     CommonModule,
