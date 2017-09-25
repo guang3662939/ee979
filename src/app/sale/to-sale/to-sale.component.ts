@@ -11,16 +11,20 @@ import { SaleService } from '../sale.service';
 export class ToSaleComponent {
   //初始交易类型
   gtIdx = null;
-  goodsTypes = ['账号交易', '金币交易', '装备交易', '代练交易'];
+  goodsTypes = [];
   //初始游戏区
   pgIdx = null;
-  playgrounds = ['网通区', '大战区', '电信区', '移动区'];
+  playgrounds = [];
   //初始游戏服
   gsIdx = null;
-  gameServers = ['罗西元', '陶然亭', '天后宫', '华楼宫', '玄月谷', '碧空海', '南柯梦','罗西元', '陶然亭', '天后宫', '华楼宫', '玄月谷', '碧空海', '南柯梦'];
+  gameServers = [];
   //初始交易类型
   ttIdx = null;
-  tradeTypes = ['担保交易', '寄售交易'];
+  tradeTypes = [];
+
+  typesList;
+  serverList;
+
 
   timer;
   scrollTop = 0;
@@ -32,8 +36,34 @@ export class ToSaleComponent {
   ) {}
 
   ngOnInit() {
-    this.saleService.toSale && this.recoverData(this.saleService.toSale);
     window.scrollTo(0, 0);
+
+    if (this.saleService.toSale) {
+      this.recoverData(this.saleService.toSale);
+    } else {
+      this.getTradeList();
+    }
+  }
+
+  getTradeList() {
+    this.saleService.getTradeList()
+      .then(res => {
+        this.typesList = res.data;
+        const arr = res.data.map(v => v.goodsType)
+        this.goodsTypes = Array.from(new Set(arr));
+
+        this.getServerList();
+      }).catch(err => console.log(err));
+  }
+
+  getServerList(){
+    this.saleService.getServerList()
+      .then(res => {
+        this.serverList = res.data;
+        const arr = res.data.map(v => v.areaName)
+        this.playgrounds = Array.from(new Set(arr));
+
+      }).catch(err => console.log(err));
   }
 
   ngOnDestroy() {
@@ -56,10 +86,12 @@ export class ToSaleComponent {
       case 'gt':
         this.gtIdx === null && setTimeout(this.scroll, 0);
         this.gtIdx = idx;
+        this.tradeTypes = this.typesList.filter(v => v.goodsType === this.goodsTypes[this.gtIdx]).map(v => v.tradeType);
         break;
       case 'pg':
         this.pgIdx === null && setTimeout(this.scroll, 0);
         this.pgIdx = idx;
+        this.gameServers = this.serverList.filter(v => v.areaName === this.playgrounds[this.pgIdx]).map(v => v.serverName);
         break;
       case 'gs':
         this.gsIdx === null && setTimeout(this.scroll, 0);  
@@ -91,19 +123,29 @@ export class ToSaleComponent {
 
 
   onNextClick() {
-    // this.saleService.toSale = {
-    //   gtIdx: this.gtIdx,
-    //   pgIdx: this.pgIdx,
-    //   gsIdx: this.gsIdx,
-    //   ttIdx: this.ttIdx
-    // };
+    this.syncData();
+    this.router.navigate(['/sale/product'])
+  }
+
+  syncData() {
+    this.saleService.toSale = {
+      gtIdx: this.gtIdx,
+      pgIdx: this.pgIdx,
+      gsIdx: this.gsIdx,
+      ttIdx: this.ttIdx
+    };
     this.saleService.toSaleText = [
       this.goodsTypes[this.gtIdx], 
       this.playgrounds[this.pgIdx],
       this.gameServers[this.gsIdx],
       this.tradeTypes[this.ttIdx],
     ];
-    this.router.navigate(['/sale/product'])
+    this.saleService.bundle.loc = {
+      areaName: this.playgrounds[this.pgIdx],
+      serverName: this.gameServers[this.gsIdx],
+      goodsType: this.goodsTypes[this.gtIdx],
+      tradeType: this.tradeTypes[this.ttIdx]  
+    };
   }
   
 }

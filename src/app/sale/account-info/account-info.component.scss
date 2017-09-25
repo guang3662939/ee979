@@ -172,3 +172,14 @@
   transform: translate(1px, 1px);
 }
 
+
+
+//错误信息
+.err-ipt {
+    box-shadow: 0 0 3px red;
+}
+.err-msg {
+    display: inline-block;
+    color: red;
+    font-size: .9rem;
+}

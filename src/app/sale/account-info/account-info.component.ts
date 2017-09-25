@@ -14,20 +14,32 @@ const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';
 })
 
 export class AccountInfoComponent implements OnInit {
+  // form part 1
+  account;
+  password;
+  password2;
+  character;
+  cargoPwd;
+
 
   //form2
+  cipher;
   startH = 0;
-  endH;
-  hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23, 24];
+  endH = 0;
+  hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0];
   tes;
-  ttl = '一天';
-  target;
+  ttl = '3';
+  target = '0';
   tradePws;
-  moneyTo;
+  moneyTo = '平台账户1';
   compensate;
 
-  front;
-  back;
+  //显示提示
+  showNotice: boolean = true;
+
+
+  front = '';
+  back = '';
   frameType;
   uploader: FileUploader = new FileUploader({
     method: "POST",
@@ -39,6 +51,11 @@ export class AccountInfoComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+
+    if (!this.saleService.toSale) {
+      return this.router.navigate(['/sale']);
+    }
+
     this.startHChange();
     this.uploader.onSuccessItem = this.onSuccess.bind(this);
   }
@@ -69,10 +86,52 @@ export class AccountInfoComponent implements OnInit {
 
   startHChange() {
     this.tes = this.hours.slice(Number(this.startH) + 1);
-    this.endH = this.tes[0];
+    // this.endH = this.tes[0];
   }
 
-  onNextClick() {
-    this.router.navigate(['/sale/result']);
+  onNextClick(form) {
+    console.log(form)
+    if (form.valid && (this.password === this.password2) && this.front && this.back) {
+      this.syncData();
+      this.publishProduct();
+      // this.router.navigate(['/sale/result']);
+    } else {
+      return alert('请填写所包含的必填信息');
+    }
+  }
+
+  syncData() {
+    this.saleService.bundle.data.account = {
+      account: this.account,
+      password: this.password,
+      character: this.character,
+      cargoPwd: this.cargoPwd,
+      sfzh1: this.front,
+      sfzh2: this.back
+    };
+    this.saleService.bundle.data.service = {
+      cipher: this.cipher,
+      startH: Number(this.startH),
+      endH: Number(this.endH),
+      ttl: Number(this.ttl),
+      target: this.target,
+      tradePws: this.target === '1' ? this.tradePws : '',
+      moneyTo: this.moneyTo,
+      // compensate: this.compensate
+    };
+  }
+
+  publishProduct() {
+    const body = {
+      model: 'GjolAccount',
+      bundle: this.saleService.bundle
+    };
+
+    console.log(body)
+
+    this.saleService.publish(body)
+      .then(res => {
+        console.log(res)
+      }).catch(err => console.log(err));
   }
 }

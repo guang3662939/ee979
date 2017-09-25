@@ -9,7 +9,7 @@
         &gt;
         <a href="javascript:;">账号信息</a>
     </div>
-    <div class="infor_alert">
+    <div class="infor_alert" *ngIf="showNotice">
         <h5>易易游戏网提醒您：</h5>
         <ul>
             <li>1.为满足广大客户的需求，地下城与勇士账号商品交易成功后，将延迟15天转账给卖家，此期间请勿修改帐号资料，否则将会财号两空。</li>
@@ -17,79 +17,125 @@
             <li>3.有客服联系时，可点击【客服验证中心】验证客服真假，V9games不会通过邮箱进行二次审核或通过任何未认证通讯方式向您索取账号信息。</li>
             <li>温馨提示：为了顺利通过审核，建议您解除QQ安全中心手机版 <a href="javascript:;" class="clickable">（点击查看如何解绑QQ安全中心手机版）</a></li>
         </ul>
-        <b class="detele"></b>
+        <b class="detele" (click)="showNotice = null"></b>
     </div>
-    <div class="acc_infor">
-        <div class="infor_tit">
-            账号信息
-        </div>
-        <form>
-            <ul class="infor_ipt">
-                <li>
-                    <span><i>*</i>游戏账号</span>
-                    <input [(ngModel)]="account" name="_account"/>
-                </li>
-                <li>
-                    <span><i>*</i>游戏密码</span>
-                    <input [(ngModel)]="password" name="_password"/>
-                </li>
-                <li>
-                    <span><i>*</i>确认游戏密码</span>
-                    <input [(ngModel)]="password2" name="_password2"/>
-                </li>
-                <li>
-                    <span><i>*</i>游戏角色名</span>
-                    <input [(ngModel)]="character" name="_character"/>
-                </li>
-                <li>
-                    <span><i>*</i>仓库密码</span>
-                    <input [(ngModel)]="cargoPwd" name="_cargoPwd"/>
-                </li>
-                <li>
-                    <span><i>*</i>身份证截图</span>
-                     <i>注：身份证截图为游戏绑定的身份证截图</i>
-                </li>
-                <li class="pro_mf">
-                    <!--正面-->
-                    <div class="upload">
-                        <input 
-                            ng2FileSelect [uploader]="uploader" (change)="wrapOos('front')"
-                            type="file" accept="image/jpeg,image/jpg,image/png">
-                        <div class="thumb"></div>
-                        <p>上传正面</p>
-                        <img [src]="front" *ngIf="front">
-                    </div>
-                    <div class="card_exam">
-                        <img src="/assets/images/id_front.png"/>
-                        <p>示例</p>
-                    </div>
 
-                    <!--反面-->
-                    <div class="upload">
-                        <input 
-                            ng2FileSelect [uploader]="uploader" (change)="wrapOos('back')"
-                            type="file" accept="image/jpeg,image/jpg,image/png">
-                        <div class="thumb"></div>
-                        <p>上传反面</p>
-                        <img [src]="back" *ngIf="back">
-                    </div>
-                    <div class="card_exam">
-                        <img src="/assets/images/id_back.png"/>
-                        <p>示例</p>
-                    </div>
-                </li>
-            </ul>
-        </form>
-    </div>
-    <div class="acc_infor">
-        <div class="infor_tit">
-            客服信息
+    <form #f="ngForm">
+        <div class="acc_infor">
+            <div class="infor_tit">
+                账号信息
+            </div>
+            <!--<form>-->
+                <ul class="infor_ipt">
+                    <li>
+                        <span><i>*</i>游戏账号</span>
+                        <input [(ngModel)]="account" 
+                            #_account="ngModel"
+                            required
+                            [class.err-ipt]="_account.invalid && (_account.dirty || _account.touched)"
+                            name="_account"/>
+                        <div class="err-msg" *ngIf="_account.invalid && (_account.dirty || _account.touched)">
+                            <div *ngIf="_account.errors.required">必填</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span><i>*</i>游戏密码</span>
+                        <input [(ngModel)]="password" 
+                            #_password="ngModel"
+                            required
+                            type="password"
+                            [class.err-ipt]="_password.invalid && (_password.dirty || _password.touched)"
+                            name="_password"/>
+                        <div class="err-msg" *ngIf="_password.invalid && (_password.dirty || _password.touched)">
+                            <div *ngIf="_password.errors.required">必填</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span><i>*</i>确认游戏密码</span>
+                        <input [(ngModel)]="password2" 
+                            #_password2="ngModel"
+                            required
+                            type="password"
+                            [class.err-ipt]="_password2.invalid && (_password2.dirty || _password2.touched)"
+                            name="_password2"/>
+                        <div class="err-msg" *ngIf="_password2.invalid && (_password2.dirty || _password2.touched)">
+                            <div *ngIf="_password2.errors.required">必填</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span><i>*</i>游戏角色名</span>
+                        <input [(ngModel)]="character" 
+                            #_character="ngModel"
+                            required
+                            [class.err-ipt]="_character.invalid && (_character.dirty || _character.touched)"
+                            name="_character"/>
+                        <div class="err-msg" *ngIf="_character.invalid && (_character.dirty || _character.touched)">
+                            <div *ngIf="_character.errors.required">必填</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span><i>*</i>仓库密码</span>
+                        <input [(ngModel)]="cargoPwd" 
+                            #_cargoPwd="ngModel"
+                            required
+                            [class.err-ipt]="_cargoPwd.invalid && (_cargoPwd.dirty || _cargoPwd.touched)"
+                            name="_cargoPwd"/>
+                        <div class="err-msg" *ngIf="_cargoPwd.invalid && (_cargoPwd.dirty || _cargoPwd.touched)">
+                            <div *ngIf="_cargoPwd.errors.required">必填</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>身份证截图</span>
+                        <i>注：身份证截图为游戏绑定的身份证截图</i>
+                    </li>
+                    <li class="pro_mf">
+                        <!--正面-->
+                        <div class="upload">
+                            <input 
+                                ng2FileSelect 
+                                [uploader]="uploader" (change)="wrapOos('front')"
+                                type="file" accept="image/jpeg,image/jpg,image/png">
+                            <div class="thumb"></div>
+                            <p>上传正面</p>
+                            <img [src]="front" *ngIf="front">
+                        </div>
+                        <div class="card_exam">
+                            <img src="/assets/images/id_front.png"/>
+                            <p>示例</p>
+                        </div>
+
+                        <!--反面-->
+                        <div class="upload">
+                            <input 
+                                ng2FileSelect [uploader]="uploader" (change)="wrapOos('back')"
+                                type="file" accept="image/jpeg,image/jpg,image/png">
+                            <div class="thumb"></div>
+                            <p>上传反面</p>
+                            <img [src]="back" *ngIf="back">
+                        </div>
+                        <div class="card_exam">
+                            <img src="/assets/images/id_back.png"/>
+                            <p>示例</p>
+                        </div>
+                    </li>
+                </ul>
+            <!--</form>-->
         </div>
-        <form>
+        <div class="acc_infor">
+            <div class="infor_tit">
+                客服信息
+            </div>
             <ul class="infor_ipt">
                 <li>
                     <span><i>*</i>客服暗号</span>
-                    <input [(ngModel)]="cipher" name="_cipher"/>
+                    <input [(ngModel)]="cipher" 
+                        #_cipher="ngModel"
+                        required
+                        [class.err-ipt]="_cipher.invalid && (_cipher.dirty || _cipher.touched)"
+                        name="_cipher"/>
+                    <div class="err-msg" *ngIf="_cipher.invalid && (_cipher.dirty || _cipher.touched)">
+                        <div *ngIf="_cipher.errors.required">必填</div>
+                    </div>
                     <b>注：设置后，客服联系您时必定有此暗号，没有则为假客服</b>
                 </li>
                 <li class="acc_time">
@@ -97,54 +143,90 @@
                     <select [(ngModel)]="startH" name="_startH" (change)="startHChange()">
                         <option 
                             *ngFor="let ts of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
-                            [value]="ts">{{ ts }}:00</option>
+                            [value]="ts">{{ ts > 9 ? ts : '0' + ts }}:00</option>
                     </select>
                     <select [(ngModel)]="endH" name="_endH">
                         <option 
                             *ngFor="let te of tes"
-                            [value]="te">{{ te }}:00</option>
+                            [value]="te">{{ te > 9 ? te : '0' + te }}:00</option>
                     </select>
                     <b>注：默认时间为24小时，如全天24小时均方便交易，请选择00:00到00:00</b>
                 </li>
                 <li>
                     <span><i>*</i>有效期</span>
-                    <select [(ngModel)]="ttl" name="_ttl">
-                        <option value="一天">一天</option>
-                        <option value="两天">两天</option>
-                        <option value="三天">三天</option>
-                        <option value="七天">七天</option>
+                    <select [(ngModel)]="ttl" 
+                        #_ttl="ngModel"
+                        [class.err-ipt]="_ttl.invalid && (_ttl.dirty || _ttl.touched)"
+                        name="_ttl">
+                        <option value="1">一天</option>
+                        <option value="2">两天</option>
+                        <option value="3">三天</option>
+                        <option value="4">四天</option>
+                        <option value="5">五天</option>
+                        <option value="6">六天</option>
+                        <option value="7">七天</option>
                     </select>
                     <b>注：再此有效期后就停止出售此商品</b>
                 </li>
                 <li>
-                    <span>是否指定购买</span>
-                    <select [(ngModel)]="target" name="_target">
-                        <option value="">否</option>
+                    <span><i>*</i>是否指定购买</span>
+                    <select [(ngModel)]="target" 
+                        #_target="ngModel"
+                        [class.err-ipt]="_target.invalid && (_target.dirty || _target.touched)"
+                        name="_target">
+                        <option value="0">否</option>
                         <option value="1">是</option>
                     </select>
+                    <div class="err-msg" *ngIf="_target.invalid && (_target.dirty || _target.touched)">
+                        <div *ngIf="_target.errors.required">必填</div>
+                    </div>
+                </li>
+                <li *ngIf="_target.value === '1'">
+                    <span><i>*</i>指定购买密码</span>
+                    <input [(ngModel)]="tradePws" 
+                        #_tradePws="ngModel"
+                        required
+                        [class.err-ipt]="_tradePws.invalid && (_tradePws.dirty || _tradePws.touched)"
+                        name="_tradePws" /> 
+                    <div class="err-msg" *ngIf="_tradePws.invalid && (_tradePws.dirty || _tradePws.touched)">
+                        <div *ngIf="_tradePws.errors.required">必填</div>
+                    </div>
                 </li>
                 <li>
                     <span>资金转账至</span>
-                    <select [(ngModel)]="moneyTo" name="_moneyTo">
+                    <select [(ngModel)]="moneyTo" 
+                        #_moneyTo="ngModel"
+                        [class.err-ipt]="_moneyTo.invalid && (_moneyTo.dirty || _moneyTo.touched)"
+                        name="_moneyTo">
                         <option value="平台账户1">平台账户1</option>
                         <option value="平台账户2">平台账户2</option>
                     </select>
+                    <div class="err-msg" *ngIf="_moneyTo.invalid && (_moneyTo.dirty || _moneyTo.touched)">
+                        <div *ngIf="_moneyTo.errors.required">必填</div>
+                    </div>
                 </li>
-                <li>
+                <!--<li>
                     <span>无货赔付</span>
-                    <select [(ngModel)]="compensate" name="_compensate">
+                    <select [(ngModel)]="compensate" 
+                        #_compensate="ngModel"
+                        [class.err-ipt]="_compensate.invalid && (_compensate.dirty || _compensate.touched)"
+                        name="_compensate">
                         <option value="一个月找回包赔">一个月找回包赔</option>
                     </select>
-                </li>
+                    <div class="err-msg" *ngIf="_compensate.invalid && (_compensate.dirty || _compensate.touched)">
+                        <div *ngIf="_compensate.errors.required">必填</div>
+                    </div>
+                </li>-->
             </ul>
-        </form>
-    </div>
-    <div class="btn-wrapper">
-        <button 
-        class="btn next" 
-        (click)="onNextClick()"
-        >确认无误，下一步</button>
-    </div>
+        </div>
+        <div class="btn-wrapper">
+            <button 
+            class="btn next" 
+            (click)="onNextClick(f)"
+            >确认无误，下一步</button>
+        </div>
+    </form>
+
 </div>
 <div class="info_fix">
     <div class="content">

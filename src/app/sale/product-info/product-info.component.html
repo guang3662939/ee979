@@ -8,7 +8,7 @@
         <a>商品信息</a>
     </div>
 
-    <div class="infor_alert">
+    <div class="infor_alert" *ngIf="showNotice">
         <h5>易易游戏网提醒您：</h5>
         <ul>
             <li>1.为满足广大客户的需求，地下城与勇士账号商品交易成功后，将延迟15天转账给卖家，此期间请勿修改帐号资料，否则将会财号两空。</li>
@@ -16,7 +16,7 @@
             <li>3.有客服联系时，可点击【客服验证中心】验证客服真假，V9games不会通过邮箱进行二次审核或通过任何未认证通讯方式向您索取账号信息。</li>
             <li>温馨提示：为了顺利通过审核，建议您解除QQ安全中心手机版 <a class="clickable">（点击查看如何解绑QQ安全中心手机版）</a></li>
         </ul>
-        <b class="detele"></b>
+        <b class="detele" (click)="showNotice = null"></b>
     </div>
     <div class="acc_infor pro_find">
         <div class="info-label">
@@ -37,43 +37,74 @@
            <div class="right"></div>
         </div>
 
-        <form>
+        <form #f="ngForm">
             <ul class="infor_ipt">
                 <li>
                     <span><i>*</i>账号职业</span>
-                    <select [(ngModel)]="career" name="_career">
+                    <select [(ngModel)]="career" 
+                        [class.err-ipt]="_career.invalid && (_career.dirty || _career.touched)"
+                        name="_career" #_career="ngModel" required>
                         <option *ngFor="let career of careers" [value]="career">{{ career }}</option>
                     </select>
+                    <div class="err-msg" *ngIf="_career.invalid && (_career.dirty || _career.touched)">
+                        <div *ngIf="_career.errors.required">必填</div>
+                    </div>
                 </li>
                 <li>
                     <span><i>*</i>账号等级</span>
-                    <input [(ngModel)]="level" name="_level"/>
+                    <input [(ngModel)]="level" 
+                        [class.err-ipt]="_level.invalid && (_level.dirty || _level.touched)"
+                        name="_level" #_level="ngModel" required/>
+                    <div class="err-msg" *ngIf="_level.invalid && (_level.dirty || _level.touched)">
+                        <div *ngIf="_level.errors.required">必填</div>
+                    </div>
                 </li>
                 <li>
                     <span><i>*</i>账号性别</span>
-                    <select [(ngModel)]="gender" name="_gender">
+                    <select [(ngModel)]="gender" 
+                        [class.err-ipt]="_gender.invalid && (_gender.dirty || _gender.touched)"
+                        name="_gender" #_gender="ngModel" required>
                         <option value="男">男</option>
                         <option value="女">女</option>
                     </select>
+                    <div class="err-msg" *ngIf="_gender.invalid && (_gender.dirty || _gender.touched)">
+                        <div *ngIf="_gender.errors.required">必填</div>
+                    </div>
                 </li>
                 <li class="pro_inf_tit">
                     <span><i>*</i>信息标题</span>
                     <input 
                         name="_title"
-                        [(ngModel)]="title" placeholder="请输入您的个性化标题，以被更多人发现哦~" />
+                        [class.err-ipt]="_title.invalid && (_title.dirty || _title.touched)"
+                        [(ngModel)]="title" 
+                        #_title="ngModel"
+                        placeholder="请输入您的个性化标题，以被更多人发现哦~" />
+                    <div class="err-msg" *ngIf="_title.invalid && (_title.dirty || _title.touched)">
+                        <div *ngIf="_title.errors.required">必填</div>
+                    </div>
                 </li>
                 <li >
                     <span><i>*</i>出售价格</span>
-                    <input [(ngModel)]="unitPrice" name="_unitPrice"/>
+                    <input [(ngModel)]="unitPrice" 
+                        [class.err-ipt]="_unitPrice.invalid && (_unitPrice.dirty || _unitPrice.touched)"
+                        name="_unitPrice" #_unitPrice="ngModel" required/>
                       元
                     <a  href="javascript:;" class="clickable pro_a">交易服务费说明</a>
+                    <div class="err-msg" *ngIf="_unitPrice.invalid && (_unitPrice.dirty || _unitPrice.touched)">
+                        <div *ngIf="_unitPrice.errors.required">必填</div>
+                    </div>
                 </li>
                 <li class="pro_text">
                     <span><i>*</i>角色描述</span>
                    <textarea 
-                    [(ngModel)]="description"
-                     name="_description"
-                    placeholder="详尽的描述可以吸引更多人来咨询您的账号，加快您的出售速度哦~"></textarea>
+                        [(ngModel)]="description"
+                        name="_description"
+                        #_description="ngModel"
+                        [class.err-ipt]="_description.invalid && (_description.dirty || _description.touched)"
+                        placeholder="详尽的描述可以吸引更多人来咨询您的账号，加快您的出售速度哦~"></textarea>
+                    <div class="err-msg" *ngIf="_description.invalid && (_description.dirty || _description.touched)">
+                        <div *ngIf="_description.errors.required">必填</div>
+                    </div>
                 </li>
                 <li class="pro_warn">
                   <p>请您将不出售的商品转移出账号，如未转移，则视为与账号一起出售</p>
@@ -102,7 +133,7 @@
     <div class="btn-wrapper">
         <button 
         class="btn next" 
-        (click)="onNextClick()"
+        (click)="onNextClick(f)"
         >确认无误，下一步</button>
     </div>
 </div>

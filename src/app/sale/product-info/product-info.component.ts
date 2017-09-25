@@ -27,6 +27,8 @@ export class ProductInfoComponent implements OnInit {
   refundSelected: number = 0;
   imgFrames = new Array(7);
   curFrame: number;
+  //显示提示
+  showNotice: boolean = true;
   
   uploader: FileUploader = new FileUploader({
     method: "POST",
@@ -43,6 +45,10 @@ export class ProductInfoComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    // if (!this.saleService.toSale) {
+    //   return this.router.navigate(['/sale']);
+    // }
+    this.saleService.productInfo && this.recoverData(this.saleService.productInfo);
     this.toSaleText = this.saleService.toSaleText && this.saleService.toSaleText.join(' > ');
     window.addEventListener('scroll', this.onScroll);
     this.uploader.onSuccessItem = this.onSuccess.bind(this);
@@ -58,8 +64,36 @@ export class ProductInfoComponent implements OnInit {
     }
   }
 
-  onNextClick() {
-    this.router.navigate(['/sale/account']);
+  onNextClick(form) {
+    // console.log(form)
+    if (form.valid) {
+      this.syncData();
+      this.router.navigate(['/sale/account']);
+    } else {
+      return alert('请填写所包含的必填信息');
+    }
+  }
+
+  syncData() {
+    this.saleService.bundle.data.goods = {
+      career: this.career,
+      gender: this.gender,
+      level: Number(this.level),
+      title: this.title,
+      unitPrice: Number(this.unitPrice),
+      description: this.description,
+      refund: this.refunds[this.refundSelected],
+      images: this.imgFrames.join(';')
+    };
+  }
+
+  recoverData(data) {
+    this.career = data._career; 
+    this.level = data._level; 
+    this.gender = data._gender; 
+    this.title = data._title; 
+    this.unitPrice = data._unitPrice; 
+    this.description = data._description;
   }
 
   canDeactivate() {
@@ -69,6 +103,14 @@ export class ProductInfoComponent implements OnInit {
     // }
     // return this.dialogService.confirm();
     return true;
+  }
+
+  validate() {
+    if (this.career && this.level && this.gender && this.title && this.unitPrice && this.description) {
+
+    } else {
+      
+    }
   }
 
   wrapOos(index) {

@@ -11,6 +11,44 @@ export class SaleService {
   toSale;
   toSaleText;
   productInfo;
+  bundle = {
+    loc: {
+      areaName: "",
+      serverName: "",
+      goodsType: "",
+      tradeType: ""  
+    },
+    data: {
+      goods: {
+        career: "",
+        gender: "",
+        level: null,
+        title: "",
+        unitPrice: null,
+        description: "",
+        refund: "",
+        images: ""
+      },
+      account: {
+        account: "",
+        password: "",
+        character: "",
+        cargoPwd: "",
+        sfzh1: "",
+        sfzh2: ""
+      },
+      service: {
+        cipher: "",
+        startH: null,
+        endH: null,
+        ttl: null,
+        target: "",
+        tradePws: "",
+        moneyTo: "",
+        // compensate: ""
+      }
+    }
+  };
   accesToken: string;
 
   constructor(
@@ -21,6 +59,27 @@ export class SaleService {
 
   getOssKey() {
     return this.http.post(`${API_URL}AliyunOsses/token?access_token=${this.accesToken}`, {})
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  getServerList() {
+    return this.http.get(`${API_URL}GjolServers/list?access_token=${this.accesToken}`)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  getTradeList() {
+    return this.http.get(`${API_URL}GjolTypes/list?access_token=${this.accesToken}`)
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
+  }
+
+  publish(body) {
+    return this.http.post(`${API_URL}GjolGoods/add?access_token=${this.accesToken}`, body)
       .toPromise()
       .then(res => res.json())
       .catch(err => console.log(err));
