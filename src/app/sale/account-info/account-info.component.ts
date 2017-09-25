@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import * as sha1 from 'js-sha1';
 
@@ -15,15 +15,15 @@ const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';
 
 export class AccountInfoComponent implements OnInit {
   // form part 1
-  account;
-  password;
-  password2;
-  character;
-  cargoPwd;
+  account = '1';
+  password = '1';
+  password2 = '1';
+  character = '1';
+  cargoPwd = '1';
 
 
   //form2
-  cipher;
+  cipher = '1';
   startH = 0;
   endH = 0;
   hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0];
@@ -90,11 +90,11 @@ export class AccountInfoComponent implements OnInit {
   }
 
   onNextClick(form) {
-    console.log(form)
-    if (form.valid && (this.password === this.password2) && this.front && this.back) {
+    // console.log(form)
+    if (form.valid && (this.password === this.password2)) {
       this.syncData();
       this.publishProduct();
-      // this.router.navigate(['/sale/result']);
+      
     } else {
       return alert('请填写所包含的必填信息');
     }
@@ -127,11 +127,18 @@ export class AccountInfoComponent implements OnInit {
       bundle: this.saleService.bundle
     };
 
-    console.log(body)
+    // console.log(body)
 
     this.saleService.publish(body)
       .then(res => {
-        console.log(res)
+        // console.log(res)
+        if (res.data) {
+          let navigationExtras: NavigationExtras = {
+            queryParams: { data: JSON.stringify(res.data) },
+            fragment: 'anchor'
+          };
+          this.router.navigate(['/sale/result', navigationExtras]);
+        }
       }).catch(err => console.log(err));
   }
 }

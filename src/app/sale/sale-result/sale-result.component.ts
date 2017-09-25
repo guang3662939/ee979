@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'sale-result',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SaleResultComponent implements OnInit {
-  constructor() { }
+  sn: string;
+  game: string;
+  title: string;
+  price: number;
 
-  ngOnInit() { }
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit() {
+    const data = this.route.queryParamMap.map(params => params.get('data') || {});
+    console.log(data);
+
+  }
+
 }

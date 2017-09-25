@@ -18,12 +18,12 @@ export class ProductInfoComponent implements OnInit {
   hideFixed: boolean = false;
   refunds = ['不支持，让买家担心', '一个月内找回包赔', '两个月内找回包赔', '三个月内找回包赔'];
   careers = ['天罡', '斩风', '御剑', '妙法', '司令', '咒隐'];
-  career;
-  level: string;
-  gender;
-  title;
-  unitPrice;
-  description;
+  career = '天罡';
+  level = '1';
+  gender = '男';
+  title = '1';
+  unitPrice = 1;
+  description = '1';
   refundSelected: number = 0;
   imgFrames = new Array(7);
   curFrame: number;
