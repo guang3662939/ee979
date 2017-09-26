@@ -1,32 +1,37 @@
 .step {
-  width: 400px;
+  width: 460px;
   margin: 100px auto;
   position: relative;
   display: flex;
   justify-content: space-between;
 
   .circle {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #eee;
-    font-size: 1.4rem;
+    background-color: #cccccc;
+    font-size: 14px;
     color: #fff;
-    box-shadow: 0 0 0 10px #d4a248;
+    box-shadow: 0 0 0 10px rgba(204, 204, 204, .2);
 
     &.circle1 {
-      background-color: orange;
+      background-color: #ffba00;
+      box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
     }
 
     &.step2 {
-      animation: .2s fill2 .1s ease-out forwards;
+      animation: .1s fill .06s linear forwards;
+      box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
+      transition: .3s;
     }
 
     &.step3 {
-      animation: .2s fill2 .1s ease-out forwards;
+      animation: .1s fill .06s linear forwards;
+      box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
+      transition: .3s;
     }
   }
   
@@ -34,28 +39,28 @@
 
 .bar {
   position: absolute;
-  height: 14px;
+  height: 8px;
   width: 100%;
-  top: 13px;
+  top: 10px;
   left: 0;
-  background-color: #999;
+  background-color: #ececec;
   z-index: -1;
 
   .progress {
     position: absolute;
     height: 100%;
-    width: 100px;
+    width: 124px;
     top: 0;
     left: 0;
-    background-color: orange;
-    border-radius: 6px;
+    background-color: #ffba00;
+    border-radius: 4px;
 
     &.step2 {
-      animation: .3s extend2 ease-out forwards;
+      animation: .3s extend2 linear forwards;
     }
 
     &.step3 {
-      animation: .3s extend3 ease-out forwards;
+      animation: .2s extend3 linear forwards;
     }
   }
 
@@ -66,107 +71,107 @@
 
 @keyframes extend2 {
   0% {
-    width: 100px;
+    width: 124px;
   }
   10% {
-    width: 120px;
+    width: 145.6px;
   }
   20% {
-    width: 140px;
+    width: 167.2px;
   }
   30% {
-    width: 160px;
+    width: 188.8px;
   }
   40% {
-    width: 180px;
+    width: 210.4px;
   }
   50% {
-    width: 200px;
+    width: 232px;
   }
   60% {
-    width: 220px;
+    width: 253.6px;
   }
   70% {
-    width: 240px;
+    width: 275.2px;
   }
   80% {
-    width: 260px;
+    width: 296.8px;
   }
   90% {
-    width: 280px;
+    width: 318.4px;
   }
   100% {
-    width: 300px;
+    width: 340px;
   }
 }
 @keyframes extend3 {
   0% {
-    width: 300px;
-  }
-  10% {
-    width: 310px;
-  }
-  20% {
-    width: 320px;
-  }
-  30% {
-    width: 330px;
-  }
-  40% {
     width: 340px;
   }
+  10% {
+    width: 352px;
+  }
+  20% {
+    width: 364px;
+  }
+  30% {
+    width: 376px;
+  }
+  40% {
+    width: 388px;
+  }
   50% {
-    width: 350px;
+    width: 400px;
   }
   60% {
-    width: 360px;
+    width: 412px;
   }
   70% {
-    width: 370px;
+    width: 424px;
   }
   80% {
-    width: 380px;
+    width: 436px;
   }
   90% {
-    width: 390px;
+    width: 448px;
   }
   100% {
-    width: 400px;
+    width: 460px;
   }
 }
 
-@keyframes fill2 {
+@keyframes fill {
   0% {
-    background-image: linear-gradient(to right, orange, orange 0%, transparent 0%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 0%, transparent 0%);
   }
   10% {
-    background-image: linear-gradient(to right, orange, orange 10%, transparent 10%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 10%, transparent 10%);
   }
   20% {
-    background-image: linear-gradient(to right, orange, orange 20%, transparent 20%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 20%, transparent 20%);
   }
   30% {
-    background-image: linear-gradient(to right, orange, orange 30%, transparent 30%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 30%, transparent 30%);
   }
   40% {
-    background-image: linear-gradient(to right, orange, orange 40%, transparent 40%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 40%, transparent 40%);
   }
   50% {
-    background-image: linear-gradient(to right, orange, orange 50%, transparent 50%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 50%, transparent 50%);
   }
   60% {
-    background-image: linear-gradient(to right, orange, orange 60%, transparent 60%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 60%, transparent 60%);
   }
   70% {
-    background-image: linear-gradient(to right, orange, orange 70%, transparent 70%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 70%, transparent 70%);
   }
   80% {
-    background-image: linear-gradient(to right, orange, orange 80%, transparent 80%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 80%, transparent 80%);
   }
   90% {
-    background-image: linear-gradient(to right, orange, orange 90%, transparent 90%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 90%, transparent 90%);
   }
   100% {
-    background-image: linear-gradient(to right, orange, orange 100%, transparent 100%);
+    background-image: linear-gradient(to right, #ffba00, #ffba00 100%, transparent 100%);
   }
 }
