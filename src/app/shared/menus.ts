@@ -23,7 +23,7 @@ export const personalMenus = [
   { text: 'divider' },
   { text: '我要卖', path: '/sale'},
   { text: '出售中的商品', path: 'on-sale'},
-  { text: '已售出的商品', path: 'done-sale'},
+  { text: '已售出的商品', path: 'sold'},
   { text: 'divider' },
   { text: '帐号安全', path: 'security'},
   { text: '投诉管理', path: 'complaint'},

@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { AuthService } from '../services/auth.service';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 import { API_URL } from '../shared/api';
 
 @Injectable()
@@ -62,6 +63,11 @@ export class SaleService {
       .toPromise()
       .then(res => res.json())
       .catch(err => console.log(err));
+  }
+
+  getGoodsInfo(id) {
+    return this.http.post(`${API_URL}GjolGoods/betail?access_token=${this.accesToken}`, {id})
+      .map(res => res.json());
   }
 
   getServerList() {

@@ -16,10 +16,13 @@
             <div class="reltop_lt">
                 <h2><b class="suc_ic"></b>商品提交成功，正在等待审核！</h2>
                 <ul>
-                    <li>商品编号：【复制商品编号】</li>
-                    <li>游戏区服：</li>
-                    <li>商品标题：</li>
-                    <li>商品价格：</li>
+                    <li>商品编号：{{ sn }} 
+                        <a (click)="onCopy(textarea)">【复制商品编号】</a>
+                        <textarea #textarea></textarea>
+                    </li>
+                    <li>游戏区服：{{ game }}</li>
+                    <li>商品标题：{{ title }}</li>
+                    <li>商品价格：{{ price }}</li>
                 </ul>
             </div>
             <div class="reltop_rg">

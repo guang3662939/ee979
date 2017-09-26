@@ -1,1 +1,11 @@
-<h1>personal info</h1>
+<div class="step">
+  <div class="bar">
+    <div class="progress" [class.step2]="step2" [class.step3]="step3"></div>
+  </div>
+  <div class="circle circle1">1</div>
+  <div class="circle" [class.step2]="step2">2</div>
+  <div class="circle circle3" [class.step3]="step3">3</div>
+</div>
+
+
+<button (click)="nextStep()">next step</button>

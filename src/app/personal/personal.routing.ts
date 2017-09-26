@@ -12,6 +12,7 @@ import { FinanceComponent } from './finance/finance.component';
 import { LikedComponent } from './liked/liked.component';
 import { MessagesCenterComponent } from './message-center/messages-center.component';
 import { OnSaleComponent } from './on-sale/on-sale.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { PersonalComponent } from './personal.component';
 import { PersonalCenterComponent } from './personal-center/personal-center.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
@@ -52,8 +53,12 @@ const appRoutes: Routes = [
         component: OnSaleComponent
       },
       {
-        path: 'done-sale',
-        component: DoneSaleComponent
+        path: 'sold',
+        component: DoneSaleComponent,
+      },
+      {
+          path: 'sold/detail/:id',
+          component: OrderDetailComponent
       },
       {
         path: 'security',
@@ -66,7 +71,7 @@ const appRoutes: Routes = [
       {
         path: 'feedback',
         component: FeedbackComponent
-      }
+      },
     ]
   }
 ];

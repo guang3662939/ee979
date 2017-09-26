@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 import { AuthService } from '../services/auth.service';
+import { PersonalService } from './personal.service';
 
 import { personalMenus } from '../shared/menus';
 
@@ -16,12 +16,21 @@ import { personalMenus } from '../shared/menus';
 export class PersonalComponent implements OnInit {
 
   accessToken: string;
+  showMenu;
   menus = personalMenus;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private personalService: PersonalService,
+    private router: Router) { }
 
   ngOnInit() {
     this.authService.accessToken.subscribe(val => this.accessToken = val);
+    this.personalService.routerChange.subscribe(val => this.showMenu = val);
+    // console.log(this.router)
+    if (this.router.url.indexOf('sold/detail') !== -1) {
+      this.personalService.routerChange.next(false);
+    }
   }
 
   logout() {
