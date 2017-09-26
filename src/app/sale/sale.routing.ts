@@ -30,7 +30,7 @@ export const saleRoutes: Routes = [{
       canDeactivate: [CanDeactivateGuard]
     },
     {
-      path: 'result',
+      path: 'result/:id',
       component: SaleResultComponent
     }
   ]

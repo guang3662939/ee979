@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'sale-result',
   templateUrl: 'sale-result.component.html',
@@ -8,19 +10,18 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 
 export class SaleResultComponent implements OnInit {
-  sn: string;
-  game: string;
-  title: string;
-  price: number;
+  sn;
+  game;
+  title;
+  price;
 
   constructor(
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    const data = this.route.queryParamMap.map(params => params.get('data') || {});
-    console.log(data);
 
+    console.log(this.route.snapshot.paramMap.get('id'))
   }
 
 }

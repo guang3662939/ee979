@@ -131,13 +131,9 @@ export class AccountInfoComponent implements OnInit {
 
     this.saleService.publish(body)
       .then(res => {
-        // console.log(res)
+        console.log(res.data)
         if (res.data) {
-          let navigationExtras: NavigationExtras = {
-            queryParams: { data: JSON.stringify(res.data) },
-            fragment: 'anchor'
-          };
-          this.router.navigate(['/sale/result', navigationExtras]);
+          this.router.navigate(['/sale/result/:id', {id: res.data.id}]);
         }
       }).catch(err => console.log(err));
   }

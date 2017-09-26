@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth.service';
 
+import { personalMenus } from '../shared/menus';
+
 @Component({
   selector: 'app-personal',
   templateUrl: 'personal.component.html',
@@ -14,6 +16,7 @@ import { AuthService } from '../services/auth.service';
 export class PersonalComponent implements OnInit {
 
   accessToken: string;
+  menus = personalMenus;
 
   constructor(private authService: AuthService, private router: Router) { }
 

@@ -2,6 +2,9 @@
     border-top: 1px solid #ececec;
     border-bottom: 1px solid #ececec;
     padding-bottom: 30px;
+    .content {
+        display: flex;
+    }
 }
 
 .personl_lt,.personl_rg{
@@ -49,122 +52,29 @@
     padding: 10px 0;
     margin: 0 auto;
 }
-.per_ul ul:last-child{
+.per_ul ul:last-child {
     border-bottom: none;
-}
-.per_ul ul li{
-    font-size: 14px;
-    color: #666;
+} 
+.per_ul ul li {
     padding: 5px 0;
     cursor: pointer;
-}
-.per_ul ul li.current{
-    color: #ffba00;
-}
-.perrg_b_tit span:before{
-    content: "";
-    width: 4px;
-    height: 14px;
-    background: #ffba00;
-    display: inline-block;
-    margin-right: 8px;
-}
-.perrg_b_tit{
-    border-bottom: 1px solid #ececec;
-    padding-bottom: 14px;
-}
-.perrg_b_tit span{
-    font-size: 14px;
-    color: #333;
-}
-.perrg_b_tit b{
-    font-size: 12px;
-    color: #999;
-    cursor: pointer;
-}
-.perrg_b_tit b:after{
-    content: "";
-    width: 5px;
-    height: 10px;
-    background: url("/assets/images/ionic.png") -206px -20px;
-    display: inline-block;
-    margin-left: 10px;
-}
-.perrg_b_tit .batch:after{
-    width: 0;
-    height: 0;
-}
-.perrg_b_tit .batch:before{
-    content: "";
-    width: 11px;
-    height: 11px;
-    background: url("/assets/images/ionic.png") -254px -19px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 5px 3px 0;
-}
-.perrg_block{
-    margin-bottom:35px ;
-}
-.perrg_block ul{
-    padding: 18px 0;
-}
-.per_notice li{
-    font-size: 14px;
-    color: #666;
-    padding: 8px 0;
-}
-.per_notice li,.per_notice li span{
-    text-overflow: ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
-    font-size: 14px;
-    color: #666;
-    cursor: pointer;
-}
-.per_notice li span{
-    width: 215px;
-    display: inline-block;
-}
-.per_notice li b{
-    color: #999;
-}
-.per_safety{
-    width: 200px;
-    margin: 0 auto;
-}
-.per_safety li{
-    padding: 10px 0;
-    border-bottom: 1px solid #ececec;
-}
-.per_safety li:last-child{
-    border-bottom: none;
-}
-.per_safety li{
-    padding: 18px 0 18px 60px;
-    cursor: pointer;
 
+    &.divider {
+        padding: 0;
+        margin: 5px 0;
+        height: 1px;
+        background-color: #ececec;
+    }
+
+    a {
+        font-size: 14px;
+        color: #666;
+    }
+    a.current {
+        color: #ffba00;
+    }
 }
-.per_safety li.persf_s1{
-    background: url("/assets/images/per_ic01.png") no-repeat left center;
-}
-.per_safety li.persf_s2{
-    background: url("/assets/images/per_ic02.png") no-repeat left center;
-}
-.per_safety li.persf_s3{
-    background: url("/assets/images/per_ic03.png") no-repeat left center;
-}
-.per_safety li.persf_s4{
-    background: url("/assets/images/per_ic03.png") no-repeat left center;
-}
-.per_safety li span{
-    font-size: 16px;
-    color: #333;
-}
-.per_safety li p{
-    font-size: 12px;
-    color: #999;
-    margin-top: 4px;
-}
+
+
 
 
