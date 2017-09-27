@@ -86,7 +86,33 @@
     text-align: center;
 }
 .id_left ul li.on{
-    background: url("/assets/images/tab_btn01.png");
+    border: 1px solid #efb546;
+    background: linear-gradient(#ffd990, #dc9a56);
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: 1px solid #efb546;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #edb973;
+      /*background-image: linear-gradient(#efb546, #dc9a56);*/
+      right: -4px;
+      top: 44px;
+      border: 1px solid #edb973;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
 }
 .id_left ul li.on a{
     color: #fff;

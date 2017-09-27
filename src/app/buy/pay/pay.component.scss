@@ -1,0 +1,249 @@
+.pay-wrap {
+  border-top: 1px solid #ececec;
+}
+
+/*通用样式*/
+.currency{
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Microsoft YaHei', 'Arial';
+    font-size: 14px;
+    color: #333;
+}
+
+/*通用标题*/
+.navtitle{
+    height: 32px;
+    border-bottom: 1px solid #ececec;
+    margin-top: 40px!important;
+
+}
+.navtitle h1{
+    height: 16px;
+    border-left: 4px solid #ffba00;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+
+}
+
+/*订单列表展示*/
+.shoplist{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ffba00;
+}
+.shoplist .list_state{
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+}
+.shoplist .list_state li {
+    display: inline-flex;
+    color: #666;
+}
+.shoplist .list_state li span{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #3bce30;
+    border-radius: 24px;
+}
+.shoplist .list_state li span:after{
+    content: '\2714';
+    font-size: 16px;
+    color: #fff;
+}
+.shoplist .list_state li p{
+    font-size: 16px;
+    color: #333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+.shoplist .list_state li:last-child{
+    align-items: center;
+}
+.shoplist .list_state li b{
+    font-size: 20px;
+    color: #ff2d26;
+    font-weight: bold;
+}
+
+.shoplist .list_content{
+    display: flex;
+    flex-direction: column;
+    padding:20px 35px;
+}
+.shoplist .list_content li{
+    margin: 5px 0;
+    color: #666;
+}
+.shoplist .list_content li b{
+    font-size: 12px;
+    color: #999;
+}
+
+/*选择付款方式*/
+
+.Choice_pay{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px 10px 0px;
+}
+.Choice_pay .self_pay{
+    display: inline-flex;
+    margin: 20px 0px;
+    height: 18px;
+    align-items: center;
+}
+.Choice_pay .self_pay input{
+    display: none;
+}
+.Choice_pay .self_pay input + label{
+    width: 18px;
+    height: 18px;
+    background-color: #ececec;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+.Choice_pay .self_pay input:checked + label{
+    background-color: #ffba00;
+    border: none;
+}
+.Choice_pay .self_pay input:checked + label:after{
+    content: '\2714';
+    font-size: 14px;
+    color: #fff;
+
+}
+.Choice_pay .self_pay .label{
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.Choice_pay .self_pay .label b{
+    font-weight: bold;
+    color: #ff2d26;
+}
+.Choice_pay .self_pay .label span{
+    margin-right: 30px;
+}
+.Choice_pay .self_pay .label p{
+    height: 30px;
+    padding:0  30px;
+    color: #333;
+    margin: 0 10px;
+    line-height: 29px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+.Choice_pay .self_pay .label .on{
+    background: linear-gradient(155deg, #ffd76d, #ffba00);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #fff;
+}
+
+/*支付展示*/
+.pay_show{
+    min-height: 100px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+
+/*全屏遮罩*/
+.black_auto{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    top:0px ;
+    z-index: 9;
+}
+
+
+/*确认区服*/
+.service_ok{
+    width: 380px;
+    height: 280px;
+    background-color: #fff;
+    border: 1px solid #ffba00;
+    border-radius: 10px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -190px;
+    margin-top: -140px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+.service_ok h1 {
+    font-size: 20px;
+    margin-top: 40px;
+}
+.service_ok p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+.service_ok h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+.service_ok b {
+    font-size: 14px;
+    color: #ff2d26;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.service_ok button {
+    width: 240px;
+    height: 40px;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(155deg, #ffd76d, #feb702);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #999;
+}
+

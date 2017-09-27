@@ -1,0 +1,217 @@
+.fi-wrap {
+  border-top: 1px solid #ececec;
+}
+
+/*通用样式*/
+.currency{
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Microsoft YaHei', 'Arial';
+    font-size: 14px;
+    color: #333;
+}
+.red{
+    background-color: #e71313;
+}
+.yellow{
+    background-color: #ffba00;
+}
+.blue{
+    background-color: #26b7ff;
+}
+.green{
+    background-color: #3bce30;
+}
+.orange{
+    background-color: #ff8400;
+}
+
+.navtitle{
+    height: 32px;
+    border-bottom: 1px solid #ececec;
+    margin-top: 40px!important;
+
+}
+.navtitle h1{
+    height: 16px;
+    border-left: 4px solid #ffba00;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+
+}
+
+
+/*当前位置*/
+.current{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color:#999;
+}
+/*提醒*/
+.remind{
+    min-height: 120px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+.remind h1{
+    font-size: 14px;
+    color: #ff2d26;
+    font-weight: bold;
+    line-height: 30px;
+}
+.remind p{
+    font-size: 12px;
+    color: #333;
+    line-height: 22px;
+}
+.remind p b{
+    font-weight: bold;
+    color: #ffba00;
+}
+.close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #999;
+}
+
+/*商品信息*/
+.shoplist{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    line-height: 30px;
+    color: #666666;
+    border-bottom: 1px solid #ffba00;
+}
+.shoplist p b{
+    font-size: 12px;
+}
+/*收货信息*/
+
+.getlist{
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #ffba00;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.getlist li{
+    display: flex;
+    margin-bottom: 20px;
+}
+.getlist li:last-child{
+    margin-bottom: 0px;
+}
+.getlist li span{
+    width: 60px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    background: linear-gradient(155deg, #ffd76d, #ffba00);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.getlist li input {
+    width: 250px;
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #cccccc;
+    padding: 0 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/*付款进入下一步*/
+.buynext {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    & > * {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 14px;
+        color: #666;
+
+        b{
+            font-size: 20px;
+            color: #ff2d26;
+        }
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+
+        label{
+            display: flex;
+            margin-right: 10px;
+        }
+    }
+
+    button {
+        width: 234px;
+        height: 48px;
+        color: #fff;
+        outline: none;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        background: linear-gradient(155deg, #ffd76d, #ffba00);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+
+.checkbox {
+    display: none;
+}
+
+.checkbox + label {
+    width: 16px;
+    height: 16px;
+    background: #ececec;
+    border-radius: 16px;
+    border: 2px solid #ccc;
+}
+.checkbox:checked + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffba00;
+    border: none;
+}
+.checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 12px;
+    color: #fff;
+}

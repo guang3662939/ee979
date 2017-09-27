@@ -1,0 +1,350 @@
+/*****商品列表页样式*****/
+.border-top {
+    border-top: 1px solid #ececec;
+}
+
+
+/*通用样式*/
+.currency {
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Microsoft YaHei', 'Arial';
+    font-size: 14px;
+    color: #333;
+}
+
+/*当前位置*/
+.current {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color:#999;
+}
+/*区服类型筛选板块*/
+.screen {
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.screen ul {
+    margin:0 20px;
+    height: 53px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    align-items: center;
+}
+.screen ul:last-child {
+    border-bottom: none;
+}
+
+.screen ul span {
+    font-weight: bold;
+    padding-right: 20px;
+    color: #333;
+}
+.screen ul li {
+    padding-right: 20px;
+    color: #666;
+}
+/*交易类别及搜索*/
+.buy_class {
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+}
+.buy_class ul{
+    display: flex;
+}
+.buy_class ul:first-child li{
+    width: 120px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.buy_class ul:first-child .on{
+    background-color: #ffba00;
+    border: none;
+    color: #fff;
+    background: linear-gradient(155deg, #ffd76d, #ffba00);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.buy_class ul:last-child input {
+    width: 180px;
+    box-sizing: border-box;
+    border: 1px solid #ececec;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    display: inline-flex;
+    padding-left:10px;
+}
+.buy_class ul:last-child li{
+    width: 60px;
+    background-color: #ffba00;
+    color: #fff;
+    background: linear-gradient(155deg, #ffd76d, #ffba00);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/*商品排序*/
+.sort {
+    height: 40px;
+    background-color: #fafafa;
+    border: 1px solid #ececec;
+    border-bottom: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sort ul{
+    height: 20px;
+}
+.sort ul{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+}
+.sort .new{
+    flex: 1;
+    border-right:1px solid #ececec;
+}
+.sort .credit{
+    flex: 1;
+    border-right:1px solid #ececec;
+}
+.sort .credit img{
+    transform: rotate(180deg);
+}
+.sort .price{
+    flex: 6;
+    justify-content: flex-start!important;
+    padding-left: 15px;
+}
+.sort .price input{
+    width: 60px;
+    border-radius: 3px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.sort .price li{
+    width: 45px;
+    background-color: #ffba00;
+    color: #fff;
+    background: linear-gradient(155deg, #ffd76d, #ffba00);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sort .Unit{
+     flex: 2;
+    color: #999;
+    justify-content: flex-start;
+ }
+.sort .Stock{
+    flex: 2;
+    color: #999;
+    justify-content: flex-start;
+}
+.sort .guarantee{
+    flex: 4;
+    color: #999;
+    justify-content: flex-start;
+}
+
+/*商品列表*/
+.buy_list {
+    border: 1px solid #ececec;
+    border-top: none;
+    border-bottom: 1px solid #ffba00;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.buy_list div {
+    display: flex;
+    border-bottom: 1px solid #ececec;
+    min-height: 150px;
+    padding: 20px 0;
+}
+.buy_list div:last-child {
+    display: flex;
+    border-bottom: none;
+}
+
+.buy_list div .class {
+    width: 16px;
+    margin-top: 3px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.class li {
+    height: 16px;
+    width: 16px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 2px;
+}
+.buy_list div .red{
+    background-color: #e71313;
+}
+.buy_list div .yellow{
+    background-color: #ffba00;
+}
+.buy_list div .blue{
+    background-color: #26b7ff;
+}
+.buy_list div .green{
+    background-color: #3bce30;
+}
+.buy_list div .orange{
+ background-color: #ff8400;
+}
+
+.buy_list div .title{
+    width: 500px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.title li{
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left:5px;
+    cursor: pointer;
+}
+.title span{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 14px;
+}
+.title p{
+    margin-left: 5px;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 3px;
+    display: inline-flex;
+    align-items: center;
+
+}
+.title p img{
+    margin-right: 2px;
+}
+
+.buy_unit{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.buy_unit h1{
+    font-size: 24px;
+    color: #ff2d26;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial';
+}
+.buy_unit span{
+    color: #999;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.buy_unit span b{
+    color: #ff8400;
+}
+
+.buy_guarantee{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.buy_guarantee li{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    margin-bottom: 5px;
+}
+.buy_guarantee li span{
+    height: 16px;
+    width: 16px;
+    margin-right: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.buy_button{
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    li {
+        width: 150px;
+        height: 40px;
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &.buy-now {
+            background-color: #ffba00;
+            background: linear-gradient(155deg, #ffd76d, #ffba00);
+        }
+
+        &.ongoing {
+            background-color: #26b7ff;
+            background: linear-gradient(155deg, #a3dffd, #26b7ff);
+        }
+
+        &.done {
+            background-color: #666;
+            background: linear-gradient(155deg, #999, #666);
+            // opacity: .8;
+            // cursor: not-allowed;
+        }
+    }
+}
+
+

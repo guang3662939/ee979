@@ -1,4 +1,145 @@
 .nav {
   color: #999999;
   font-size: 12px;
+  margin: 20px 0;
+}
+
+// 订单信息表
+.p-table {
+  width: 1200px;
+  min-width: 1200px;
+  display: flex;
+  border: 1px solid #f0f0f0;
+
+  .col:not(:last-child) {
+    border-right: 1px solid #f0f0f0;
+  }
+
+  .col > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-id, .col-service {
+    flex: 1.5;
+  }
+
+  .col-info {
+    flex: 3;
+
+    .col-content {
+      padding: 10px;
+    }
+  }
+
+  .col-price, .col-qt, .col-status {
+    flex: 1;
+  }
+
+  .col-service .col-content {
+    flex-direction: column;
+
+    .contact {
+      color: #ffba00;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+  }
+
+  .col-label {
+    height: 30px;
+    background-color: #f0f0f0;
+    color: #999999;
+    font-size: 12px;
+  }
+
+  .col-content {
+    height: 74px;
+    font-size: 14px;
+    color: #666666;
+  }
+}
+
+// 交易状态
+.trade-status {
+  padding: 50px 0;
+
+  .ts-top {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    margin-bottom: 18px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+
+  .ts-content {
+    margin-left: 14px;
+    
+    p {
+      font-size: 14px;
+      color: #999999;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    .notice {
+      color: #ff2d26;
+    }
+  }
+}
+
+// 订单信息
+.order-detail, .order-delivery {
+  margin-bottom: 20px;
+
+  .label {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ececec;
+
+    h3 {
+      border-left: 4px solid #ffba00;
+      padding-left: 9px;
+    }
+  }
+
+  .od-content {
+    padding: 20px 14px;
+  }
+}
+
+.order-detail .od-content p {
+  font-size: 14px;
+  color: #999999;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+
+
+// 订单物流跟踪
+.order-delivery .od-content div {
+  font-size: 14px;
+  color: #666666;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &.done {
+    color: #ff2d26;
+  }
+
+  .time {
+    display: inline-block;
+    min-width: 150px;
+  }
 }

@@ -1,0 +1,63 @@
+<div class="pay-wrap">
+  <!--订单列表展示-->
+  <div class="shoplist currency">
+      <ul class="list_state">
+          <li><span></span><p>订单提交成功，还差一步就抢到心爱的商品，快快支付吧~</p></li>
+          <li>总额：<b>￥1200.00</b></li>
+      </ul>
+      <ul class="list_content">
+          <li>订单编号：<b>1566380954</b></li>
+          <li>游戏区服：<b>江苏区/江苏6区</b></li>
+          <li>商品名称：<b>【剑神 角色等级90 男 身份证已设置 QQ等级0级 有QQ好友 】上元节三，雷剑，圣剑。2016国庆套。完美换装。</b></li>
+      </ul>
+  </div>
+
+
+  <!--选择付款方式标题-->
+  <div class="navtitle currency"><h1>选择付款方式</h1></div>
+
+
+  <!--选择付款方式-->
+  <div class="Choice_pay currency">
+      <div class="self_pay">
+          <input type="radio" id="radio1" name="1">
+          <label for="radio1"></label>
+          <label for="radio1" class="label">易易游戏网余额支付	（当前账户余额：<b>￥12.00</b>）</label>
+      </div>
+      <div class="self_pay">
+          <input type="radio" id="radio2" name="1" checked>
+          <label for="radio2"></label>
+          <label for="radio2" class="label">
+              <span>快捷支付</span>
+              <p class="on">支付宝</p>
+              <p >微信</p>
+              <p>网银支付</p>
+          </label>
+
+      </div>
+
+  </div>
+
+  <!--快捷支付展示-->
+  <div class="pay_show currency">
+      <p>这里是具体支付展现之地</p>
+      <p>这里是具体支付展现之地</p>
+  </div>
+
+
+
+  <div class="service_ok" *ngIf="!confirmed && !canceled">
+      <h1>确认区服</h1>
+      <p>您当前购买的商品区服为：</p>
+      <h2>地下城与勇士/江苏区/江苏6区</h2>
+      <b>（请仔细核对，以免买错区服）</b>
+      <button (click)="confirmed = true">确认无误、继续购买</button>
+      <span class="close" (click)="canceled = true">╳</span>
+  </div>
+
+
+
+  <!--黑色全屏遮罩-->
+  <div class="black_auto" *ngIf="!confirmed && !canceled"></div>
+
+</div>

@@ -13,9 +13,7 @@
             <div class="header_right">
                 <div class="header_right_type">
                     <div class="header_right_type_pr">
-                        <div class="header_prec">
-                            <img src="/assets/images/seach01.png"/>
-                        </div>
+                        <div class="header_prec gradient">精准搜索</div>
                         <ul class="header_hot">
                             <li class="h_list_f"><a href="javascript:;">热门搜索：</a></li>
                             <li><a href="javascript:;">DNF</a></li>
@@ -26,24 +24,24 @@
                         </ul>
                     </div>
                     <div class="header_seach flex">
-                        <div class="header_seach_left">
-                            <ul>
-                                <li>
-                                    <a href="javascript:;">游戏区<span class="pull "></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">服务区<span class="pull "></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">物品种类<span class="pull "></span></a>
-                                </li>
-                            </ul>
-                            <input type="text" class="header_seach_input" placeholder="请输入想要搜索的内容">
+                        <div class="hsl-wrap">
+                            <div class="header_seach_left">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">游戏区<span class="pull "></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">服务区<span class="pull "></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">物品种类<span class="pull "></span></a>
+                                    </li>
+                                </ul>
+                                <input type="text" class="header_seach_input" placeholder="请输入想要搜索的内容">
 
+                            </div>
                         </div>
-                        <div class="header_seach_right">
-                            <img src="/assets/images/search_btn.png"/>
-                        </div>
+                        <div class="header_seach_right gradient">搜索</div>
                     </div>
                 </div>
                 <!--搜索的点击部分-->
@@ -65,8 +63,13 @@
         <!--导航-->
         <div class="nav_menu">
             <ul>
-                <li *ngFor="let menu of menus; let idx = index"
-                    ><a [routerLink]="menu.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ menu.text }}</a></li>
+                <li *ngFor="let menu of menus; let idx = index">
+                    <a [routerLink]="menu.path" 
+                        routerLinkActive="active" 
+                        *ngIf="menu.path"
+                        [routerLinkActiveOptions]="{exact: true}">{{ menu.text }}</a>
+                    <a *ngIf="!menu.path">{{ menu.text }}</a>
+                </li>
             </ul>
         </div>
     </div>

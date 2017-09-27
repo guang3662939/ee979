@@ -16,40 +16,8 @@ export const appRoutes: Routes = [
     loadChildren: './personal/personal.module#PersonalModule'
   },
   {
-    path: 'test1',
-    redirectTo: '/sale'
-  },
-  {
-    path: 'test2',
-    redirectTo: '/'
-  },
-  {
-    path: 'test3',
-    redirectTo: '/sale'
-  },
-  {
-    path: 'test4',
-    redirectTo: '/'
-  },
-  {
-    path: 'test5',
-    redirectTo: '/sale'
-  },
-  {
-    path: 'test6',
-    redirectTo: '/'
-  },
-  {
-    path: 'test7',
-    redirectTo: '/sale'
-  },
-  {
-    path: 'test8',
-    redirectTo: '/'
-  },
-  {
-    path: 'test9',
-    redirectTo: '/sale'
+    path: 'buy',
+    loadChildren: './buy/buy.module#BuyModule'
   },
   {
     path: '**',

@@ -1,0 +1,80 @@
+<div class="border-top">
+
+    <!--当前位置-->
+    <div class="currency current">您现在的位置：首页 > 我要买</div>
+
+    <!--筛选-->
+    <div class="currency screen">
+        <ul><span>游戏区服：</span><li>经典体验区</li><li>苍天战区</li><li>炎天战区</li><li>昊天战区</li><li>玄天战区</li></ul>
+        <ul><span>商品类型：</span><li>全部</li><li>游戏账号</li><li>点卡</li><li>游戏币</li><li>装备</li></ul>
+        <ul><span>价格选择：</span><li>30元以下</li><li>30-100元</li><li>100-300元</li><li>300-500元</li><li>500元以上</li></ul>
+    </div>
+
+    <!--分类-->
+    <div class="currency buy_class">
+        <ul>
+            <li class="on">全部交易</li>
+            <li>寄售交易</li>
+            <li>担保交易</li>
+        </ul>
+        <ul>
+            <input name="search"  placeholder="输入商品关键词"/>
+            <li>搜索
+            </li>
+        </ul>
+    </div>
+
+    <!--排序-->
+    <div class="currency sort">
+        <ul class="new">最新&nbsp;<img src="/assets/images/Arrow.jpg" width="9" height="12"/></ul>
+        <ul class="credit">信用&nbsp;<img src="/assets/images/Arrow.jpg" width="9" height="12"/></ul>
+        <ul class="price">
+            价格：&nbsp;
+            <input name="small" placeholder="不低于"/>&nbsp;-&nbsp;
+            <input name="large" placeholder="不大于"/>
+            <li>确定</li>
+        </ul>
+        <ul  class="Unit">单价</ul>
+        <ul  class="Stock">库存</ul>
+        <ul  class="guarantee">保障</ul>
+    </div>
+
+    <!--商品列表-->
+    <div class="currency buy_list">
+        <div *ngFor="let item of items">
+            <ul class="class">
+                <li class="blue">账</li>
+                <li class="red">寄</li>
+                <li class="green">担</li>
+            </ul>
+            <ul class="title">
+                <li (click)="viewDetail()">14衣服+9弓外送51级小炮镖飞 51级狂战手动搬砖号卖等级钱 </li>
+                <span>【身份证未设置 QQ等级1~5级 无QQ好友 狂战士 男 角色等级51 】</span>
+                <p>物品类型：装备</p>
+                <p>游戏区服：诛仙3 / 钧天战区 / 浩渺无极</p>
+                <p>卖家信用：<img src="/assets/images/zuan1.jpg"><img src="/assets/images/zuan2.jpg"></p>
+            </ul>
+            <ul class="buy_unit">
+                <h1>¥ 1800</h1>
+                <span><b>1元=42</b>万金</span>
+                <span>0.0238元/万金</span>
+            </ul>
+            <ul class="buy_unit">
+
+                <span>1</span>
+
+            </ul>
+            <ul class="buy_guarantee">
+                <li ><span class="yellow">保</span>安全保障</li>
+                <li ><span class="orange">赔</span>找回包赔</li>
+                <li ><span class="blue">证</span>证件认证</li>
+            </ul>
+            <ul class="buy_button">
+                <li [class]="item.status ? item.status : 'buy-now'"
+                    (click)="viewDetail()"
+                >{{ item.text }}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

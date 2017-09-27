@@ -25,9 +25,17 @@
     width: 90px;
     height: 28px;
     position:absolute ;
-    top:1px;
+    top: 2px;
     left: 0;
     z-index: 5;
+    background-color: #ffd25a;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 0 3px 2px rgba(191,139,0,.6);
 }
 .header_hot{
     max-width: 555px;
@@ -47,10 +55,18 @@
 .header_hot .h_list_f a,.header_type_tit .h_list_f {
     color: #103e56;
 }
+.hsl-wrap {
+    border-bottom-left-radius: 4px;
+    overflow: hidden;
+}
 .header_seach_left{
     width: 599px;
     height: 42px;
-    background: url("/assets/images/inbox.png");
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffd259;
+    border-bottom-left-radius: 6px;
+    border-image: linear-gradient(102deg, #ffd76d, #ffba00) 10;
     float: left;
 }
 .header_seach_left ul li{
@@ -95,8 +111,19 @@
     letter-spacing: normal;
 }
 .header_seach_right{
+    width: 94px;
+    height: 42px;
     float: left;
     cursor: pointer;
+    background-color: #ffd25a;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 3px 2px rgba(191,139,0,.6);
+    letter-spacing: 4px;
 }
 .header_type_det{
     position: absolute;
@@ -127,10 +154,10 @@
     color: #103e56;
 }
 
-.header_type_data{
+.header_type_data {
     margin-top:20px ;
 }
-.header_type_data a{
+.header_type_data a {
     width: 142px;
     text-align: center;
     /*padding: 0 10px;*/
@@ -140,14 +167,15 @@
     border: 1px solid #103e56;
     margin: 0 20px 20px 0;
     color: #103e56;
-    box-sizing: content-box;
+    transition: all .3s;
 }
-.header_type_data a:hover{
-    width: 144px;
-    height: 39px;
-    line-height: 39px;
-    border: none;
-    background:linear-gradient(#ffd76d,#ffba00);
+.header_type_data a:hover {
+    // // width: 144px;
+    // height: 39px;
+    // line-height: 39px;
+    border: 1px solid #efb546;
+    background-image: linear-gradient(#ffd76d,#ffba00);
+    
 }
 .header_type_data .hot{
     position: relative;
@@ -168,7 +196,8 @@
     width: 690px;
 }
 .nav_menu {
-    margin: 34px 0 16px 0;
+    padding: 34px 0 16px 0;
+    // border-bottom: 1px solid #ececec;
     overflow: hidden;
 }
 .nav_menu ul{

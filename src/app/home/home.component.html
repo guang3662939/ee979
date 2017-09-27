@@ -28,12 +28,12 @@
             <img src="/assets/images/icon01.png"/>
             找代练
         </button>
-        <button class="btn ban_sus_btn ban_bt_buy">
+        <button class="btn ban_sus_btn ban_bt_buy" routerLink="/buy">
             <img src="/assets/images/icon02.png"/>
              我要买
         </button>
         <button class="btn ban_sus_btn ">
-            <img src="/assets/images/icon03.png"/>
+            <img src="/assets/images/icon03.png" routerLink="/sale"/>
             我要卖
         </button>
     </div>
@@ -44,25 +44,25 @@
     <div class="index_deal flex">
         <div class="id_left">
             <ul>
-                <li class="on">
+                <li [class.on]="tradeType === 1" (click)="tradeType = 1">
                     <a href="javascript:;">
                         <p>账号交易</p>
                         <span>0.1元/金起</span>
                     </a>
                 </li>
-                <li>
+                <li [class.on]="tradeType === 2" (click)="tradeType = 2">
                     <a href="javascript:;">
                         <p>金币交易</p>
                         <span>0.1元/金起</span>
                     </a>
                 </li>
-                <li>
+                <li [class.on]="tradeType === 3" (click)="tradeType = 3">
                     <a href="javascript:;">
                         <p>装备交易</p>
                         <span>权杖5折起</span>
                     </a>
                 </li>
-                <li>
+                <li [class.on]="tradeType === 4" (click)="tradeType = 4">
                     <a href="javascript:;">
                         <p>代练交易</p>
                         <span>免费代练</span>

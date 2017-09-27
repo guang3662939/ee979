@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class HomeComponent implements OnInit {
   curHero: number = 0;
   curBanner: number = 0;
+  tradeType: number = 1;
 
   constructor(private authService: AuthService, private router: Router) { }
 
