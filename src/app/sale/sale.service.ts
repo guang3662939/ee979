@@ -78,7 +78,7 @@ export class SaleService {
   }
 
   getTradeList() {
-    return this.http.get(`${API_URL}GjolTypes/list?access_token=${this.accesToken}`)
+    return this.http.get(`${API_URL}GjolTypes/list`)
       .toPromise()
       .then(res => res.json())
       .catch(err => console.log(err));

@@ -3,20 +3,29 @@
 <!--海报-->
 <div class="banner">
     <div class="poster">
-        <div 
-            class="poster_list"
-            [style.background-image]="'url(/assets/images/ban_0' + (curBanner + 1) + '.jpg)'"
-            [style.background-position]="'50% 50%'"
-            >
-
-            <div class="widgets">
-                <ul class="indicators">
-                    <li [class.on]="curBanner === idx"
-                        (click)="curBanner = idx"
-                        *ngFor="let indicator of [1,2,3]; let idx = index"></li>
-                </ul>
+        <div class="poster_list">
+            <div class="poster-item" 
+                [style.background-image]="'url(' + banners[curBanner] + ')'"
+                ></div>
+            <div class="poster-next"
+                [ngClass]="randomType ? randomType : ''"
+                [style.background-image]="nextBanner >= 0 ? 'url(' + banners[nextBanner] + ')' : 'none'">
             </div>
-            
+        </div>
+
+        <!--<div class="poster_list">
+            <div class="poster-item" 
+                *ngFor="let banner of banners"
+                [style.background-image]="'url(' + banner + ')'"
+                ></div>
+        </div>-->
+
+        <div class="widgets">
+            <ul class="indicators">
+                <li [class.on]="curIndicator === idx"
+                    (click)="onNextPoster(idx)"
+                    *ngFor="let indicator of [1,2,3]; let idx = index"></li>
+            </ul>
         </div>
         
     </div>
@@ -32,8 +41,8 @@
             <img src="/assets/images/icon02.png"/>
              我要买
         </button>
-        <button class="btn ban_sus_btn ">
-            <img src="/assets/images/icon03.png" routerLink="/sale"/>
+        <button class="btn ban_sus_btn" routerLink="/sale">
+            <img src="/assets/images/icon03.png"/>
             我要卖
         </button>
     </div>
@@ -97,7 +106,7 @@
                     全明星之夏7月热力进击，龙图粉丝节多重豪礼粉丝节多重豪礼礼粉丝节多重豪礼
                 </h4>
                 <ul class="i_list_data">
-                    <li ><a href="javascript:;" class="flex"><span class="comm_dian " >【攻略】 卧虎藏龙贰手游50-59级快速升级攻略</span><b class="size_color">09/13</b></a></li>
+                    <li ><a href="javascript:;" class="flex"><span class="comm_dian ">【攻略】 卧虎藏龙贰手游50-59级快速升级攻略</span><b class="size_color">09/13</b></a></li>
                     <li ><a href="javascript:;" class="flex"><span class="comm_dian ">【攻略】 卧虎藏龙贰手游50-59级快速升级攻略</span><b class="size_color">09/13</b></a></li>
                     <li ><a href="javascript:;" class="flex"><span class="comm_dian "> 【攻略】 卧虎藏龙贰手游50-59级快速升级攻略</span><b class="size_color">09/13</b></a></li>
                     <li ><a href="javascript:;" class="flex"><span class="comm_dian "> 【攻略】 卧虎藏龙贰手游50-59级快速升级攻略9级快速升级攻略</span><b class="size_color">09/13</b></a></li>

@@ -26,15 +26,38 @@
     right: 20px;
     z-index: 5;
 }
-.infor_tit{
+// .infor_tit{
+//     font-size: 26px;
+//     color: #f0bd76;
+//     font-weight: bold;
+//     font-family:'Microsoft YaHei';
+//     text-align: center;
+//     margin-bottom: 40px;
+//     background: url("/assets/images/infor_bg.png") no-repeat center;
+// }
+.info-label {
     font-size: 26px;
     color: #f0bd76;
     font-weight: bold;
     font-family:'Microsoft YaHei';
     text-align: center;
-    margin-bottom: 40px;
-    background: url("/assets/images/infor_bg.png") no-repeat center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+        margin: 0 30px;
+    }
+
+    .left, .right {
+        width: 8px;
+        height: 8px;
+        border: 2px solid #f0bd76;
+        transform: rotate(45deg);
+    }
 }
+
 .acc_infor{
     margin-top: 60px;
 }

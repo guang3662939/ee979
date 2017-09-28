@@ -7,31 +7,58 @@
 
   .circle {
     width: 28px;
-    height: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 28px;
+    text-align: center;
     border-radius: 50%;
     background-color: #cccccc;
     font-size: 14px;
     color: #fff;
     box-shadow: 0 0 0 10px rgba(204, 204, 204, .2);
+    position: relative;
+
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      display: block;
+      bottom: -40px;
+      color: #999999;
+      font-size: 12px;
+      width: 100px;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     &.circle1 {
       background-color: #ffba00;
       box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
+      
+      &:after {
+        color: #ffba00;
+      }
     }
+
 
     &.step2 {
       animation: .18s fill .06s linear forwards;
       box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
       transition: .3s;
+
+      &:after {
+        color: #ffba00;
+        transition: color .3s;
+      }
     }
 
     &.step3 {
       animation: .18s fill .06s linear forwards;
       box-shadow: 0 0 0 10px rgba(255, 186, 0, .2);
       transition: .3s;
+
+      &:after {
+        color: #ffba00;
+        transition: color .3s;
+      }
     }
   }
   
@@ -73,33 +100,6 @@
   0% {
     width: 124px;
   }
-  10% {
-    width: 145.6px;
-  }
-  20% {
-    width: 167.2px;
-  }
-  30% {
-    width: 188.8px;
-  }
-  40% {
-    width: 210.4px;
-  }
-  50% {
-    width: 232px;
-  }
-  60% {
-    width: 253.6px;
-  }
-  70% {
-    width: 275.2px;
-  }
-  80% {
-    width: 296.8px;
-  }
-  90% {
-    width: 318.4px;
-  }
   100% {
     width: 340px;
   }
@@ -107,33 +107,6 @@
 @keyframes extend3 {
   0% {
     width: 340px;
-  }
-  10% {
-    width: 352px;
-  }
-  20% {
-    width: 364px;
-  }
-  30% {
-    width: 376px;
-  }
-  40% {
-    width: 388px;
-  }
-  50% {
-    width: 400px;
-  }
-  60% {
-    width: 412px;
-  }
-  70% {
-    width: 424px;
-  }
-  80% {
-    width: 436px;
-  }
-  90% {
-    width: 448px;
   }
   100% {
     width: 460px;

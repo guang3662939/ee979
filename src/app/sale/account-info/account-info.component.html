@@ -22,8 +22,10 @@
 
     <form #f="ngForm">
         <div class="acc_infor">
-            <div class="infor_tit">
-                账号信息
+            <div class="info-label">
+                <div class="left"></div>
+                    <div class="text">账号信息</div>
+                <div class="right"></div>
             </div>
             <!--<form>-->
                 <ul class="infor_ipt">
@@ -122,8 +124,10 @@
             <!--</form>-->
         </div>
         <div class="acc_infor">
-            <div class="infor_tit">
-                客服信息
+            <div class="info-label">
+                <div class="left"></div>
+                    <div class="text">客服信息</div>
+                <div class="right"></div>
             </div>
             <ul class="infor_ipt">
                 <li>
@@ -230,6 +234,6 @@
 </div>
 <div class="info_fix">
     <div class="content">
-        您当前的选择是：古剑奇谭 > 账号交易
+        您当前的选择是：古剑奇谭 > {{ toSaleText }}
     </div>
 </div>

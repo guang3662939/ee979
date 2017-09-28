@@ -14,6 +14,7 @@ const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';
 })
 
 export class AccountInfoComponent implements OnInit {
+  toSaleText;
   // form part 1
   account = '1';
   password = '1';
@@ -55,7 +56,7 @@ export class AccountInfoComponent implements OnInit {
     if (!this.saleService.toSale) {
       return this.router.navigate(['/sale']);
     }
-
+    this.toSaleText = this.saleService.toSaleText && this.saleService.toSaleText.join(' > ');
     this.startHChange();
     this.uploader.onSuccessItem = this.onSuccess.bind(this);
   }
