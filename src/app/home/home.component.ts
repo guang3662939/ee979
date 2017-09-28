@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   curBanner: number = 0;
   nextBanner;
   tradeType: number = 1;
-  animType = ['tl', 'down', 'tr', 'right', 'br', 'up', 'bl', 'left'];
+  animType = ['tl', 'down', 'tr', 'right', 'br', 'up', 'bl', 'left', 'fade'];
   randomType;
   curIndicator: number = 0;
 

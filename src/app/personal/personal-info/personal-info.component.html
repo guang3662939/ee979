@@ -1,11 +1,61 @@
-<div class="step">
-  <div class="bar">
-    <div class="progress" [class.step2]="step2" [class.step3]="step3"></div>
-  </div>
-  <div class="circle circle1" data-text="验证身份">1</div>
-  <div class="circle circle2" [class.step2]="step2" data-text="修改手机">2</div>
-  <div class="circle circle3" [class.step3]="step3" data-text="完成">3</div>
+<div class="per_subclass">
+    <h2 class="perrg_b_tit flex">
+        <span>个人信息</span>
+    </h2>
+    <div class="per_infor">
+        <ul>
+            <li>
+                <span>头像信息</span>
+                <div class="perif_rg">
+                    <img class="head_portr f_l" src="/assets/images/img_05.png"/>
+                    <div class="upload_tip">
+                        <button class="per_btn">上传照片
+                            <input type="file"/>
+                        </button>
+                        <p>
+                            温馨提示：<br />
+                            图片不超过3M，支持 jpg、png、gif 格式的图片
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="perif_text">
+                <span>昵称</span>
+                <input type="text" />
+            </li>
+            <li class="perif_text">
+                <span>真实姓名</span>
+                <input type="text" />
+            </li>
+            <li>
+                <span>性别</span>
+                <div class="perif_rg">
+                    <label >
+                        <input type="radio" name="gender" value="male">
+                        <div class="round_box"></div>
+                        男
+                    </label>
+                    <label >
+                        <input type="radio" name="gender" value="female">
+                        <div class="round_box"></div>
+                        女
+                    </label>
+                    <label >
+                        <input type="radio" name="gender" value="secret">
+                        <div class="round_box"></div>
+                        保密
+                    </label>
+                </div>
+            </li>
+            <li>
+                <span>生日</span>
+                <div class="perif_rg">
+                    <!--生日选择框-->
+                </div>
+            </li>
+        </ul>
+        <div class="pefof_save">
+            <button class="per_btn all_save">全部保存</button>
+        </div>
+    </div>
 </div>
-
-
-<button (click)="nextStep()">next step</button>

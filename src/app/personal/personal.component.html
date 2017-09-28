@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="personal-wrap">
-    <div class="content">
+    <div class="content flex">
         <div class="personl_lt" *ngIf="showMenu">
             <div class="per_h">
                 <div class="per_img">`
@@ -19,7 +19,7 @@
                     <li *ngFor="let menu of menus" [class.divider]="menu.text === 'divider'">
                         <a [routerLink]="menu.path" 
                             *ngIf="menu.path"
-                            [routerLinkActiveOptions]="{exact: true}"
+                            [routerLinkActiveOptions]="{exact: menu.path === './' ? true : false}"
                             routerLinkActive="current">{{ menu.text }}</a>
                         <a *ngIf="!menu.path && menu.text !== 'divider'" (click)="logout()">{{ menu.text }}</a>
                     </li>

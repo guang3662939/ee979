@@ -113,103 +113,39 @@
     margin-top: 40px;
 }
 
-.per_btn{
-    background: #ffba00;
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
-    border: 1px solid  #ffba00;
-}
-/*个人中心的个人信息*/
-.per_infor{
-    margin-left: 240px;
-}
-.per_infor ul li{
-    padding: 15px 0;
-    overflow: hidden;
-}
-.per_infor ul li span{
-    width: 68px;
-    display: inline-block;
-    text-align: right;
-    font-size: 14px;
-    color: #333;
-    float: left;
-    margin-right: 30px;
-}
-.perif_rg{
-    float: left;
-}
-.per_infor .perif_text input{
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #cccccc;
-    padding: 0 10px;
-}
-.upload_tip{
-    float: left;
-    padding-top: 30px;
-}
-.upload_tip  .per_btn{
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
-    border-radius:3px ;
-    font-size: 14px;
-    float: left;
-    margin: 0 20px 0 30px;
-    position: relative;
-}
-.upload_tip .per_btn input{
-    width: 100px;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-}
-.upload_tip p{
-    font-size: 12px;
+/*登录记录*/
+.logrd_tip {
     color: #999;
-    float: left;
-    line-height: 20px;
+    font-size: 12px;
+    margin: 25px 0;
+    font-family:'Microsoft YaHei';
+    line-height: 25px;
 }
-.all_save{
-    width: 200px;
-    height: 46px;
-    line-height: 46px;
-    font-size: 16px;
-    margin: 0 auto;
+.logrd_list_item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
 }
-.per_infor .pefof_save {
-    margin-top: 45px;
-    margin-left: 135px;
-}
-.perif_rg label {
-    float: left;
-    margin-right: 38px;
-    cursor: pointer;
+.logrd_list_item div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #666;
+    height: 52px;
 
-    input{
-        width:14px;
-        height: 14px;
-        display: none;
-    }
-
-    input:checked + .round_box {
-        background: url("/assets/images/ionic.png") -123px -57px;
-        border: none;
-    }
+    font-size: 14px;
+    font-family:'Microsoft YaHei'
 }
-.perif_rg .round_box{
-    width: 14px;
-    height: 14px;
-    border-radius: 50px;
-    border: 1px solid #cecece;
-    float: left;
-    vertical-align: middle;
-    margin:5px 10px 0 0;
+.logrd_list_item:last-child{
+    border-bottom: 1px solid #ffba00;
 }
+.logrd_list_head  div{
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    border-bottom: none;
+    background: #f7f7f7;
+}
+/**/

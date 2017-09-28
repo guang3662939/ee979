@@ -1,0 +1,170 @@
+.perrg_b_tit span:before{
+    content: "";
+    width: 4px;
+    height: 14px;
+    background: #ffba00;
+    display: inline-block;
+    margin-right: 8px;
+}
+.perrg_b_tit{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+}
+.perrg_b_tit span{
+    font-size: 14px;
+    color: #333;
+}
+.perrg_b_tit b{
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+.perrg_b_tit b:after{
+    content: "";
+    width: 5px;
+    height: 10px;
+    background: url("/assets/images/ionic.png") -206px -20px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.perrg_b_tit .batch:after{
+    width: 0;
+    height: 0;
+}
+.perrg_b_tit .batch:before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: url("/assets/images/ionic.png") -254px -19px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 3px 0;
+}
+.per_subclass{
+    width: 960px;
+    min-height: 760px;
+    margin-top: 40px;
+}
+
+/*账户安全*/
+.acct_safe_head{
+    height: 60px;
+    background:#fff8e5;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.acct_safe_grade{
+}
+.acct_safe_grade span{
+    font-size: 16px;
+    color: #333333;
+}
+.acct_safe_grade span{
+    font-size: 16px;
+    color: #333;
+    float: left;
+}
+.acct_safe_grade span ,.acct_safe_grade i{
+    font-size: 16px;
+}
+.acct_safe_series{
+    width: 100px;
+    height: 20px;
+    background: #ffecb7;
+    display: inline-block;
+    margin: 0 20px;
+}
+.acct_safe_series b{
+    width: 10px;
+    height: 20px;
+    background: #ff2d26;
+    display: inline-block;
+}
+.acct_safe_grade i{
+    padding-right: 30px;
+}
+
+.acct_safe .red{
+    color: #ff2d26;
+}
+.acct_safe_grade p{
+    font-size: 14px;
+    display: inline-block;
+}
+.acct_safe_list{
+    padding:0 40px ;
+    border-bottom: 1px solid #ffba00;
+}
+.acct_safe_item{
+    padding: 30px 0;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.acct_safe_item:last-child{
+    border-bottom: none;
+}
+.acsf_it_lt{
+    display: flex;
+    align-items: center;
+}
+.acsf_it_rg a {
+    font-size: 16px;
+    color: #26b7ff;
+
+    &:active {
+        opacity: .4;
+        transition: opacity .1s;
+    }
+}
+.acsf_it_lt b{
+    display: inline-block;
+    margin-right: 18px;
+}
+.acsf_it_lt .right{
+    width: 30px;
+    height: 22px;
+    background: url("/assets/images/ionic.png") -295px -13px;
+}
+.acsf_it_lt .wrong{
+    width: 30px;
+    height: 26px;
+    background: url("/assets/images/ionic.png") -332px -9px;
+}
+.acsf_it_lt .trilateral{
+    width: 30px;
+    height: 30px;
+    background: url("/assets/images/ionic.png") -6px -52px;
+}
+.acsf_it_lt .complain{
+    width: 28px;
+    height: 30px;
+    background: url("/assets/images/ionic.png") -59px -52px;
+}
+.acsf_it_lt h2{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+}
+.acsf_it_lt span{
+    font-size: 14px;
+    color: #999;
+}
+.acsf_it_lt span i{
+    color: #333;
+}
+.acsf_it_lt h2:after{
+    content: "";
+    width: 1px;
+    height: 30px;
+    background:#ececec;
+    display: inline-block;
+    margin: 0 30px 0 38px;
+    vertical-align: middle;
+}
+/**/

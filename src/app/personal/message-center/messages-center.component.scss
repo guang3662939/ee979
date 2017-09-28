@@ -1,3 +1,53 @@
+.perrg_b_tit span:before{
+    content: "";
+    width: 4px;
+    height: 14px;
+    background: #ffba00;
+    display: inline-block;
+    margin-right: 8px;
+}
+.perrg_b_tit{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+}
+.perrg_b_tit span{
+    font-size: 14px;
+    color: #333;
+}
+.perrg_b_tit b{
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+.perrg_b_tit b:after{
+    content: "";
+    width: 5px;
+    height: 10px;
+    background: url("/assets/images/ionic.png") -206px -20px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.perrg_b_tit .batch:after{
+    width: 0;
+    height: 0;
+}
+.perrg_b_tit .batch:before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: url("/assets/images/ionic.png") -254px -19px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 3px 0;
+}
+.per_subclass{
+    width: 960px;
+    min-height: 760px;
+    margin-top: 40px;
+}
+
+/*消息中心页面*/
 /*方形选择框*/
 .square_box{
     width:16px;
@@ -12,32 +62,6 @@
 .sqbox_on {
     background: url("/assets/images/ionic.png") -99px -55px;
     border: none;
-}
-/*个人中心页面都有*/
-.per_subclass{
-    width: 960px;
-    min-height: 760px;
-}
-.perrg_b_tit{
-    border-bottom: 1px solid #ececec;
-    padding-bottom: 14px;
-}
-.perrg_b_tit span{
-    font-size: 14px;
-    color: #333;
-}
-.perrg_b_tit span:before{
-    content: "";
-    width: 4px;
-    height: 14px;
-    background: #ffba00;
-    display: inline-block;
-    margin-right: 8px;
-}
-/*//*/
-.p_select .square_box{
-    margin: 20px 0 0 25px;
-
 }
 .perm_classify{
     margin: 30px 0;
@@ -61,10 +85,10 @@
     border: 1px solid  #ffba00;
 }
 .perm_list_item{
-    overflow: hidden;
     border-bottom: 1px solid #ececec;
     height: 57px;
-    line-height: 57px;
+    display: flex;
+    align-items: center;
 }
 .perm_list_item:last-child{
     border-bottom: 1px solid #ffba00;
@@ -77,13 +101,14 @@
     color: #666;
 }
 .perm_list_item div{
-    float: left;
     text-align: center;
     font-size: 14px;
     font-family:'Microsoft YaHei','Arial'
 }
 .perm_list_item .p_select{
     width: 63px;
+    display: flex;
+    justify-content: center;
 }
 .perm_list_item .p_title{
     width: 318px;
@@ -140,10 +165,14 @@
 .per_messbot{
     margin-top: 25px;
 }
-.permet_lt .square_box{
-    float: left;
-    margin: 3px 9px 0 25px;
+.permet_lt{
+    display: flex;
+    align-items: center;
 }
+.permet_lt .square_box{
+    margin: 0 9px 0 25px;
+}
+
 .permet_lt span{
     font-size: 14px;
     color: #333;

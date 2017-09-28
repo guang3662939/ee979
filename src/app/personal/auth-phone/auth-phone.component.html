@@ -1,0 +1,63 @@
+<div class="per_subclass">
+    <h2 class="perrg_b_tit flex">
+        <span>支付密码</span>
+    </h2>
+
+    <div class="state_s_f per_fail" *ngIf="fail">
+        <span class="fail"></span>
+        <div class="succ_rg">
+            <h2>修改失败</h2>
+            <p>抱歉，提交出现错误，请您重新填写信息。</p>
+        </div>
+    </div>
+
+    <div class="state_s_f per_success" *ngIf="success">
+        <span class="success"></span>
+        <div class="succ_rg">
+            <h2>修改成功</h2>
+            <p>恭喜您，手机号码修改成功</p>
+            <p>您可以继续逛逛“<a class="bule">首页</a>”找找看有没有心仪的商品，或者返回“<a class="bule">帐号安全</a>”继续补全您的信息</p>
+        </div>
+    </div>
+
+    <div class="step">
+      <div class="bar">
+        <div class="progress" [class.step2]="authed" [class.step3]="step3"></div>
+      </div>
+      <div class="circle circle1" data-text="验证身份">1</div>
+      <div class="circle circle2" [class.step2]="authed" data-text="修改手机">2</div>
+      <div class="circle circle3" [class.step3]="step3" data-text="完成">3</div>
+    </div>
+
+    <form class="mul_iplist" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <ul>
+            <li>
+                <span>{{ !authed ? '当前' : '新的'}}手机号</span>
+                <input placeholder="请输入手机号" 
+                    maxlength="11"
+                    minlength="11"
+                    [(ngModel)]="phone"
+                    name="_phone"
+                    #_phone="ngModel"
+                    required/>
+            </li>
+            <li class="verif_code">
+                <span>验证码</span>
+                <input placeholder="请输入验证码"
+                    maxlength="11"
+                    [(ngModel)]="code"
+                    name="_code"
+                    #_code="ngModel"
+                    required/>
+                <a>获取验证码</a>
+            </li>
+            <li>
+                <span></span>
+                <button class="per_btn next_step" 
+                    [class.valid]="f.valid" [disabled]="f.invalid">
+                下一步
+            </button>
+            </li>
+        </ul>
+    </form>
+</div>
