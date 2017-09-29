@@ -1,0 +1,36 @@
+<div class="pagination-wrap">
+  <div class="pg-nav">
+    <button class="prev btn" 
+      [disabled]="pageNum === 1"
+      [class.invalid]="pageNum === 1"
+      (click)="onPrev()"><</button>
+
+    <div class="pg-num" 
+      [class.current]="pager === pageNum"
+      (click)="onPagerClick(pager)"
+      *ngFor="let pager of pagers">
+
+        <div class="pg-ellipse" *ngIf="pager === 'front'">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      <span  *ngIf="pager !== 'front' && pager !== 'end'">{{ pager }}</span>  
+
+      <div class="pg-ellipse" *ngIf="pager === 'end'">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    
+
+    <button class="next btn" 
+      [disabled]="pageNum === this.pagersBackup.length"
+      [class.invalid]="pageNum === this.pagersBackup.length"
+      (click)="onNext()">></button>
+  </div>
+  <div class="pg-jump"></div>
+</div>

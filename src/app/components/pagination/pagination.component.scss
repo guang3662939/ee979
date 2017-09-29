@@ -1,0 +1,63 @@
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.pg-nav {
+  display: flex;
+
+  & > div {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .prev, .next, .pg-num > span {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      color: #666666;
+      transition: all .1s;
+  }
+
+  .pg-num.current span {
+    color: #fff;
+    background-color: #ffba00;
+    border-color: #ffba00;
+  }
+
+
+  .prev, .next {
+    margin-right: 10px;
+
+    &.invalid {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+
+  .pg-ellipse {
+    width: 37px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    span {
+      width: 3px;
+      height: 3px;
+      background-color: #999;
+
+      &:nth-child(2) {
+        margin: 4px;
+      }
+    }
+  }
+  
+}

@@ -27,7 +27,7 @@ const appRoutes: Routes = [
   {
     path: '',
     component: PersonalComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',

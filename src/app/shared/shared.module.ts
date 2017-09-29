@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { PaginationComponent } from '../components/pagination/pagination.component';
 import { ToolbarComponent } from '../components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
     HeaderComponent,
+    PaginationComponent,
     ToolbarComponent
   ],
   imports: [
@@ -19,6 +21,7 @@ import { ToolbarComponent } from '../components/toolbar/toolbar.component';
   exports: [
     FooterComponent,
     HeaderComponent,
+    PaginationComponent,
     ToolbarComponent
   ]
 })
