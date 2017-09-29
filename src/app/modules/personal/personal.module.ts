@@ -11,14 +11,14 @@ import { PersonalService } from './personal.service';
 
 //components
 import { AccountSecurityComponent } from './account-security/account-security.component';
-import { AuthPhoneComponent } from './auth-phone/auth-phone.component';
-import { ChangePasswdComponent } from './change-passwd/change-passwd.component';
+import { AuthPhoneComponent } from './account-security/children/auth-phone/auth-phone.component';
+import { ChangePasswdComponent } from './account-security/children/change-passwd/change-passwd.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { DoneSaleComponent } from './done-sale/done-sale.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FinanceComponent } from './finance/finance.component';
 import { LikedComponent } from './liked/liked.component';
-import { LoginRecordComponent } from './login-record/login-record.component';
+import { LoginRecordComponent } from './account-security/children/login-record/login-record.component';
 import { MessagesCenterComponent } from './message-center/messages-center.component';
 import { OnSaleComponent } from './on-sale/on-sale.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
