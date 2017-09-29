@@ -57,28 +57,39 @@ const appRoutes: Routes = [
       },
       {
         path: 'sold',
-        component: DoneSaleComponent,
-      },
-      {
-          path: 'sold/detail/:id',
-          component: OrderDetailComponent
+        children: [
+          {
+            path: '',
+            component: DoneSaleComponent
+          },
+          {
+            path: 'detail/:id',
+            component: OrderDetailComponent
+        },
+        ]
       },
       {
         path: 'security',
-        component: AccountSecurityComponent
+        children: [
+          {
+            path: '',
+            component: AccountSecurityComponent
+          },
+          {
+            path: 'record',
+            component: LoginRecordComponent
+          },
+          {
+            path: 'phone',
+            component: AuthPhoneComponent
+          },
+          {
+            path: 'passwd',
+            component: ChangePasswdComponent
+          },
+        ]
       },
-      {
-        path: 'security/record',
-        component: LoginRecordComponent
-      },
-      {
-        path: 'security/phone',
-        component: AuthPhoneComponent
-      },
-      {
-        path: 'security/passwd',
-        component: ChangePasswdComponent
-      },
+      
       {
         path: 'complaint',
         component: ComplaintComponent
