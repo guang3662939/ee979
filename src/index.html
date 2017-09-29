@@ -8,20 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
-    .text-logo {
-      width: 100vw;
-      height: 100vh;
+    .text-logo-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 120px;
-      /* background: linear-gradient(155deg, #ffd76d, #ffba00); */
-      background-color: #eee;
+      background: linear-gradient(155deg, #ffd76d, #ffba00); 
+      font-family: 'Microsoft YaHei','Arial';
       text-transform: uppercase; 
       color: #fff;
       letter-spacing: -3px;
+    }
+    .logo-text {
+      animation: text-rise .8s ease-out forwards;
+    }
 
-      /*text-shadow:     0 1px 0 hsl(174,5%,80%),
+    @keyframes text-rise {
+      0% {
+        transform: translate(10px, 10px);
+        text-shadow:     0 1px 0 hsl(174,5%,80%), 0 0 5px rgba(0,0,0,.05);
+      }
+
+      100% {
+        transform: translate(0,0);
+        text-shadow:     0 1px 0 hsl(174,5%,80%),
                        0 2px 0 hsl(174,5%,75%),
                        0 3px 0 hsl(174,5%,70%),
                        0 4px 0 hsl(174,5%,66%),
@@ -35,13 +51,16 @@
                       0 3px 5px rgba(0,0,0,.2),
                      0 5px 10px rgba(0,0,0,.2),
                     0 10px 10px rgba(0,0,0,.2),
-                    0 20px 20px rgba(0,0,0,.3);*/
+                    0 20px 20px rgba(0,0,0,.3);
+      }
     }
   </style>
 </head>
 <body>
   <app-root>
-    <div class="text-logo">ee979</div>
+    <div class="text-logo-wrap">
+      <div class="logo-text">ee979</div>
+    </div>
   </app-root>
 </body>
 </html>

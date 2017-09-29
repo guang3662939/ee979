@@ -3,7 +3,7 @@
         <span>支付密码</span>
     </h2>
 
-    <div class="state_s_f per_fail" *ngIf="fail">
+    <div class="state_s_f per_fail" *ngIf="fail && step3">
         <span class="fail"></span>
         <div class="succ_rg">
             <h2>修改失败</h2>
@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="state_s_f per_success" *ngIf="success">
+    <div class="state_s_f per_success" *ngIf="success && step3">
         <span class="success"></span>
         <div class="succ_rg">
             <h2>修改成功</h2>
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="step">
+    <div class="step" *ngIf="!success">
       <div class="bar">
         <div class="progress" [class.step2]="authed" [class.step3]="step3"></div>
       </div>
@@ -29,7 +29,7 @@
       <div class="circle circle3" [class.step3]="step3" data-text="完成">3</div>
     </div>
 
-    <form class="mul_iplist" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form class="mul_iplist" #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="!success">
         <ul>
             <li>
                 <span>{{ !authed ? '当前' : '新的'}}手机号</span>

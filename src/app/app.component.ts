@@ -18,6 +18,8 @@ export class AppComponent {
 
   navigated: boolean = true;
 
+  loaded: boolean = false;  
+
   constructor(
     private authService: AuthService, 
     private route: ActivatedRoute,

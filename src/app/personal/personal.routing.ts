@@ -6,6 +6,7 @@ import { AuthGuard } from '../services/auth-guard.service';
 
 import { AccountSecurityComponent } from './account-security/account-security.component';
 import { AuthPhoneComponent } from './auth-phone/auth-phone.component';
+import { ChangePasswdComponent } from './change-passwd/change-passwd.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { DoneSaleComponent } from './done-sale/done-sale.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -73,6 +74,10 @@ const appRoutes: Routes = [
       {
         path: 'security/phone',
         component: AuthPhoneComponent
+      },
+      {
+        path: 'security/passwd',
+        component: ChangePasswdComponent
       },
       {
         path: 'complaint',
