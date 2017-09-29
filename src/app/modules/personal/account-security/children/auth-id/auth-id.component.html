@@ -1,0 +1,96 @@
+<div class="per_subclass">
+    <h2 class="perrg_b_tit flex">
+        <span>实名认证</span>
+    </h2>
+
+    <!--提交失败显示-->
+    <div class=" state_s_f per_fail" *ngIf="fail">
+        <span class="fail"></span>
+        <div class="succ_rg">
+            <h2>提交失败</h2>
+            <p>抱歉，提交出现错误，请您重新填写信息。</p>
+        </div>
+    </div>
+
+    <!--提交成功显示-->
+    <div class="state_s_f per_success"  *ngIf="success">
+        <span class="success"></span>
+        <div class="succ_rg">
+            <h2>提交成功</h2>
+            <p>平台将在 24 小时内为您进行身份审核，请您耐心等待审核结果。</p>
+            <p>您可以继续逛逛“<a class="bule">首页</a>”找找看有没有心仪的商品，或者返回“<a class="bule">帐号安全</a>”继续补全您的信息</p>
+        </div>
+    </div>
+
+    <!--已提交状态-->
+    <div class="certif_infor" *ngIf="success">
+        <span></span>
+        <div class="cerif_rg">
+            <h2>验证的身份信息</h2>
+            <p>姓名：林**</p>
+            <p>身份证号：3303**********1234</p>
+        </div>
+    </div>
+
+    <!--提示-->
+    <div class="logpass_tip" *ngIf="!success">
+        实名认证后，可以在平台进行交易，请填写您本人的真实姓名及身份证号码，并上传您的身份证正反面。平台不会将您的信息泄漏给第三<br />
+        方，只做账户能够确保安全使用，本平台不作他途使用，其他任何人均无法查看，请您放心填写。
+        <p>注：实名认证后将无法修改，为了不影响您日后的交易，确保您资金安全以及账户安全，请务必使用您本人的身份信息进行认证。</p>
+    </div>
+
+    <!--具体提交表单-->
+    <div class="mul_iplist" *ngIf="!success">
+        <ul>
+            <li>
+                <span>真是姓名</span>
+                <input type="text"/>
+            </li>
+            <li>
+                <span>身份证号</span>
+                <input type="text"/>
+            </li>
+            <li class="certif_photo">
+                <span>上传照片</span>
+                <div class="certif_pho_rg">
+                    <div>
+                        <div class="certif_upload">
+                            <div class="cer_ud_btn">
+                                <input type="file"/>
+                                <b> +添加人像面</b>
+                            </div>
+                            <div class="cer_ud_eps">
+                                <p>示例</p>
+                                <img src="/assets/images/id_front.png"/>
+                            </div>
+                        </div>
+                        <div class="certif_upload">
+                            <div class="cer_ud_btn">
+                                <input type="file"/>
+                                <b> +添加非人像面</b>
+                            </div>
+                            <div class="cer_ud_eps">
+                                <p>示例</p>
+                                <img src="/assets/images/id_back.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cer_ud_tip">
+                        注：<br />
+                        1. 需上传清晰的身份证正面、反面共2张照片<br />
+                        2. 照片不超过5MB，支持格式jpg，jpeg，png
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span></span>
+                <button class="per_btn">
+                    确认修改
+                </button>
+            </li>
+        </ul>
+
+    </div>
+
+
+</div>

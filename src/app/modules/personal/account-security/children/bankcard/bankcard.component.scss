@@ -1,0 +1,336 @@
+/*个人中心页面都有的*/
+.perrg_b_tit span:before{
+    content: "";
+    width: 4px;
+    height: 14px;
+    background: #ffba00;
+    display: inline-block;
+    margin-right: 8px;
+}
+.perrg_b_tit{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+}
+.perrg_b_tit span{
+    font-size: 14px;
+    color: #333;
+}
+.perrg_b_tit b{
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+.perrg_b_tit b:after{
+    content: "";
+    width: 5px;
+    height: 10px;
+    background: url("/assets/images/ionic.png") -206px -20px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.perrg_b_tit .batch:after{
+    width: 0;
+    height: 0;
+}
+.perrg_b_tit .batch:before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: url("/assets/images/ionic.png") -254px -19px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 3px 0;
+}
+.per_subclass{
+    width: 960px;
+    min-height: 760px;
+    margin-top: 40px;
+}
+
+/*登录密码，认证页面都有,绑定银行卡，手机验证，邮箱验证，添加银行卡都有*/
+.mul_iplist{
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+.mul_iplist ul li{
+    margin-bottom: 30px;
+}
+.mul_iplist ul li span{
+    font-size: 14px;
+    color: #333;
+    margin-right: 25px;
+    text-align: right;
+    display: inline-block;
+    min-width: 90px;
+}
+
+.mul_iplist ul li input{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    padding: 0 10px;
+}
+.mul_iplist button{
+    width: 200px;
+    height: 46px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.verif_code {
+    position: relative;
+}
+.verif_code a{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 5;
+    font-size: 14px;
+    color: #ffba00;
+}
+.verif_code a.obtain{
+    color: #999;
+}
+.verif_code b{
+    position: absolute;
+    right: -85px;
+    bottom: 10px;
+    z-index: 5;
+    font-size: 14px;
+    color: #ff2d26;
+}
+.per_btn{
+    background: #ffba00;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid  #ffba00;
+}
+.next_step{
+    background:#ececec;
+    color: #fff;
+    border: 1px solid #ececec;
+}
+.state_s_f{
+    padding: 30px 40px;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.per_success {
+    background: #e2ffd4;
+}
+.per_fail{
+    background: #fff8e5;
+}
+span.success{
+    width: 40px;
+    height: 40px;
+    background: url("/assets/images/ionic.png") no-repeat -135px -6px;
+    display: inline-block;
+    margin-right: 20px;
+}
+span.fail{
+    width: 44px;
+    height: 44px;
+    background: url("/assets/images/ionic.png") no-repeat -145px -50px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.succ_rg h2{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.succ_rg p{
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+.succ_rg a.bule{
+    color: #26b7ff;
+}
+.logpass_tip{
+    font-size: 12px;
+    color: #999;
+    font-family:'Microsoft YaHei';
+    margin: 0 0 50px ;
+    line-height: 22px;
+}
+.state_s_f + .logpass_tip{
+    margin-top: 25px;
+}
+/**/
+
+/*绑定银行卡页面*/
+.pay_agree {
+    color: #26b7ff;
+    font-size: 14px;
+}
+.mul_iplist ul li.add_card_code{
+    margin-bottom: 16px;
+}
+.card_biding{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+.card_block ,.card_b_add,.card_b_add input{
+    width: 300px;
+    height: 140px;
+    border: 1px solid #ececec;
+}
+.card_block{
+    margin-right: 30px;
+}
+
+.card_block h2,.card_block p,.card_block h2 span,.card_b_add span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.card_block h2,.card_block p{
+    padding: 0 9px;
+}
+.card_block h2{
+    height: 55px;
+    background: #fbfbfb;
+}
+.card_block h2 span{
+    color: #333;
+    font-size: 16px;
+}
+.card_block h2 span b{
+    font-size: 14px;
+}
+.card_block h2 span a{
+    font-size: 12px;
+    color: #fff;
+    width: 46px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #26b7ff;
+    border-radius:3px ;
+    margin-left:10px;
+}
+.card_block p{
+    color: #666;
+    font-size: 14px;
+    margin: 14px 0 0 0;
+}
+.card_block_deft{
+    border: 1px solid #ffba00;
+}
+.card_block_deft h2{
+    background: #fff8e5;
+}
+.card_block_deft h2 span a{
+    background: #ffba00;
+}
+.card_b_add{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card_b_add input{
+    position:absolute;
+    left: 0;
+    top:0;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+.card_b_add span{
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    border: 1px dashed #34bcff;
+    color: #34bcff;
+    font-size: 25px;
+    justify-content: center;
+}
+.card_b_add p{
+    font-size: 14px;
+    color: #26b7ff;
+    margin-top: 8px;
+}
+/*解绑银行卡的弹框*/
+.card_mask_bg,.card_mask_dt{
+    position: fixed;
+}
+.card_mask_bg{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 2;
+    background: #000;
+    opacity: 0.5;
+}
+
+.card_mask_dt{
+    width: 400px;
+    height: 210px;
+    background: #fff;
+    top:50%;
+    left: 50%;
+    z-index: 5;
+    margin-top: -105px;
+    margin-left: -200px;
+    border: 1px solid #ffba00;
+    border-radius: 6px;
+}
+.card_mask_dt h2{
+    padding: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    border: 1px solid #ececec;
+}
+.card_mask_dt h2 span{
+    font-size: 16px;
+    color: #333;
+}
+.card_mask_dt h2 b{
+    color: #999;
+    font-size: 25px;
+    transform:rotate(45deg) ;
+    cursor: pointer;
+}
+.card_mask_dt p{
+    font-size: 16px;
+    color: #666;
+    margin: 35px auto;
+    text-align: center;
+}
+.card_mask_dt div{
+    width: 280px;
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+}
+.card_mask_dt button{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    background: #ffba00;
+    border-radius: 3px;
+}
+.card_mask_dt button:last-child{
+    border: 1px solid #ffba00;
+    background: #fff;
+    color: #ffba00;
+}
+/**/

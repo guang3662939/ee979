@@ -11,8 +11,10 @@ import { PersonalService } from './personal.service';
 
 //components
 import { AccountSecurityComponent } from './account-security/account-security.component';
-import { AuthPhoneComponent } from './account-security/children/auth-phone/auth-phone.component';
+import { AuthIdComponent } from './account-security/children/auth-id/auth-id.component';
+import { BankcardComponent } from './account-security/children/bankcard/bankcard.component';
 import { ChangePasswdComponent } from './account-security/children/change-passwd/change-passwd.component';
+import { ChangePhoneComponent } from './account-security/children/change-phone/change-phone.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { DoneSaleComponent } from './done-sale/done-sale.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -31,8 +33,10 @@ import { PurchasedComponent } from './purchased/purchased.component';
 @NgModule({
   declarations: [
     AccountSecurityComponent,
-    AuthPhoneComponent,
+    AuthIdComponent,
+    BankcardComponent,
     ChangePasswdComponent,
+    ChangePhoneComponent,
     ComplaintComponent,
     DoneSaleComponent,
     FeedbackComponent,

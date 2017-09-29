@@ -2,12 +2,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'auth-phone',
-  templateUrl: 'auth-phone.component.html',
-  styleUrls: ['auth-phone.component.scss']
+  selector: 'change-phone',
+  templateUrl: 'change-phone.component.html',
+  styleUrls: ['change-phone.component.scss']
 })
 
-export class AuthPhoneComponent implements OnInit {
+export class ChangePhoneComponent implements OnInit {
   phone: string = '';
   code: string = '';
   authed: boolean = false;

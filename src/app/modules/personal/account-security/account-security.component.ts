@@ -10,5 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AccountSecurityComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    window.scrollTo(0,0);
+  }
 }
