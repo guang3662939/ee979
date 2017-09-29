@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import * as sha1 from 'js-sha1';
 
-import { DialogService } from '../../services/dialog.service';
+import { DialogService } from '../../../services/dialog.service';
 import { SaleService } from '../sale.service';
 
 const URL = 'http://ee979-tmp.oss-cn-hangzhou.aliyuncs.com/';

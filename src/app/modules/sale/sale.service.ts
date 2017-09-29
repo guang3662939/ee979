@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-import { API_URL } from '../shared/api';
+import { API_URL } from '../../shared/api';
 
 @Injectable()
 export class SaleService {

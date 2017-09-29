@@ -9,15 +9,15 @@ export const appRoutes: Routes = [
   },
   {
     path: 'sale',
-    loadChildren: './sale/sale.module#SaleModule'
+    loadChildren: './modules/sale/sale.module#SaleModule'
   },
   {
     path: 'personal',
-    loadChildren: './personal/personal.module#PersonalModule'
+    loadChildren: './modules/personal/personal.module#PersonalModule'
   },
   {
     path: 'buy',
-    loadChildren: './buy/buy.module#BuyModule'
+    loadChildren: './modules/buy/buy.module#BuyModule'
   },
   {
     path: '**',

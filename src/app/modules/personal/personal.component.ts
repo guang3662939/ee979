@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { PersonalService } from './personal.service';
 
-import { personalMenus } from '../shared/menus';
+import { personalMenus } from '../../shared/menus';
 
 @Component({
   selector: 'app-personal',
